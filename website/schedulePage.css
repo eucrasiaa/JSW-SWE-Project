@@ -1,0 +1,49 @@
+
+  body {
+    display: flex;
+    flex-direction: row;
+    font-family: Arial, sans-serif;
+  }
+
+  #calendar {
+    flex: 3;
+    padding: 20px;
+  }
+
+  #devPanel {
+    flex: 1;
+    padding: 20px;
+    border-left: 1px solid #ccc;
+  }
+
+  .calendar-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .calendar-table th, .calendar-table  {
+    border: 1px solid #ccc;
+    text-align: center;
+    height: 10px; /* Adjust as needed */
+  }
+  .schedule-cell {
+    width: 8%; /* 7 columns */
+    border-left: 1px solid #ccc;
+  }
+  .time-cell {
+    width: 8%;
+    border-right: 1px solid #ccc;
+  }
+  /* only border every 4th row to create hour blocks, but still have 15 min intervals */
+  .calendar-table tr:nth-child(4n) {
+    border-bottom: 2px solid #000;
+  }
+
+  .time-cell {
+    background-color: #f0f0f0;
+    font-weight: bold;
+  }
+
+  .schedule-cell {
+    background-color: #fff;
+  }

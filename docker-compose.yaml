@@ -1,0 +1,10 @@
+services:
+  web:
+    build: .
+    ports:
+      - "4413:4413"
+    volumes:
+      - .:/app  # This is the "magic" line: maps current dir to /app
+    environment:
+      - FLASK_ENV=development
+      - FLASK_DEBUG=1

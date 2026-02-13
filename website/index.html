@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Schedule</title>
+
+
+<link rel="stylesheet" href="schedulePage.css">
+<style>
+  body {
+    display: flex;
+    flex-direction: row;
+    font-family: Arial, sans-serif;
+  }
+
+  #calendar {
+    flex: 3;
+    padding: 20px;
+  }
+
+  #devPanel {
+    flex: 1;
+    padding: 20px;
+    border-left: 1px solid #ccc;
+  }
+
+  .calendar-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .calendar-table th, .calendar-table  {
+    border: 1px solid #ccc;
+    text-align: center;
+    height: 10px; /* Adjust as needed */
+  }
+  .schedule-cell {
+    width: 8%; /* 7 columns */
+    border-left: 1px solid #ccc;
+  }
+  .time-cell {
+    width: 8%;
+    border-right: 1px solid #ccc;
+  }
+  /* only border every 4th row to create hour blocks, but still have 15 min intervals */
+  .calendar-table tr:nth-child(4n) {
+    border-bottom: 2px solid #000;
+  }
+
+  .time-cell {
+    background-color: #f0f0f0;
+    font-weight: bold;
+  }
+
+  .schedule-cell {
+    background-color: #fff;
+  }
+
+  .studentClassCell {
+    background-color: #add8e6; /* light blue for visibility */
+  }
+  .tutorClassCell {
+    background-color: #90ee90; /* light green for visibility */
+  }
+  .overlapCell {
+    background-color: #ffcccb !important; /* light red for visibility */
+  }
+
+</style>
+</head>
+<!-- <script src="schedulePage.js"></script> -->
+<body>
+
+<div id="header">
+  <p> dropdown</p>
+  <select id="studentDropdown">
+    <option value="">Select Student</option>
+  </select>
+</div>
+
+  <div id="calendar">
+  </div>
+
+  <div id="devPanel">
+    <h2>Developer Panel</h2>
+ <!-- buttons to test various api calls, and box to host returns -->
+<!-- @app.route('/api/data/<int:classID>') -->
+<!-- @app.route('/api/sections') -->
+<!-- @app.route('/api/tutor_blocks') -->
+<!-- @app.route('/api/studentSchedules/<int:studentID>') -->
+<!-- '/api/tutorsFor/<int:courseID>' -->
+
+    <div class="2col">
+      <button id="getClassData">Get Class Data</button> <input type="number" id="classIDInput" placeholder="Class ID">
+      <button id="getSections">Get Sections</button>
+      <button id="getTutorBlocks">Get Tutor Blocks</button>
+      <button id="getStudentSchedules">Get Student Schedules</button> <input type="number" id="studentIDInput" placeholder="Student ID">
+      <button id="tutorsForCourse">Get Tutors for Course</button> <input type="number" id="courseIDInput" placeholder="Course ID">
+    </div>
+
+      <div id="apiResponse">
+      <h3>API Response:</h3>
+      <pre id="responseContent"></pre>
+    </div>
+  </div>
+
+
+</body>
+<script>
+// generate table 7 columns, 7am-11pm, 4  rows per hour (15 minute intervals)
+  // each has header with day of the week, and a 8th column for hour labels
+  function generateCalendar() {
+    const calendar = document.getElementById('calendar');
+    const table = document.createElement('table');
+    table.classList.add('calendar-table');
+    const headerRow = document.createElement('tr');
+    const daysOfWeek = ['Time', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+
+    //header for labels
+    daysOfWeek.forEach(day => {
+      const th = document.createElement('th');
+      th.textContent = day;
+      headerRow.appendChild(th);
+    });
+    table.appendChild(headerRow);
+
+    // Create time slots from 7am to 11pm
+    for (let hour = 7; hour <= 23; hour++) {
+      // hour has 15 min dividers
+      for (let quarter = 0; quarter < 4; quarter++) {
+        const row = document.createElement('tr');
+        const timeCell = document.createElement('td');
+
+        timeCell.classList.add('time-cell');
+        if (quarter === 0) {
+          timeCell.textContent = `${hour}:00`;
+        } 
+        //timeCell.textContent = `${hour}:${quarter * 15 === 0 ? '00' : quarter * 15}`;
+        row.appendChild(timeCell);
+        
+        // for 
+        for (let i = 0; i < 7; i++) {
+          const cell = document.createElement('td');
+          cell.classList.add('schedule-cell');
+          row.appendChild(cell);
+        }
+        table.appendChild(row);
+      }
+    }
+    
+    calendar.appendChild(table);
+  }
+
+// onload:
+const getClassDataBtn = document.getElementById('getClassData');
+const getSectionsBtn = document.getElementById('getSections');
+const getTutorBlocksBtn = document.getElementById('getTutorBlocks');
+const getStudentSchedulesBtn = document.getElementById('getStudentSchedules');
+const tutorsForCourseBtn = document.getElementById('tutorsForCourse');
+const responseBox = document.getElementById('responseContent');
+
+
+
+      const studentDropdown = document.getElementById('studentDropdown');
+let currStudentSchedule = {};
+let currTutorBlocks = {};
+
+
+function eventListeners(){
+
+    getClassDataBtn.addEventListener('click', () => {
+      const classID = document.getElementById('classIDInput').value;
+      fetch(`'/api/class/'${classID}`)
+        .then(response => response.json())
+        .then(data => {
+          responseBox.textContent = JSON.stringify(data, null, 2);
+        });
+    });
+    getSectionsBtn.addEventListener('click', () => {
+      fetch('/api/sections')
+        .then(response => response.json())
+        .then(data => {
+          responseBox.textContent = JSON.stringify(data, null, 2);
+        });
+    });
+    getTutorBlocksBtn.addEventListener('click', () => {
+      fetch('/api/tutor_blocks')
+        .then(response => response.json())
+        .then(data => {
+          responseBox.textContent = JSON.stringify(data, null, 2);
+        });
+    });
+    getStudentSchedulesBtn.addEventListener('click', () => {
+      const studentID = document.getElementById('studentIDInput').value;
+      fetch(`/api/studentSchedules/${studentID}`)
+        .then(response => response.json())
+        .then(data => {
+          responseBox.textContent = JSON.stringify(data, null, 2);
+        });
+    }); 
+    tutorsForCourseBtn.addEventListener('click', () => {
+      const courseID = document.getElementById('courseIDInput').value;
+      fetch(`/api/tutorsFor/${courseID}`)
+        .then(response => response.json())
+        .then(data => {
+          responseBox.textContent = JSON.stringify(data, null, 2);
+        });
+    });
+}
+
+function clearResponse() {
+  responseBox.textContent = '';
+}
+
+function getTutorForCourse(courseID){
+  fetch(`/api/tutorsFor/${courseID}`)
+    .then(response => response.json())
+    .then(data => {
+      currTutorBlocks = data;
+      for (let i = 0; i < currTutorBlocks.length; i++){
+        const [ TutorIDSQL, FirstName, LastName, title, startTime, duration, sectionDays, courseID] = currTutorBlocks[i];
+        const tutorScheduleElem = [TutorIDSQL, FirstName, LastName, title, startTime, duration, sectionDays, courseID];
+        displaySchedule([tutorScheduleElem], "tutor");
+
+      }
+
+      // responseBox.textContent = JSON.stringify(data, null, 2);
+    });
+}
+
+ function clearCalendar() {
+  const cells = document.querySelectorAll('.schedule-cell');
+  cells.forEach(cell => {
+    cell.textContent = '';
+    cell.classList.remove('studentClassCell', 'tutorClassCell', 'overlapCell');
+  });
+ }
+  window.onload = function() {
+    generateCalendar();
+    eventListeners();
+
+// get all students, and make dropdown to pick one.
+// picking one queries their schedule, and displays it on the calendar.
+    fetch('/api/students')
+      .then(response => response.json())
+      .then(data => {
+        const dropdown = document.getElementById('studentDropdown');
+        data.forEach(student => {
+          const option = document.createElement('option');
+          option.value = student[0]; // student ID
+          option.textContent = student[1]; // student name
+          dropdown.appendChild(option); 
+        });
+      });
+
+      studentDropdown.addEventListener('change', () => {
+        const studentID = studentDropdown.value;
+        if (studentID) {
+          fetch(`/api/studentSchedules/${studentID}`)
+            .then(response => response.json())
+            .then(data => {
+              currStudentSchedule = data;
+              clearCalendar();
+
+              responseBox.textContent = JSON.stringify(data, null, 2);
+              
+              displaySchedule(currStudentSchedule, "student");
+
+              //determine tutors:
+              
+            });
+        }
+      });
+  };
+
+
+function displaySchedule(schedule, slotType) {
+  // schedule is array, 
+  // slotType is "student" or "tutor" to determine cell color
+  schedule.forEach(elem => {
+    console.log(elem);
+    let [ StudIDSQL, FirstName, LastName, title, startTime, duration, sectionDays, courseID] = elem;
+    
+    console.log(startTime);
+    // convert startTime to minutes from 7am (0 at 7am, 60 at 8am, etc)
+    const [startHour, startMinute] = startTime.split(':').map(Number);
+    const startMinutesFrom7am = ((startHour - 7) * 60) + startMinute;
+    const endMinutesFrom7am = startMinutesFrom7am + duration;
+
+    // calculate row index based on minutes from 7am (each row is 15 min)
+    const startRowIndex = Math.floor(startMinutesFrom7am / 15) + 1; // +1 for header row
+    const endRowIndex = Math.ceil(endMinutesFrom7am / 15) + 1;
+    console.log(startRowIndex + " " + endRowIndex);
+    // loop through sectionDays to determine which columns to fill 
+
+    if(slotType === "tutor"){
+      console.log("tutorSection");
+      //tutor stores date as a literal text "Monday" "Tuesday" etc, so convert to binary string:
+      const daysOfWeek = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+      const dayIndex = daysOfWeek.indexOf(sectionDays);
+
+      console.log(daysOfWeek[dayIndex]);
+      // convert to the binary to let it work with the loop below:
+      let binaryString = "";
+      for(let i = 0; i < 7; i++){
+        binaryString += (i === dayIndex) ? '1' : '0';
+      }
+      sectionDays = binaryString;
+    }
+    console.log(sectionDays); 
+    for (let i = 0; i < sectionDays.length; i++) {
+      if (sectionDays[i] === '1') {
+        // fill cells from startRowIndex to endRowIndex in column i+1 (since column 0 is time labels)
+        for (let rowIndex = startRowIndex; rowIndex < endRowIndex; rowIndex++) {
+          const cell = document.querySelector(`.calendar-table tr:nth-child(${rowIndex}) td:nth-child(${i + 2})`);
+          if (rowIndex === startRowIndex) {
+            cell.textContent = title;
+          }
+          if(slotType === "student"){
+            if(cell.classList.contains('tutorClassCell')){
+              cell.classList.add('overlapCell');
+            } else {
+              cell.classList.add('studentClassCell');
+            }
+          } else if(slotType === "tutor"){
+            if(cell.classList.contains('studentClassCell')){
+              cell.classList.add('overlapCell');
+            } else {
+              cell.classList.add('tutorClassCell');
+            }
+          }
+      }
+    }
+  }
+  if(slotType === "student"){
+    // after displaying student schedule, get tutors for each course
+    getTutorForCourse(courseID);
+    }
+  });
+}
+
+
+</script>
+</html>
+
+
+<!-- I'll be displaying a 7 day calander on the page with hour and half hour marks 
+  itll display info based on the users schedule, so i need to develop a system to read in a schedule element 
+
+  {elemement: "title" starttime: "hh:mm" duration: "mm" sectionDays "101000" (monday tuesday ...)}
+  optimal way to convert timestamps into positions on the calander?
+
+  use:
+  startTime = (startHour * 60) + startMinute
+  endTime = startTime + duration
+  calander should be drawn with a grid system (visible lines at half hour, but each hour has 4 sections to allow for 15 minute intervals)
+
+
+--> 
