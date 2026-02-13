@@ -4,6 +4,8 @@ __pycache__/
 venv/
 .env
 
+#dev aid scripts
+dev-scripts/
 
 # database  on prod
 
