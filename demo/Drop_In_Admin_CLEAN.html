@@ -196,8 +196,55 @@
 	{
 		background-color: #4f0674;
 	}
+
+  .showCurrent {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: auto;
+    border: 1px solid red;
+}
+
+div#ongoing>div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.showActiveContent {
+    display: flex;
+    justify-content: center;
+}
+
+.showActiveContent > #ongoing >h3:after {
+    display: inline-block;
+    border-bottom: 1px solid black;
+    width: 100%;
+    height: 2px;
+    min-width: 100%;
+    content: "";
+    padding: 0px;
+}
+    .ongoing {
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+        margin: auto;
+    }
+    .ongoing > p {
+      font-size: 1.5em;
+      border-bottom: 1px solid black;
+    }
 </style>
 <div>
+  <div class="showCurrent">
+    <button id="devShowActive"> Display Current Tutor Sessions </button>
+  <div class="showActiveContent" id="activeContainer" style="display: none;">
+
+    <div id="ongoing">
+    </div>
+  </div>
+</div>
 <label for="SusannaStatus">Susanna:</label>
 <select id="susannaStatus" onchange="updateStatus('susannaMon', this.value)">
 	<option value="away" selected="">Away</option>
@@ -1533,9 +1580,36 @@ function isTimeInRange(current, start, end) {
   // 2. and we have not yet passed the end time
   return currentTotal >= windowStart && currentTotal <= endTotal;
 }
+
+
+const showBox = document.getElementById("activeContainer");
+const showOngoing = document.getElementById("devShowActive");
+const ongoingInsert = document.getElementById("ongoing");
+showOngoing.addEventListener("click", getOngoingDemo);
+function getOngoingDemo(){
+  //remove hidden from inline style
+  if(showBox.style.display === "none"){
+    showBox.style.display = "flex";
+  } else {
+    showBox.style.display = "none";
+  }
+  findAllOngoingSlots();
+}
+
+
+
 function findAllOngoingSlots(){
   // parsing to find slots within the range of (-1 hour, +1 hour) of current time, and highlight them. BUT 
   let now = new Date();
+  ongoingInsert.innerHTML = ""; // clear
+  let header = document.createElement("div");
+  let hTop = document.createElement("h3");
+  hTop.innerText = "Current Time: " + now.toLocaleTimeString();
+  let hBot = document.createElement("h4");
+  hBot.innerText = "Ongoing tutor slots:";
+  header.appendChild(hTop);
+  header.appendChild(hBot);
+  ongoingInsert.appendChild(header);
   let dayOfWeek = now.toLocaleString('en-US', { weekday: 'long' });
   let currentTime = now.getHours() + ":" + now.getMinutes();
   console.log("current time: " + currentTime);
@@ -1553,6 +1627,12 @@ function findAllOngoingSlots(){
               if(isTimeInRange(currentTime, startTime, endTime)){
                 console.log("ongoing slot: " + slotText);
                 elements[i].children[j].children[k].style.backgroundColor = "lightgreen";
+                let it = document.createElement("p"); 
+                // course + day + time + tutor
+                let slotFull = elements[i].id.replace("_", " ") + " | " + dayOfWeek + " " + slotText;
+                it.innerText = slotFull;
+                it.classList.add("ongoing-slot-p");
+                ongoingInsert.appendChild(it);
               }
             }
           }
@@ -1561,7 +1641,6 @@ function findAllOngoingSlots(){
     }
   }
 } 
-
 
 </script>
 </body></html>
