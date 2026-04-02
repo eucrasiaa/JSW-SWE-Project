@@ -1,0 +1,11 @@
+services:
+  web:
+    build: .
+    ports:
+      - "4413:4413"
+    volumes:
+      # Mount a local 'data' folder to store the SQLite file
+      - ./data:/app/data
+    environment:
+      - RUST_LOG=info
+      - DATABASE_URL=sqlite:///app/data/schedule.db
