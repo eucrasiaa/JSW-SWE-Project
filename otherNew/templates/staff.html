@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- placeholder slop for testing LOL -->
+<head>
+    <meta charset="UTF-8">
+    <title>Staff Dashboard</title>
+    <style>
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { border: 1px solid #ccc; padding: 10px; text-align: left; }
+        th { background: #eee; }
+    </style>
+</head>
+<body>
+
+    <h1>Staff Command Center</h1>
+    <p>Change statuses below.</p>
+
+    <table id="staff-live-table">
+        <thead>
+            <tr>
+                <th>Time</th>
+                <th>Tutor</th>
+                <th>Courses</th>
+                <th>Current Status</th>
+            </tr>
+        </thead>
+        <tbody id="staff-table-body">
+            </tbody>
+    </table>
+
+    <script>
+        async function loadStaffDashboard() {
+            const response = await fetch('/api/shifts/today');
+            const shifts = await response.json();
+            
+            const tbody = document.getElementById('staff-table-body');
+            tbody.innerHTML = '';
+
+            const statuses = ['Scheduled', 'Arrived', 'Late', 'Canceled', 'Full'];
+
+            shifts.forEach(shift => {
+                const tr = document.createElement('tr');
+                let optionsHtml = statuses.map(s => 
+                    `<option value="${s}" ${shift.status === s ? 'selected' : ''}>${s}</option>`
+                ).join('');
+
+                tr.innerHTML = `
+                    <td>${shift.start} - ${shift.end}</td>
+                    <td>${shift.tutor}</td>
+                    <td>${shift.courses || "None"}</td>
+                    <td>
+                        <select onchange="updateStatus('${shift.shift_id}', this.value)">
+                            ${optionsHtml}
+                        </select>
+                    </td>
+                `;
+                tbody.appendChild(tr);
+            });
+        }
+        async function updateStatus(shiftId, newStatus) {
+            await fetch('/api/update_live_status', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ shift_id: shiftId, status: newStatus })
+            });
+            console.log(`Updated shift ${shiftId} to ${newStatus}`);
+        }
+        loadStaffDashboard();
+    </script>
+</body>
+</html>

@@ -1,0 +1,3915 @@
+[
+  {
+    "Course": "BIOL 101",
+    "Day": "Monday",
+    "Start Time": "11:00",
+    "End Time": "13:00",
+    "Tutor": "Susanna"
+  },
+  {
+    "Course": "BIOL 101",
+    "Day": "Monday",
+    "Start Time": "16:00",
+    "End Time": "17:00",
+    "Tutor": "Angela"
+  },
+  {
+    "Course": "BIOL 101",
+    "Day": "Tuesday",
+    "Start Time": "12:00",
+    "End Time": "14:00",
+    "Tutor": "Shakib"
+  },
+  {
+    "Course": "BIOL 101",
+    "Day": "Tuesday",
+    "Start Time": "13:00",
+    "End Time": "16:00",
+    "Tutor": "Zoya"
+  },
+  {
+    "Course": "BIOL 101",
+    "Day": "Tuesday",
+    "Start Time": "13:30",
+    "End Time": "17:00",
+    "Tutor": "Aren"
+  },
+  {
+    "Course": "BIOL 101",
+    "Day": "Wednesday",
+    "Start Time": "11:30",
+    "End Time": "13:00",
+    "Tutor": "Tristan"
+  },
+  {
+    "Course": "BIOL 101",
+    "Day": "Wednesday",
+    "Start Time": "13:00",
+    "End Time": "14:00",
+    "Tutor": "Lillian"
+  },
+  {
+    "Course": "BIOL 101",
+    "Day": "Wednesday",
+    "Start Time": "16:30",
+    "End Time": "17:00",
+    "Tutor": "Angela"
+  },
+  {
+    "Course": "BIOL 101",
+    "Day": "Thursday",
+    "Start Time": "12:30",
+    "End Time": "14:00",
+    "Tutor": "Shakib"
+  },
+  {
+    "Course": "BIOL 101",
+    "Day": "Thursday",
+    "Start Time": "13:00",
+    "End Time": "16:00",
+    "Tutor": "Zoya"
+  },
+  {
+    "Course": "BIOL 101",
+    "Day": "Thursday",
+    "Start Time": "13:00",
+    "End Time": "16:00",
+    "Tutor": "Avi"
+  },
+  {
+    "Course": "BIOL 101",
+    "Day": "Friday",
+    "Start Time": "11:00",
+    "End Time": "13:00",
+    "Tutor": "Aren"
+  },
+  {
+    "Course": "BIOL 140",
+    "Day": "Monday",
+    "Start Time": "11:00",
+    "End Time": "13:00",
+    "Tutor": "Susanna"
+  },
+  {
+    "Course": "BIOL 140",
+    "Day": "Monday",
+    "Start Time": "16:00",
+    "End Time": "17:00",
+    "Tutor": "Angela"
+  },
+  {
+    "Course": "BIOL 140",
+    "Day": "Tuesday",
+    "Start Time": "12:00",
+    "End Time": "14:00",
+    "Tutor": "Shakib"
+  },
+  {
+    "Course": "BIOL 140",
+    "Day": "Tuesday",
+    "Start Time": "13:00",
+    "End Time": "16:00",
+    "Tutor": "Zoya"
+  },
+  {
+    "Course": "BIOL 140",
+    "Day": "Tuesday",
+    "Start Time": "13:30",
+    "End Time": "17:00",
+    "Tutor": "Aren"
+  },
+  {
+    "Course": "BIOL 140",
+    "Day": "Wednesday",
+    "Start Time": "11:30",
+    "End Time": "13:00",
+    "Tutor": "Tristan"
+  },
+  {
+    "Course": "BIOL 140",
+    "Day": "Wednesday",
+    "Start Time": "13:00",
+    "End Time": "14:00",
+    "Tutor": "Lillian"
+  },
+  {
+    "Course": "BIOL 140",
+    "Day": "Wednesday",
+    "Start Time": "16:30",
+    "End Time": "17:00",
+    "Tutor": "Angela"
+  },
+  {
+    "Course": "BIOL 140",
+    "Day": "Thursday",
+    "Start Time": "12:30",
+    "End Time": "14:00",
+    "Tutor": "Shakib"
+  },
+  {
+    "Course": "BIOL 140",
+    "Day": "Thursday",
+    "Start Time": "13:00",
+    "End Time": "16:00",
+    "Tutor": "Zoya"
+  },
+  {
+    "Course": "BIOL 140",
+    "Day": "Thursday",
+    "Start Time": "13:00",
+    "End Time": "16:00",
+    "Tutor": "Avi"
+  },
+  {
+    "Course": "BIOL 140",
+    "Day": "Friday",
+    "Start Time": "11:00",
+    "End Time": "13:00",
+    "Tutor": "Aren"
+  },
+  {
+    "Course": "BIOL 141",
+    "Day": "Monday",
+    "Start Time": "11:00",
+    "End Time": "13:00",
+    "Tutor": "Susanna"
+  },
+  {
+    "Course": "BIOL 141",
+    "Day": "Monday",
+    "Start Time": "16:00",
+    "End Time": "17:00",
+    "Tutor": "Angela"
+  },
+  {
+    "Course": "BIOL 141",
+    "Day": "Tuesday",
+    "Start Time": "12:00",
+    "End Time": "14:00",
+    "Tutor": "Shakib"
+  },
+  {
+    "Course": "BIOL 141",
+    "Day": "Tuesday",
+    "Start Time": "13:00",
+    "End Time": "16:00",
+    "Tutor": "Zoya"
+  },
+  {
+    "Course": "BIOL 141",
+    "Day": "Tuesday",
+    "Start Time": "13:30",
+    "End Time": "17:00",
+    "Tutor": "Aren"
+  },
+  {
+    "Course": "BIOL 141",
+    "Day": "Wednesday",
+    "Start Time": "11:30",
+    "End Time": "13:00",
+    "Tutor": "Tristan"
+  },
+  {
+    "Course": "BIOL 141",
+    "Day": "Wednesday",
+    "Start Time": "13:00",
+    "End Time": "14:00",
+    "Tutor": "Lillian"
+  },
+  {
+    "Course": "BIOL 141",
+    "Day": "Wednesday",
+    "Start Time": "16:30",
+    "End Time": "17:00",
+    "Tutor": "Angela"
+  },
+  {
+    "Course": "BIOL 141",
+    "Day": "Thursday",
+    "Start Time": "12:30",
+    "End Time": "14:00",
+    "Tutor": "Shakib"
+  },
+  {
+    "Course": "BIOL 141",
+    "Day": "Thursday",
+    "Start Time": "13:00",
+    "End Time": "16:00",
+    "Tutor": "Zoya"
+  },
+  {
+    "Course": "BIOL 141",
+    "Day": "Thursday",
+    "Start Time": "13:00",
+    "End Time": "16:00",
+    "Tutor": "Avi"
+  },
+  {
+    "Course": "BIOL 141",
+    "Day": "Friday",
+    "Start Time": "11:00",
+    "End Time": "13:00",
+    "Tutor": "Aren"
+  },
+  {
+    "Course": "BIOL 251",
+    "Day": "Tuesday",
+    "Start Time": "12:30",
+    "End Time": "13:30",
+    "Tutor": "Chelsea"
+  },
+  {
+    "Course": "BIOL 251",
+    "Day": "Tuesday",
+    "Start Time": "17:00",
+    "End Time": "17:00",
+    "Tutor": "Moyo"
+  },
+  {
+    "Course": "BIOL 251",
+    "Day": "Wednesday",
+    "Start Time": "17:00",
+    "End Time": "17:00",
+    "Tutor": "Moyo"
+  },
+  {
+    "Course": "BIOL 273",
+    "Day": "Tuesday",
+    "Start Time": "12:30",
+    "End Time": "13:30",
+    "Tutor": "Chelsea"
+  },
+  {
+    "Course": "BIOL 273",
+    "Day": "Tuesday",
+    "Start Time": "17:00",
+    "End Time": "17:00",
+    "Tutor": "Moyo"
+  },
+  {
+    "Course": "BIOL 273",
+    "Day": "Wednesday",
+    "Start Time": "17:00",
+    "End Time": "17:00",
+    "Tutor": "Moyo"
+  },
+  {
+    "Course": "BIOL 302",
+    "Day": "Monday",
+    "Start Time": "11:00",
+    "End Time": "13:00",
+    "Tutor": "Susanna"
+  },
+  {
+    "Course": "BIOL 302",
+    "Day": "Monday",
+    "Start Time": "16:00",
+    "End Time": "17:00",
+    "Tutor": "Angela"
+  },
+  {
+    "Course": "BIOL 302",
+    "Day": "Tuesday",
+    "Start Time": "12:00",
+    "End Time": "14:00",
+    "Tutor": "Shakib"
+  },
+  {
+    "Course": "BIOL 302",
+    "Day": "Tuesday",
+    "Start Time": "13:00",
+    "End Time": "16:00",
+    "Tutor": "Zoya"
+  },
+  {
+    "Course": "BIOL 302",
+    "Day": "Wednesday",
+    "Start Time": "11:30",
+    "End Time": "13:00",
+    "Tutor": "Tristan"
+  },
+  {
+    "Course": "BIOL 302",
+    "Day": "Wednesday",
+    "Start Time": "16:30",
+    "End Time": "17:00",
+    "Tutor": "Angela"
+  },
+  {
+    "Course": "BIOL 302",
+    "Day": "Thursday",
+    "Start Time": "12:30",
+    "End Time": "14:00",
+    "Tutor": "Shakib"
+  },
+  {
+    "Course": "BIOL 302",
+    "Day": "Thursday",
+    "Start Time": "13:00",
+    "End Time": "16:00",
+    "Tutor": "Zoya"
+  },
+  {
+    "Course": "BIOL 302",
+    "Day": "Thursday",
+    "Start Time": "13:00",
+    "End Time": "16:00",
+    "Tutor": "Avi"
+  },
+  {
+    "Course": "BIOL 303",
+    "Day": "Monday",
+    "Start Time": "16:00",
+    "End Time": "17:00",
+    "Tutor": "Angela"
+  },
+  {
+    "Course": "BIOL 303",
+    "Day": "Tuesday",
+    "Start Time": "13:00",
+    "End Time": "16:00",
+    "Tutor": "Zoya"
+  },
+  {
+    "Course": "BIOL 303",
+    "Day": "Wednesday",
+    "Start Time": "11:30",
+    "End Time": "13:00",
+    "Tutor": "Tristan"
+  },
+  {
+    "Course": "BIOL 303",
+    "Day": "Wednesday",
+    "Start Time": "16:30",
+    "End Time": "17:00",
+    "Tutor": "Angela"
+  },
+  {
+    "Course": "BIOL 303",
+    "Day": "Thursday",
+    "Start Time": "13:00",
+    "End Time": "16:00",
+    "Tutor": "Zoya"
+  },
+  {
+    "Course": "BIOL 303",
+    "Day": "Thursday",
+    "Start Time": "13:00",
+    "End Time": "16:00",
+    "Tutor": "Avi"
+  },
+  {
+    "Course": "BIOL 430",
+    "Day": "Tuesday",
+    "Start Time": "13:00",
+    "End Time": "16:00",
+    "Tutor": "Zoya"
+  },
+  {
+    "Course": "BIOL 430",
+    "Day": "Thursday",
+    "Start Time": "13:00",
+    "End Time": "16:00",
+    "Tutor": "Zoya"
+  },
+  {
+    "Course": "CHEM 100",
+    "Day": "Thursday",
+    "Start Time": "13:00",
+    "End Time": "16:00",
+    "Tutor": "Avi"
+  },
+  {
+    "Course": "CHEM 101",
+    "Day": "Monday",
+    "Start Time": "11:00",
+    "End Time": "13:00",
+    "Tutor": "Susanna"
+  },
+  {
+    "Course": "CHEM 101",
+    "Day": "Monday",
+    "Start Time": "16:00",
+    "End Time": "17:00",
+    "Tutor": "Angela"
+  },
+  {
+    "Course": "CHEM 101",
+    "Day": "Tuesday",
+    "Start Time": "13:00",
+    "End Time": "14:30",
+    "Tutor": "Iniya"
+  },
+  {
+    "Course": "CHEM 101",
+    "Day": "Tuesday",
+    "Start Time": "16:00",
+    "End Time": "17:00",
+    "Tutor": "Iniya"
+  },
+  {
+    "Course": "CHEM 101",
+    "Day": "Wednesday",
+    "Start Time": "11:00",
+    "End Time": "12:00",
+    "Tutor": "Iniya"
+  },
+  {
+    "Course": "CHEM 101",
+    "Day": "Wednesday",
+    "Start Time": "12:00",
+    "End Time": "14:00",
+    "Tutor": "Molemo"
+  },
+  {
+    "Course": "CHEM 101",
+    "Day": "Wednesday",
+    "Start Time": "14:00",
+    "End Time": "16:30",
+    "Tutor": "Shayan"
+  },
+  {
+    "Course": "CHEM 101",
+    "Day": "Wednesday",
+    "Start Time": "15:00",
+    "End Time": "17:00",
+    "Tutor": "Zach"
+  },
+  {
+    "Course": "CHEM 101",
+    "Day": "Wednesday",
+    "Start Time": "16:30",
+    "End Time": "17:00",
+    "Tutor": "Angela"
+  },
+  {
+    "Course": "CHEM 101",
+    "Day": "Thursday",
+    "Start Time": "12:00",
+    "End Time": "13:00",
+    "Tutor": "Shayan"
+  },
+  {
+    "Course": "CHEM 101",
+    "Day": "Thursday",
+    "Start Time": "13:00",
+    "End Time": "16:00",
+    "Tutor": "Avi"
+  },
+  {
+    "Course": "CHEM 101",
+    "Day": "Thursday",
+    "Start Time": "15:30",
+    "End Time": "17:00",
+    "Tutor": "Zach"
+  },
+  {
+    "Course": "CHEM 101",
+    "Day": "Thursday",
+    "Start Time": "17:00",
+    "End Time": "17:00",
+    "Tutor": "Himani"
+  },
+  {
+    "Course": "CHEM 101",
+    "Day": "Friday",
+    "Start Time": "11:00",
+    "End Time": "12:00",
+    "Tutor": "Zach"
+  },
+  {
+    "Course": "CHEM 101",
+    "Day": "Friday",
+    "Start Time": "12:00",
+    "End Time": "13:00",
+    "Tutor": "Himani"
+  },
+  {
+    "Course": "CHEM 101",
+    "Day": "Friday",
+    "Start Time": "13:00",
+    "End Time": "14:00",
+    "Tutor": "Shayan"
+  },
+  {
+    "Course": "CHEM 101",
+    "Day": "Friday",
+    "Start Time": "13:00",
+    "End Time": "14:00",
+    "Tutor": "Molemo"
+  },
+  {
+    "Course": "CHEM 102",
+    "Day": "Monday",
+    "Start Time": "12:00",
+    "End Time": "14:00",
+    "Tutor": "Theo"
+  },
+  {
+    "Course": "CHEM 102",
+    "Day": "Monday",
+    "Start Time": "16:00",
+    "End Time": "17:00",
+    "Tutor": "Angela"
+  },
+  {
+    "Course": "CHEM 102",
+    "Day": "Tuesday",
+    "Start Time": "13:00",
+    "End Time": "14:30",
+    "Tutor": "Iniya"
+  },
+  {
+    "Course": "CHEM 102",
+    "Day": "Tuesday",
+    "Start Time": "16:00",
+    "End Time": "17:00",
+    "Tutor": "Iniya"
+  },
+  {
+    "Course": "CHEM 102",
+    "Day": "Wednesday",
+    "Start Time": "11:00",
+    "End Time": "12:00",
+    "Tutor": "Iniya"
+  },
+  {
+    "Course": "CHEM 102",
+    "Day": "Wednesday",
+    "Start Time": "12:00",
+    "End Time": "14:00",
+    "Tutor": "Molemo"
+  },
+  {
+    "Course": "CHEM 102",
+    "Day": "Wednesday",
+    "Start Time": "14:00",
+    "End Time": "16:30",
+    "Tutor": "Shayan"
+  },
+  {
+    "Course": "CHEM 102",
+    "Day": "Wednesday",
+    "Start Time": "15:00",
+    "End Time": "17:00",
+    "Tutor": "Zach"
+  },
+  {
+    "Course": "CHEM 102",
+    "Day": "Wednesday",
+    "Start Time": "16:30",
+    "End Time": "17:00",
+    "Tutor": "Angela"
+  },
+  {
+    "Course": "CHEM 102",
+    "Day": "Thursday",
+    "Start Time": "12:00",
+    "End Time": "13:00",
+    "Tutor": "Shayan"
+  },
+  {
+    "Course": "CHEM 102",
+    "Day": "Thursday",
+    "Start Time": "13:00",
+    "End Time": "16:00",
+    "Tutor": "Avi"
+  },
+  {
+    "Course": "CHEM 102",
+    "Day": "Thursday",
+    "Start Time": "15:30",
+    "End Time": "17:00",
+    "Tutor": "Zach"
+  },
+  {
+    "Course": "CHEM 102",
+    "Day": "Thursday",
+    "Start Time": "17:00",
+    "End Time": "17:00",
+    "Tutor": "Himani"
+  },
+  {
+    "Course": "CHEM 102",
+    "Day": "Friday",
+    "Start Time": "11:00",
+    "End Time": "12:00",
+    "Tutor": "Zach"
+  },
+  {
+    "Course": "CHEM 102",
+    "Day": "Friday",
+    "Start Time": "12:00",
+    "End Time": "13:00",
+    "Tutor": "Himani"
+  },
+  {
+    "Course": "CHEM 102",
+    "Day": "Friday",
+    "Start Time": "13:00",
+    "End Time": "14:00",
+    "Tutor": "Shayan"
+  },
+  {
+    "Course": "CHEM 102",
+    "Day": "Friday",
+    "Start Time": "13:00",
+    "End Time": "14:00",
+    "Tutor": "Molemo"
+  },
+  {
+    "Course": "CHEM 120",
+    "Day": "Tuesday",
+    "Start Time": "17:00",
+    "End Time": "17:00",
+    "Tutor": "Moyo"
+  },
+  {
+    "Course": "CHEM 120",
+    "Day": "Wednesday",
+    "Start Time": "17:00",
+    "End Time": "17:00",
+    "Tutor": "Moyo"
+  },
+  {
+    "Course": "CHEM 120",
+    "Day": "Thursday",
+    "Start Time": "13:00",
+    "End Time": "16:00",
+    "Tutor": "Avi"
+  },
+  {
+    "Course": "CHEM 300",
+    "Day": "Monday",
+    "Start Time": "12:00",
+    "End Time": "14:00",
+    "Tutor": "Theo"
+  },
+  {
+    "Course": "CHEM 300",
+    "Day": "Thursday",
+    "Start Time": "13:00",
+    "End Time": "16:00",
+    "Tutor": "Avi"
+  },
+  {
+    "Course": "CHEM 303",
+    "Day": "Thursday",
+    "Start Time": "13:00",
+    "End Time": "16:00",
+    "Tutor": "Avi"
+  },
+  {
+    "Course": "CHEM 351",
+    "Day": "Monday",
+    "Start Time": "11:00",
+    "End Time": "13:00",
+    "Tutor": "Susanna"
+  },
+  {
+    "Course": "CHEM 351",
+    "Day": "Monday",
+    "Start Time": "14:00",
+    "End Time": "16:00",
+    "Tutor": "Aya"
+  },
+  {
+    "Course": "CHEM 351",
+    "Day": "Monday",
+    "Start Time": "16:00",
+    "End Time": "17:00",
+    "Tutor": "Angela"
+  },
+  {
+    "Course": "CHEM 351",
+    "Day": "Tuesday",
+    "Start Time": "16:00",
+    "End Time": "17:00",
+    "Tutor": "Karen"
+  },
+  {
+    "Course": "CHEM 351",
+    "Day": "Wednesday",
+    "Start Time": "11:30",
+    "End Time": "13:00",
+    "Tutor": "Tristan"
+  },
+  {
+    "Course": "CHEM 351",
+    "Day": "Wednesday",
+    "Start Time": "13:00",
+    "End Time": "14:00",
+    "Tutor": "Lillian"
+  },
+  {
+    "Course": "CHEM 351",
+    "Day": "Wednesday",
+    "Start Time": "14:00",
+    "End Time": "16:30",
+    "Tutor": "Shayan"
+  },
+  {
+    "Course": "CHEM 351",
+    "Day": "Wednesday",
+    "Start Time": "16:30",
+    "End Time": "17:00",
+    "Tutor": "Angela"
+  },
+  {
+    "Course": "CHEM 351",
+    "Day": "Thursday",
+    "Start Time": "11:00",
+    "End Time": "13:00",
+    "Tutor": "Aya"
+  },
+  {
+    "Course": "CHEM 351",
+    "Day": "Thursday",
+    "Start Time": "12:00",
+    "End Time": "13:00",
+    "Tutor": "Shayan"
+  },
+  {
+    "Course": "CHEM 351",
+    "Day": "Thursday",
+    "Start Time": "16:00",
+    "End Time": "17:00",
+    "Tutor": "Karen"
+  },
+  {
+    "Course": "CHEM 351",
+    "Day": "Friday",
+    "Start Time": "11:30",
+    "End Time": "13:30",
+    "Tutor": "Karen"
+  },
+  {
+    "Course": "CHEM 351",
+    "Day": "Friday",
+    "Start Time": "13:00",
+    "End Time": "14:00",
+    "Tutor": "Shayan"
+  },
+  {
+    "Course": "CHEM 352",
+    "Day": "Monday",
+    "Start Time": "12:00",
+    "End Time": "14:00",
+    "Tutor": "Theo"
+  },
+  {
+    "Course": "CHEM 352",
+    "Day": "Monday",
+    "Start Time": "14:00",
+    "End Time": "16:00",
+    "Tutor": "Aya"
+  },
+  {
+    "Course": "CHEM 352",
+    "Day": "Tuesday",
+    "Start Time": "16:00",
+    "End Time": "17:00",
+    "Tutor": "Karen"
+  },
+  {
+    "Course": "CHEM 352",
+    "Day": "Thursday",
+    "Start Time": "11:00",
+    "End Time": "13:00",
+    "Tutor": "Aya"
+  },
+  {
+    "Course": "CHEM 352",
+    "Day": "Thursday",
+    "Start Time": "16:00",
+    "End Time": "17:00",
+    "Tutor": "Karen"
+  },
+  {
+    "Course": "CHEM 352",
+    "Day": "Friday",
+    "Start Time": "11:30",
+    "End Time": "13:30",
+    "Tutor": "Karen"
+  },
+  {
+    "Course": "CMPE 212",
+    "Day": "Monday",
+    "Start Time": "11:00",
+    "End Time": "12:00",
+    "Tutor": "Shrikant"
+  },
+  {
+    "Course": "CMPE 212",
+    "Day": "Monday",
+    "Start Time": "13:00",
+    "End Time": "16:00",
+    "Tutor": "Javan"
+  },
+  {
+    "Course": "CMPE 212",
+    "Day": "Wednesday",
+    "Start Time": "11:00",
+    "End Time": "12:00",
+    "Tutor": "Shrikant"
+  },
+  {
+    "Course": "CMPE 212",
+    "Day": "Wednesday",
+    "Start Time": "13:00",
+    "End Time": "16:00",
+    "Tutor": "Javan"
+  },
+  {
+    "Course": "CMPE 212",
+    "Day": "Thursday",
+    "Start Time": "17:00",
+    "End Time": "17:00",
+    "Tutor": "Shrikant"
+  },
+  {
+    "Course": "CMPE 212",
+    "Day": "Friday",
+    "Start Time": "11:00",
+    "End Time": "14:00",
+    "Tutor": "Shrikant"
+  },
+  {
+    "Course": "CMPE 306",
+    "Day": "Monday",
+    "Start Time": "11:00",
+    "End Time": "14:00",
+    "Tutor": "Elvis"
+  },
+  {
+    "Course": "CMPE 306",
+    "Day": "Monday",
+    "Start Time": "13:00",
+    "End Time": "16:00",
+    "Tutor": "Javan"
+  },
+  {
+    "Course": "CMPE 306",
+    "Day": "Tuesday",
+    "Start Time": "16:00",
+    "End Time": "17:00",
+    "Tutor": "Elvis"
+  },
+  {
+    "Course": "CMPE 306",
+    "Day": "Wednesday",
+    "Start Time": "11:00",
+    "End Time": "14:00",
+    "Tutor": "Elvis"
+  },
+  {
+    "Course": "CMPE 306",
+    "Day": "Wednesday",
+    "Start Time": "13:00",
+    "End Time": "16:00",
+    "Tutor": "Javan"
+  },
+  {
+    "Course": "CMPE 314",
+    "Day": "Monday",
+    "Start Time": "11:00",
+    "End Time": "12:30",
+    "Tutor": "Ian"
+  },
+  {
+    "Course": "CMPE 314",
+    "Day": "Monday",
+    "Start Time": "11:00",
+    "End Time": "14:00",
+    "Tutor": "Elvis"
+  },
+  {
+    "Course": "CMPE 314",
+    "Day": "Tuesday",
+    "Start Time": "11:30",
+    "End Time": "14:00",
+    "Tutor": "Ian"
+  },
+  {
+    "Course": "CMPE 314",
+    "Day": "Tuesday",
+    "Start Time": "16:00",
+    "End Time": "17:00",
+    "Tutor": "Elvis"
+  },
+  {
+    "Course": "CMPE 314",
+    "Day": "Wednesday",
+    "Start Time": "11:00",
+    "End Time": "12:30",
+    "Tutor": "Ian"
+  },
+  {
+    "Course": "CMPE 314",
+    "Day": "Wednesday",
+    "Start Time": "11:00",
+    "End Time": "14:00",
+    "Tutor": "Elvis"
+  },
+  {
+    "Course": "CMPE 314",
+    "Day": "Thursday",
+    "Start Time": "11:30",
+    "End Time": "14:00",
+    "Tutor": "Ian"
+  },
+  {
+    "Course": "CMSC 201",
+    "Day": "Monday",
+    "Start Time": "11:00",
+    "End Time": "12:30",
+    "Tutor": "Ian"
+  },
+  {
+    "Course": "CMSC 201",
+    "Day": "Monday",
+    "Start Time": "11:00",
+    "End Time": "12:30",
+    "Tutor": "Kodi"
+  },
+  {
+    "Course": "CMSC 201",
+    "Day": "Monday",
+    "Start Time": "11:00",
+    "End Time": "12:00",
+    "Tutor": "Shrikant"
+  },
+  {
+    "Course": "CMSC 201",
+    "Day": "Monday",
+    "Start Time": "12:30",
+    "End Time": "16:00",
+    "Tutor": "Kaila"
+  },
+  {
+    "Course": "CMSC 201",
+    "Day": "Monday",
+    "Start Time": "13:00",
+    "End Time": "16:00",
+    "Tutor": "Javan"
+  },
+  {
+    "Course": "CMSC 201",
+    "Day": "Monday",
+    "Start Time": "14:30",
+    "End Time": "17:00",
+    "Tutor": "Sina"
+  },
+  {
+    "Course": "CMSC 201",
+    "Day": "Monday",
+    "Start Time": "15:00",
+    "End Time": "17:00",
+    "Tutor": "Lily"
+  },
+  {
+    "Course": "CMSC 201",
+    "Day": "Tuesday",
+    "Start Time": "11:00",
+    "End Time": "14:15",
+    "Tutor": "Max A."
+  },
+  {
+    "Course": "CMSC 201",
+    "Day": "Tuesday",
+    "Start Time": "11:00",
+    "End Time": "12:30",
+    "Tutor": "Kyle"
+  },
+  {
+    "Course": "CMSC 201",
+    "Day": "Tuesday",
+    "Start Time": "11:30",
+    "End Time": "14:00",
+    "Tutor": "Ian"
+  },
+  {
+    "Course": "CMSC 201",
+    "Day": "Tuesday",
+    "Start Time": "12:30",
+    "End Time": "17:00",
+    "Tutor": "Sina"
+  },
+  {
+    "Course": "CMSC 201",
+    "Day": "Tuesday",
+    "Start Time": "17:00",
+    "End Time": "17:00",
+    "Tutor": "Kyle"
+  },
+  {
+    "Course": "CMSC 201",
+    "Day": "Wednesday",
+    "Start Time": "11:00",
+    "End Time": "12:30",
+    "Tutor": "Aren"
+  },
+  {
+    "Course": "CMSC 201",
+    "Day": "Wednesday",
+    "Start Time": "11:00",
+    "End Time": "12:30",
+    "Tutor": "Ian"
+  },
+  {
+    "Course": "CMSC 201",
+    "Day": "Wednesday",
+    "Start Time": "11:00",
+    "End Time": "12:30",
+    "Tutor": "Kodi"
+  },
+  {
+    "Course": "CMSC 201",
+    "Day": "Wednesday",
+    "Start Time": "11:00",
+    "End Time": "12:00",
+    "Tutor": "Shrikant"
+  },
+  {
+    "Course": "CMSC 201",
+    "Day": "Wednesday",
+    "Start Time": "12:30",
+    "End Time": "16:00",
+    "Tutor": "Kaila"
+  },
+  {
+    "Course": "CMSC 201",
+    "Day": "Wednesday",
+    "Start Time": "13:00",
+    "End Time": "16:00",
+    "Tutor": "Javan"
+  },
+  {
+    "Course": "CMSC 201",
+    "Day": "Wednesday",
+    "Start Time": "14:30",
+    "End Time": "15:45",
+    "Tutor": "Kodi"
+  },
+  {
+    "Course": "CMSC 201",
+    "Day": "Wednesday",
+    "Start Time": "15:00",
+    "End Time": "16:00",
+    "Tutor": "Lily"
+  },
+  {
+    "Course": "CMSC 201",
+    "Day": "Thursday",
+    "Start Time": "11:00",
+    "End Time": "14:15",
+    "Tutor": "Max A."
+  },
+  {
+    "Course": "CMSC 201",
+    "Day": "Thursday",
+    "Start Time": "11:00",
+    "End Time": "12:30",
+    "Tutor": "Kyle"
+  },
+  {
+    "Course": "CMSC 201",
+    "Day": "Thursday",
+    "Start Time": "11:30",
+    "End Time": "14:00",
+    "Tutor": "Ian"
+  },
+  {
+    "Course": "CMSC 201",
+    "Day": "Thursday",
+    "Start Time": "12:30",
+    "End Time": "17:00",
+    "Tutor": "Sina"
+  },
+  {
+    "Course": "CMSC 201",
+    "Day": "Thursday",
+    "Start Time": "16:00",
+    "End Time": "17:00",
+    "Tutor": "Max A."
+  },
+  {
+    "Course": "CMSC 201",
+    "Day": "Thursday",
+    "Start Time": "17:00",
+    "End Time": "17:00",
+    "Tutor": "Shrikant"
+  },
+  {
+    "Course": "CMSC 201",
+    "Day": "Friday",
+    "Start Time": "11:00",
+    "End Time": "14:00",
+    "Tutor": "Kaila"
+  },
+  {
+    "Course": "CMSC 201",
+    "Day": "Friday",
+    "Start Time": "11:00",
+    "End Time": "14:00",
+    "Tutor": "Kodi"
+  },
+  {
+    "Course": "CMSC 201",
+    "Day": "Friday",
+    "Start Time": "11:00",
+    "End Time": "14:00",
+    "Tutor": "Shrikant"
+  },
+  {
+    "Course": "CMSC 201",
+    "Day": "Friday",
+    "Start Time": "11:00",
+    "End Time": "14:00",
+    "Tutor": "Sina"
+  },
+  {
+    "Course": "CMSC 202",
+    "Day": "Monday",
+    "Start Time": "11:00",
+    "End Time": "12:30",
+    "Tutor": "Ian"
+  },
+  {
+    "Course": "CMSC 202",
+    "Day": "Monday",
+    "Start Time": "11:00",
+    "End Time": "12:30",
+    "Tutor": "Kodi"
+  },
+  {
+    "Course": "CMSC 202",
+    "Day": "Monday",
+    "Start Time": "11:00",
+    "End Time": "12:00",
+    "Tutor": "Shrikant"
+  },
+  {
+    "Course": "CMSC 202",
+    "Day": "Monday",
+    "Start Time": "12:30",
+    "End Time": "16:00",
+    "Tutor": "Kaila"
+  },
+  {
+    "Course": "CMSC 202",
+    "Day": "Monday",
+    "Start Time": "13:00",
+    "End Time": "16:00",
+    "Tutor": "Javan"
+  },
+  {
+    "Course": "CMSC 202",
+    "Day": "Monday",
+    "Start Time": "14:30",
+    "End Time": "17:00",
+    "Tutor": "Sina"
+  },
+  {
+    "Course": "CMSC 202",
+    "Day": "Monday",
+    "Start Time": "15:00",
+    "End Time": "17:00",
+    "Tutor": "Lily"
+  },
+  {
+    "Course": "CMSC 202",
+    "Day": "Tuesday",
+    "Start Time": "11:00",
+    "End Time": "14:15",
+    "Tutor": "Max A."
+  },
+  {
+    "Course": "CMSC 202",
+    "Day": "Tuesday",
+    "Start Time": "11:00",
+    "End Time": "12:30",
+    "Tutor": "Kyle"
+  },
+  {
+    "Course": "CMSC 202",
+    "Day": "Tuesday",
+    "Start Time": "11:30",
+    "End Time": "14:00",
+    "Tutor": "Ian"
+  },
+  {
+    "Course": "CMSC 202",
+    "Day": "Tuesday",
+    "Start Time": "12:30",
+    "End Time": "17:00",
+    "Tutor": "Sina"
+  },
+  {
+    "Course": "CMSC 202",
+    "Day": "Tuesday",
+    "Start Time": "17:00",
+    "End Time": "17:00",
+    "Tutor": "Kyle"
+  },
+  {
+    "Course": "CMSC 202",
+    "Day": "Wednesday",
+    "Start Time": "11:00",
+    "End Time": "12:30",
+    "Tutor": "Ian"
+  },
+  {
+    "Course": "CMSC 202",
+    "Day": "Wednesday",
+    "Start Time": "11:00",
+    "End Time": "12:30",
+    "Tutor": "Kodi"
+  },
+  {
+    "Course": "CMSC 202",
+    "Day": "Wednesday",
+    "Start Time": "11:00",
+    "End Time": "12:00",
+    "Tutor": "Shrikant"
+  },
+  {
+    "Course": "CMSC 202",
+    "Day": "Wednesday",
+    "Start Time": "12:30",
+    "End Time": "16:00",
+    "Tutor": "Kaila"
+  },
+  {
+    "Course": "CMSC 202",
+    "Day": "Wednesday",
+    "Start Time": "13:00",
+    "End Time": "16:00",
+    "Tutor": "Javan"
+  },
+  {
+    "Course": "CMSC 202",
+    "Day": "Wednesday",
+    "Start Time": "14:30",
+    "End Time": "15:45",
+    "Tutor": "Kodi"
+  },
+  {
+    "Course": "CMSC 202",
+    "Day": "Wednesday",
+    "Start Time": "15:00",
+    "End Time": "16:00",
+    "Tutor": "Lily"
+  },
+  {
+    "Course": "CMSC 202",
+    "Day": "Thursday",
+    "Start Time": "11:00",
+    "End Time": "14:15",
+    "Tutor": "Max A."
+  },
+  {
+    "Course": "CMSC 202",
+    "Day": "Thursday",
+    "Start Time": "11:00",
+    "End Time": "12:30",
+    "Tutor": "Kyle"
+  },
+  {
+    "Course": "CMSC 202",
+    "Day": "Thursday",
+    "Start Time": "11:30",
+    "End Time": "14:00",
+    "Tutor": "Ian"
+  },
+  {
+    "Course": "CMSC 202",
+    "Day": "Thursday",
+    "Start Time": "12:30",
+    "End Time": "17:00",
+    "Tutor": "Sina"
+  },
+  {
+    "Course": "CMSC 202",
+    "Day": "Thursday",
+    "Start Time": "16:00",
+    "End Time": "17:00",
+    "Tutor": "Max A."
+  },
+  {
+    "Course": "CMSC 202",
+    "Day": "Thursday",
+    "Start Time": "17:00",
+    "End Time": "17:00",
+    "Tutor": "Shrikant"
+  },
+  {
+    "Course": "CMSC 202",
+    "Day": "Friday",
+    "Start Time": "11:00",
+    "End Time": "14:00",
+    "Tutor": "Kaila"
+  },
+  {
+    "Course": "CMSC 202",
+    "Day": "Friday",
+    "Start Time": "11:00",
+    "End Time": "14:00",
+    "Tutor": "Kodi"
+  },
+  {
+    "Course": "CMSC 202",
+    "Day": "Friday",
+    "Start Time": "11:00",
+    "End Time": "14:00",
+    "Tutor": "Shrikant"
+  },
+  {
+    "Course": "CMSC 202",
+    "Day": "Friday",
+    "Start Time": "11:00",
+    "End Time": "14:00",
+    "Tutor": "Sina"
+  },
+  {
+    "Course": "CMSC 203",
+    "Day": "Monday",
+    "Start Time": "11:00",
+    "End Time": "12:30",
+    "Tutor": "Kodi"
+  },
+  {
+    "Course": "CMSC 203",
+    "Day": "Monday",
+    "Start Time": "11:00",
+    "End Time": "12:00",
+    "Tutor": "Shrikant"
+  },
+  {
+    "Course": "CMSC 203",
+    "Day": "Monday",
+    "Start Time": "12:00",
+    "End Time": "15:00",
+    "Tutor": "Max M."
+  },
+  {
+    "Course": "CMSC 203",
+    "Day": "Monday",
+    "Start Time": "12:30",
+    "End Time": "16:00",
+    "Tutor": "Kaila"
+  },
+  {
+    "Course": "CMSC 203",
+    "Day": "Tuesday",
+    "Start Time": "11:00",
+    "End Time": "14:15",
+    "Tutor": "Max A."
+  },
+  {
+    "Course": "CMSC 203",
+    "Day": "Wednesday",
+    "Start Time": "11:00",
+    "End Time": "12:30",
+    "Tutor": "Aren"
+  },
+  {
+    "Course": "CMSC 203",
+    "Day": "Wednesday",
+    "Start Time": "11:00",
+    "End Time": "12:30",
+    "Tutor": "Kodi"
+  },
+  {
+    "Course": "CMSC 203",
+    "Day": "Wednesday",
+    "Start Time": "11:00",
+    "End Time": "12:00",
+    "Tutor": "Shrikant"
+  },
+  {
+    "Course": "CMSC 203",
+    "Day": "Wednesday",
+    "Start Time": "12:30",
+    "End Time": "16:00",
+    "Tutor": "Kaila"
+  },
+  {
+    "Course": "CMSC 203",
+    "Day": "Wednesday",
+    "Start Time": "12:30",
+    "End Time": "15:00",
+    "Tutor": "Max M."
+  },
+  {
+    "Course": "CMSC 203",
+    "Day": "Wednesday",
+    "Start Time": "14:30",
+    "End Time": "15:45",
+    "Tutor": "Kodi"
+  },
+  {
+    "Course": "CMSC 203",
+    "Day": "Thursday",
+    "Start Time": "11:00",
+    "End Time": "14:15",
+    "Tutor": "Max A."
+  },
+  {
+    "Course": "CMSC 203",
+    "Day": "Thursday",
+    "Start Time": "16:00",
+    "End Time": "17:00",
+    "Tutor": "Max A."
+  },
+  {
+    "Course": "CMSC 203",
+    "Day": "Thursday",
+    "Start Time": "17:00",
+    "End Time": "17:00",
+    "Tutor": "Shrikant"
+  },
+  {
+    "Course": "CMSC 203",
+    "Day": "Friday",
+    "Start Time": "11:00",
+    "End Time": "14:00",
+    "Tutor": "Kaila"
+  },
+  {
+    "Course": "CMSC 203",
+    "Day": "Friday",
+    "Start Time": "11:00",
+    "End Time": "14:00",
+    "Tutor": "Kodi"
+  },
+  {
+    "Course": "CMSC 203",
+    "Day": "Friday",
+    "Start Time": "11:00",
+    "End Time": "14:00",
+    "Tutor": "Shrikant"
+  },
+  {
+    "Course": "CMSC 313",
+    "Day": "Monday",
+    "Start Time": "12:00",
+    "End Time": "15:00",
+    "Tutor": "Max M."
+  },
+  {
+    "Course": "CMSC 313",
+    "Day": "Monday",
+    "Start Time": "12:30",
+    "End Time": "16:00",
+    "Tutor": "Kaila"
+  },
+  {
+    "Course": "CMSC 313",
+    "Day": "Wednesday",
+    "Start Time": "12:30",
+    "End Time": "16:00",
+    "Tutor": "Kaila"
+  },
+  {
+    "Course": "CMSC 313",
+    "Day": "Wednesday",
+    "Start Time": "12:30",
+    "End Time": "15:00",
+    "Tutor": "Max M."
+  },
+  {
+    "Course": "CMSC 313",
+    "Day": "Friday",
+    "Start Time": "11:00",
+    "End Time": "14:00",
+    "Tutor": "Kaila"
+  },
+  {
+    "Course": "CMSC 331",
+    "Day": "Tuesday",
+    "Start Time": "11:00",
+    "End Time": "14:15",
+    "Tutor": "Max A."
+  },
+  {
+    "Course": "CMSC 331",
+    "Day": "Wednesday",
+    "Start Time": "12:30",
+    "End Time": "16:00",
+    "Tutor": "Kaila"
+  },
+  {
+    "Course": "CMSC 331",
+    "Day": "Thursday",
+    "Start Time": "11:00",
+    "End Time": "14:15",
+    "Tutor": "Max A."
+  },
+  {
+    "Course": "CMSC 331",
+    "Day": "Friday",
+    "Start Time": "11:00",
+    "End Time": "14:00",
+    "Tutor": "Kaila"
+  },
+  {
+    "Course": "CMSC 341",
+    "Day": "Monday",
+    "Start Time": "11:00",
+    "End Time": "12:30",
+    "Tutor": "Ian"
+  },
+  {
+    "Course": "CMSC 341",
+    "Day": "Monday",
+    "Start Time": "11:00",
+    "End Time": "12:00",
+    "Tutor": "Shrikant"
+  },
+  {
+    "Course": "CMSC 341",
+    "Day": "Monday",
+    "Start Time": "12:30",
+    "End Time": "16:00",
+    "Tutor": "Kaila"
+  },
+  {
+    "Course": "CMSC 341",
+    "Day": "Monday",
+    "Start Time": "14:30",
+    "End Time": "17:00",
+    "Tutor": "Sina"
+  },
+  {
+    "Course": "CMSC 341",
+    "Day": "Tuesday",
+    "Start Time": "11:00",
+    "End Time": "14:15",
+    "Tutor": "Max A."
+  },
+  {
+    "Course": "CMSC 341",
+    "Day": "Tuesday",
+    "Start Time": "11:00",
+    "End Time": "12:30",
+    "Tutor": "Kyle"
+  },
+  {
+    "Course": "CMSC 341",
+    "Day": "Tuesday",
+    "Start Time": "11:30",
+    "End Time": "14:00",
+    "Tutor": "Ian"
+  },
+  {
+    "Course": "CMSC 341",
+    "Day": "Tuesday",
+    "Start Time": "12:30",
+    "End Time": "17:00",
+    "Tutor": "Sina"
+  },
+  {
+    "Course": "CMSC 341",
+    "Day": "Tuesday",
+    "Start Time": "17:00",
+    "End Time": "17:00",
+    "Tutor": "Kyle"
+  },
+  {
+    "Course": "CMSC 341",
+    "Day": "Wednesday",
+    "Start Time": "11:00",
+    "End Time": "12:30",
+    "Tutor": "Ian"
+  },
+  {
+    "Course": "CMSC 341",
+    "Day": "Wednesday",
+    "Start Time": "11:00",
+    "End Time": "12:00",
+    "Tutor": "Shrikant"
+  },
+  {
+    "Course": "CMSC 341",
+    "Day": "Wednesday",
+    "Start Time": "12:30",
+    "End Time": "16:00",
+    "Tutor": "Kaila"
+  },
+  {
+    "Course": "CMSC 341",
+    "Day": "Thursday",
+    "Start Time": "11:00",
+    "End Time": "14:15",
+    "Tutor": "Max A."
+  },
+  {
+    "Course": "CMSC 341",
+    "Day": "Thursday",
+    "Start Time": "11:00",
+    "End Time": "12:30",
+    "Tutor": "Kyle"
+  },
+  {
+    "Course": "CMSC 341",
+    "Day": "Thursday",
+    "Start Time": "11:30",
+    "End Time": "14:00",
+    "Tutor": "Ian"
+  },
+  {
+    "Course": "CMSC 341",
+    "Day": "Thursday",
+    "Start Time": "12:30",
+    "End Time": "17:00",
+    "Tutor": "Sina"
+  },
+  {
+    "Course": "CMSC 341",
+    "Day": "Thursday",
+    "Start Time": "16:00",
+    "End Time": "17:00",
+    "Tutor": "Max A."
+  },
+  {
+    "Course": "CMSC 341",
+    "Day": "Thursday",
+    "Start Time": "17:00",
+    "End Time": "17:00",
+    "Tutor": "Shrikant"
+  },
+  {
+    "Course": "CMSC 341",
+    "Day": "Friday",
+    "Start Time": "11:00",
+    "End Time": "14:00",
+    "Tutor": "Kaila"
+  },
+  {
+    "Course": "CMSC 341",
+    "Day": "Friday",
+    "Start Time": "11:00",
+    "End Time": "14:00",
+    "Tutor": "Shrikant"
+  },
+  {
+    "Course": "CMSC 341",
+    "Day": "Friday",
+    "Start Time": "11:00",
+    "End Time": "14:00",
+    "Tutor": "Sina"
+  },
+  {
+    "Course": "CMSC 411",
+    "Day": "Monday",
+    "Start Time": "11:00",
+    "End Time": "12:30",
+    "Tutor": "Ian"
+  },
+  {
+    "Course": "CMSC 411",
+    "Day": "Monday",
+    "Start Time": "14:30",
+    "End Time": "17:00",
+    "Tutor": "Sina"
+  },
+  {
+    "Course": "CMSC 411",
+    "Day": "Tuesday",
+    "Start Time": "11:30",
+    "End Time": "14:00",
+    "Tutor": "Ian  17:00 – 17:00 – Kodi"
+  },
+  {
+    "Course": "CMSC 411",
+    "Day": "Tuesday",
+    "Start Time": "12:30",
+    "End Time": "17:00",
+    "Tutor": "Sina"
+  },
+  {
+    "Course": "CMSC 411",
+    "Day": "Wednesday",
+    "Start Time": "11:00",
+    "End Time": "12:30",
+    "Tutor": "Ian"
+  },
+  {
+    "Course": "CMSC 411",
+    "Day": "Thursday",
+    "Start Time": "11:30",
+    "End Time": "14:00",
+    "Tutor": "Ian"
+  },
+  {
+    "Course": "CMSC 411",
+    "Day": "Thursday",
+    "Start Time": "12:30",
+    "End Time": "17:00",
+    "Tutor": "Sina"
+  },
+  {
+    "Course": "CMSC 411",
+    "Day": "Friday",
+    "Start Time": "11:00",
+    "End Time": "14:00",
+    "Tutor": "Sina"
+  },
+  {
+    "Course": "CMSC 421",
+    "Day": "Monday",
+    "Start Time": "11:00",
+    "End Time": "12:30",
+    "Tutor": "Ian"
+  },
+  {
+    "Course": "CMSC 421",
+    "Day": "Monday",
+    "Start Time": "12:00",
+    "End Time": "15:00",
+    "Tutor": "Max M."
+  },
+  {
+    "Course": "CMSC 421",
+    "Day": "Monday",
+    "Start Time": "14:30",
+    "End Time": "17:00",
+    "Tutor": "Sina"
+  },
+  {
+    "Course": "CMSC 421",
+    "Day": "Tuesday",
+    "Start Time": "11:30",
+    "End Time": "14:00",
+    "Tutor": "Ian"
+  },
+  {
+    "Course": "CMSC 421",
+    "Day": "Tuesday",
+    "Start Time": "12:30",
+    "End Time": "17:00",
+    "Tutor": "Sina"
+  },
+  {
+    "Course": "CMSC 421",
+    "Day": "Wednesday",
+    "Start Time": "11:00",
+    "End Time": "12:30",
+    "Tutor": "Ian"
+  },
+  {
+    "Course": "CMSC 421",
+    "Day": "Wednesday",
+    "Start Time": "12:30",
+    "End Time": "15:00",
+    "Tutor": "Max M."
+  },
+  {
+    "Course": "CMSC 421",
+    "Day": "Thursday",
+    "Start Time": "11:30",
+    "End Time": "14:00",
+    "Tutor": "Ian"
+  },
+  {
+    "Course": "CMSC 421",
+    "Day": "Thursday",
+    "Start Time": "12:30",
+    "End Time": "17:00",
+    "Tutor": "Sina"
+  },
+  {
+    "Course": "CMSC 421",
+    "Day": "Friday",
+    "Start Time": "11:00",
+    "End Time": "14:00",
+    "Tutor": "Sina"
+  },
+  {
+    "Course": "CMSC 426",
+    "Day": "Monday",
+    "Start Time": "11:00",
+    "End Time": "12:30",
+    "Tutor": "Ian"
+  },
+  {
+    "Course": "CMSC 426",
+    "Day": "Monday",
+    "Start Time": "14:30",
+    "End Time": "17:00",
+    "Tutor": "Sina"
+  },
+  {
+    "Course": "CMSC 426",
+    "Day": "Tuesday",
+    "Start Time": "11:30",
+    "End Time": "14:00",
+    "Tutor": "Ian"
+  },
+  {
+    "Course": "CMSC 426",
+    "Day": "Tuesday",
+    "Start Time": "12:30",
+    "End Time": "17:00",
+    "Tutor": "Sina"
+  },
+  {
+    "Course": "CMSC 426",
+    "Day": "Wednesday",
+    "Start Time": "11:00",
+    "End Time": "12:30",
+    "Tutor": "Ian"
+  },
+  {
+    "Course": "CMSC 426",
+    "Day": "Thursday",
+    "Start Time": "11:30",
+    "End Time": "14:00",
+    "Tutor": "Ian"
+  },
+  {
+    "Course": "CMSC 426",
+    "Day": "Thursday",
+    "Start Time": "12:30",
+    "End Time": "17:00",
+    "Tutor": "Sina"
+  },
+  {
+    "Course": "CMSC 426",
+    "Day": "Friday",
+    "Start Time": "11:00",
+    "End Time": "14:00",
+    "Tutor": "Sina"
+  },
+  {
+    "Course": "CMSC 441",
+    "Day": "Monday",
+    "Start Time": "14:30",
+    "End Time": "17:00",
+    "Tutor": "Sina"
+  },
+  {
+    "Course": "CMSC 441",
+    "Day": "Tuesday",
+    "Start Time": "12:30",
+    "End Time": "17:00",
+    "Tutor": "Sina"
+  },
+  {
+    "Course": "CMSC 441",
+    "Day": "Thursday",
+    "Start Time": "12:30",
+    "End Time": "17:00",
+    "Tutor": "Sina"
+  },
+  {
+    "Course": "CMSC 441",
+    "Day": "Friday",
+    "Start Time": "11:00",
+    "End Time": "14:00",
+    "Tutor": "Sina"
+  },
+  {
+    "Course": "CMSC 471",
+    "Day": "Monday",
+    "Start Time": "12:30",
+    "End Time": "16:00",
+    "Tutor": "Kaila"
+  },
+  {
+    "Course": "CMSC 471",
+    "Day": "Wednesday",
+    "Start Time": "12:30",
+    "End Time": "16:00",
+    "Tutor": "Kaila"
+  },
+  {
+    "Course": "CMSC 471",
+    "Day": "Friday",
+    "Start Time": "11:00",
+    "End Time": "14:00",
+    "Tutor": "Kaila"
+  },
+  {
+    "Course": "ECON 101",
+    "Day": "Monday",
+    "Start Time": "14:30",
+    "End Time": "16:00",
+    "Tutor": "Adamo"
+  },
+  {
+    "Course": "ECON 101",
+    "Day": "Thursday",
+    "Start Time": "16:00",
+    "End Time": "17:00",
+    "Tutor": "Adamo"
+  },
+  {
+    "Course": "ECON 102",
+    "Day": "Monday",
+    "Start Time": "14:30",
+    "End Time": "16:00",
+    "Tutor": "Adamo"
+  },
+  {
+    "Course": "ECON 102",
+    "Day": "Thursday",
+    "Start Time": "16:00",
+    "End Time": "17:00",
+    "Tutor": "Adamo"
+  },
+  {
+    "Course": "GES 102",
+    "Day": "Tuesday",
+    "Start Time": "12:00",
+    "End Time": "15:00",
+    "Tutor": "Bridget"
+  },
+  {
+    "Course": "GES 102",
+    "Day": "Thursday",
+    "Start Time": "13:00",
+    "End Time": "15:00",
+    "Tutor": "Bridget"
+  },
+  {
+    "Course": "GES 110",
+    "Day": "Tuesday",
+    "Start Time": "12:00",
+    "End Time": "15:00",
+    "Tutor": "Bridget"
+  },
+  {
+    "Course": "GES 110",
+    "Day": "Thursday",
+    "Start Time": "13:00",
+    "End Time": "15:00",
+    "Tutor": "Bridget"
+  },
+  {
+    "Course": "GES 120",
+    "Day": "Tuesday",
+    "Start Time": "12:00",
+    "End Time": "15:00",
+    "Tutor": "Bridget"
+  },
+  {
+    "Course": "GES 120",
+    "Day": "Thursday",
+    "Start Time": "13:00",
+    "End Time": "15:00",
+    "Tutor": "Bridget"
+  },
+  {
+    "Course": "GES 286",
+    "Day": "Tuesday",
+    "Start Time": "12:00",
+    "End Time": "15:00",
+    "Tutor": "Bridget"
+  },
+  {
+    "Course": "GES 286",
+    "Day": "Thursday",
+    "Start Time": "13:00",
+    "End Time": "15:00",
+    "Tutor": "Bridget"
+  },
+  {
+    "Course": "GES 386",
+    "Day": "Tuesday",
+    "Start Time": "12:00",
+    "End Time": "15:00",
+    "Tutor": "Bridget"
+  },
+  {
+    "Course": "GES 386",
+    "Day": "Thursday",
+    "Start Time": "13:00",
+    "End Time": "15:00",
+    "Tutor": "Bridget"
+  },
+  {
+    "Course": "GES 488",
+    "Day": "Tuesday",
+    "Start Time": "12:00",
+    "End Time": "15:00",
+    "Tutor": "Bridget"
+  },
+  {
+    "Course": "GES 488",
+    "Day": "Thursday",
+    "Start Time": "13:00",
+    "End Time": "15:00",
+    "Tutor": "Bridget"
+  },
+  {
+    "Course": "IS 147",
+    "Day": "Tuesday",
+    "Start Time": "12:00",
+    "End Time": "13:00",
+    "Tutor": "Sophia"
+  },
+  {
+    "Course": "IS 147",
+    "Day": "Tuesday",
+    "Start Time": "16:00",
+    "End Time": "17:00",
+    "Tutor": "Sophia"
+  },
+  {
+    "Course": "IS 147",
+    "Day": "Thursday",
+    "Start Time": "12:00",
+    "End Time": "13:00",
+    "Tutor": "Sophia"
+  },
+  {
+    "Course": "IS 147",
+    "Day": "Thursday",
+    "Start Time": "16:00",
+    "End Time": "17:00",
+    "Tutor": "Sophia"
+  },
+  {
+    "Course": "IS 247",
+    "Day": "Tuesday",
+    "Start Time": "12:00",
+    "End Time": "13:00",
+    "Tutor": "Sophia"
+  },
+  {
+    "Course": "IS 247",
+    "Day": "Tuesday",
+    "Start Time": "16:00",
+    "End Time": "17:00",
+    "Tutor": "Sophia"
+  },
+  {
+    "Course": "IS 247",
+    "Day": "Thursday",
+    "Start Time": "12:00",
+    "End Time": "13:00",
+    "Tutor": "Sophia"
+  },
+  {
+    "Course": "IS 247",
+    "Day": "Thursday",
+    "Start Time": "16:00",
+    "End Time": "17:00",
+    "Tutor": "Sophia"
+  },
+  {
+    "Course": "IS 300",
+    "Day": "Tuesday",
+    "Start Time": "12:00",
+    "End Time": "13:00",
+    "Tutor": "Sophia"
+  },
+  {
+    "Course": "IS 300",
+    "Day": "Tuesday",
+    "Start Time": "16:00",
+    "End Time": "17:00",
+    "Tutor": "Sophia"
+  },
+  {
+    "Course": "IS 300",
+    "Day": "Thursday",
+    "Start Time": "12:00",
+    "End Time": "13:00",
+    "Tutor": "Sophia"
+  },
+  {
+    "Course": "IS 300",
+    "Day": "Thursday",
+    "Start Time": "16:00",
+    "End Time": "17:00",
+    "Tutor": "Sophia"
+  },
+  {
+    "Course": "IS 310",
+    "Day": "Tuesday",
+    "Start Time": "12:00",
+    "End Time": "13:00",
+    "Tutor": "Sophia"
+  },
+  {
+    "Course": "IS 310",
+    "Day": "Tuesday",
+    "Start Time": "16:00",
+    "End Time": "17:00",
+    "Tutor": "Sophia"
+  },
+  {
+    "Course": "IS 310",
+    "Day": "Thursday",
+    "Start Time": "12:00",
+    "End Time": "13:00",
+    "Tutor": "Sophia"
+  },
+  {
+    "Course": "IS 310",
+    "Day": "Thursday",
+    "Start Time": "16:00",
+    "End Time": "17:00",
+    "Tutor": "Sophia"
+  },
+  {
+    "Course": "MATH 104",
+    "Day": "Thursday",
+    "Start Time": "13:00",
+    "End Time": "16:00",
+    "Tutor": "Avi"
+  },
+  {
+    "Course": "MATH 106",
+    "Day": "Monday",
+    "Start Time": "11:00",
+    "End Time": "12:00",
+    "Tutor": "Akanksha"
+  },
+  {
+    "Course": "MATH 106",
+    "Day": "Monday",
+    "Start Time": "11:30",
+    "End Time": "12:45",
+    "Tutor": "Michael"
+  },
+  {
+    "Course": "MATH 106",
+    "Day": "Monday",
+    "Start Time": "13:00",
+    "End Time": "14:30",
+    "Tutor": "Ini"
+  },
+  {
+    "Course": "MATH 106",
+    "Day": "Monday",
+    "Start Time": "14:30",
+    "End Time": "15:30",
+    "Tutor": "Abe"
+  },
+  {
+    "Course": "MATH 106",
+    "Day": "Monday",
+    "Start Time": "16:00",
+    "End Time": "17:00",
+    "Tutor": "Molly"
+  },
+  {
+    "Course": "MATH 106",
+    "Day": "Tuesday",
+    "Start Time": "11:00",
+    "End Time": "12:30",
+    "Tutor": "Michael"
+  },
+  {
+    "Course": "MATH 106",
+    "Day": "Tuesday",
+    "Start Time": "11:30",
+    "End Time": "13:30",
+    "Tutor": "Manav"
+  },
+  {
+    "Course": "MATH 106",
+    "Day": "Tuesday",
+    "Start Time": "12:30",
+    "End Time": "13:30",
+    "Tutor": "Chelsea"
+  },
+  {
+    "Course": "MATH 106",
+    "Day": "Tuesday",
+    "Start Time": "14:00",
+    "End Time": "15:00",
+    "Tutor": "Abe"
+  },
+  {
+    "Course": "MATH 106",
+    "Day": "Tuesday",
+    "Start Time": "15:00",
+    "End Time": "16:30",
+    "Tutor": "Akanksha"
+  },
+  {
+    "Course": "MATH 106",
+    "Day": "Wednesday",
+    "Start Time": "11:15",
+    "End Time": "12:45",
+    "Tutor": "Michael"
+  },
+  {
+    "Course": "MATH 106",
+    "Day": "Wednesday",
+    "Start Time": "11:30",
+    "End Time": "13:00",
+    "Tutor": "Manav"
+  },
+  {
+    "Course": "MATH 106",
+    "Day": "Wednesday",
+    "Start Time": "13:00",
+    "End Time": "14:00",
+    "Tutor": "Akanksha"
+  },
+  {
+    "Course": "MATH 106",
+    "Day": "Wednesday",
+    "Start Time": "14:30",
+    "End Time": "15:30",
+    "Tutor": "Abe"
+  },
+  {
+    "Course": "MATH 106",
+    "Day": "Wednesday",
+    "Start Time": "16:00",
+    "End Time": "17:00",
+    "Tutor": "Molly"
+  },
+  {
+    "Course": "MATH 106",
+    "Day": "Thursday",
+    "Start Time": "11:30",
+    "End Time": "12:30",
+    "Tutor": "Manav"
+  },
+  {
+    "Course": "MATH 106",
+    "Day": "Thursday",
+    "Start Time": "13:00",
+    "End Time": "16:00",
+    "Tutor": "Avi"
+  },
+  {
+    "Course": "MATH 106",
+    "Day": "Thursday",
+    "Start Time": "13:30",
+    "End Time": "14:30",
+    "Tutor": "Ini"
+  },
+  {
+    "Course": "MATH 106",
+    "Day": "Thursday",
+    "Start Time": "15:00",
+    "End Time": "17:00",
+    "Tutor": "Akanksha"
+  },
+  {
+    "Course": "MATH 150",
+    "Day": "Monday",
+    "Start Time": "11:00",
+    "End Time": "12:00",
+    "Tutor": "Akanksha"
+  },
+  {
+    "Course": "MATH 150",
+    "Day": "Monday",
+    "Start Time": "11:30",
+    "End Time": "12:45",
+    "Tutor": "Michael"
+  },
+  {
+    "Course": "MATH 150",
+    "Day": "Monday",
+    "Start Time": "12:30",
+    "End Time": "14:00",
+    "Tutor": "O’Tega"
+  },
+  {
+    "Course": "MATH 150",
+    "Day": "Monday",
+    "Start Time": "16:00",
+    "End Time": "17:00",
+    "Tutor": "O’Tega"
+  },
+  {
+    "Course": "MATH 150",
+    "Day": "Tuesday",
+    "Start Time": "11:00",
+    "End Time": "12:30",
+    "Tutor": "Michael"
+  },
+  {
+    "Course": "MATH 150",
+    "Day": "Tuesday",
+    "Start Time": "11:30",
+    "End Time": "13:30",
+    "Tutor": "Manav"
+  },
+  {
+    "Course": "MATH 150",
+    "Day": "Tuesday",
+    "Start Time": "15:00",
+    "End Time": "16:30",
+    "Tutor": "Akanksha"
+  },
+  {
+    "Course": "MATH 150",
+    "Day": "Wednesday",
+    "Start Time": "11:15",
+    "End Time": "12:45",
+    "Tutor": "Michael"
+  },
+  {
+    "Course": "MATH 150",
+    "Day": "Wednesday",
+    "Start Time": "11:30",
+    "End Time": "13:00",
+    "Tutor": "Manav"
+  },
+  {
+    "Course": "MATH 150",
+    "Day": "Wednesday",
+    "Start Time": "13:00",
+    "End Time": "14:00",
+    "Tutor": "Akanksha"
+  },
+  {
+    "Course": "MATH 150",
+    "Day": "Thursday",
+    "Start Time": "11:30",
+    "End Time": "12:30",
+    "Tutor": "Manav"
+  },
+  {
+    "Course": "MATH 150",
+    "Day": "Thursday",
+    "Start Time": "13:00",
+    "End Time": "16:00",
+    "Tutor": "Avi"
+  },
+  {
+    "Course": "MATH 150",
+    "Day": "Thursday",
+    "Start Time": "15:00",
+    "End Time": "17:00",
+    "Tutor": "Akanksha"
+  },
+  {
+    "Course": "MATH 151",
+    "Day": "Monday",
+    "Start Time": "11:00",
+    "End Time": "12:00",
+    "Tutor": "Rania"
+  },
+  {
+    "Course": "MATH 151",
+    "Day": "Monday",
+    "Start Time": "11:00",
+    "End Time": "12:00",
+    "Tutor": "Akanksha"
+  },
+  {
+    "Course": "MATH 151",
+    "Day": "Monday",
+    "Start Time": "11:30",
+    "End Time": "12:45",
+    "Tutor": "Michael"
+  },
+  {
+    "Course": "MATH 151",
+    "Day": "Monday",
+    "Start Time": "12:00",
+    "End Time": "13:00",
+    "Tutor": "Shrikant"
+  },
+  {
+    "Course": "MATH 151",
+    "Day": "Monday",
+    "Start Time": "12:30",
+    "End Time": "14:00",
+    "Tutor": "O’Tega"
+  },
+  {
+    "Course": "MATH 151",
+    "Day": "Monday",
+    "Start Time": "14:00",
+    "End Time": "16:00",
+    "Tutor": "Dani"
+  },
+  {
+    "Course": "MATH 151",
+    "Day": "Monday",
+    "Start Time": "14:30",
+    "End Time": "15:30",
+    "Tutor": "Abe"
+  },
+  {
+    "Course": "MATH 151",
+    "Day": "Monday",
+    "Start Time": "16:00",
+    "End Time": "17:00",
+    "Tutor": "Rania"
+  },
+  {
+    "Course": "MATH 151",
+    "Day": "Monday",
+    "Start Time": "16:00",
+    "End Time": "17:00",
+    "Tutor": "Molly"
+  },
+  {
+    "Course": "MATH 151",
+    "Day": "Monday",
+    "Start Time": "16:00",
+    "End Time": "17:00",
+    "Tutor": "O’Tega"
+  },
+  {
+    "Course": "MATH 151",
+    "Day": "Tuesday",
+    "Start Time": "11:00",
+    "End Time": "12:30",
+    "Tutor": "Michael"
+  },
+  {
+    "Course": "MATH 151",
+    "Day": "Tuesday",
+    "Start Time": "11:30",
+    "End Time": "13:30",
+    "Tutor": "Manav"
+  },
+  {
+    "Course": "MATH 151",
+    "Day": "Tuesday",
+    "Start Time": "12:00",
+    "End Time": "14:00",
+    "Tutor": "Shakib"
+  },
+  {
+    "Course": "MATH 151",
+    "Day": "Tuesday",
+    "Start Time": "13:00",
+    "End Time": "14:00",
+    "Tutor": "Shrikant"
+  },
+  {
+    "Course": "MATH 151",
+    "Day": "Tuesday",
+    "Start Time": "13:30",
+    "End Time": "17:00",
+    "Tutor": "Aren"
+  },
+  {
+    "Course": "MATH 151",
+    "Day": "Tuesday",
+    "Start Time": "14:00",
+    "End Time": "15:00",
+    "Tutor": "Abe"
+  },
+  {
+    "Course": "MATH 151",
+    "Day": "Tuesday",
+    "Start Time": "15:00",
+    "End Time": "16:30",
+    "Tutor": "Akanksha"
+  },
+  {
+    "Course": "MATH 151",
+    "Day": "Tuesday",
+    "Start Time": "16:00",
+    "End Time": "17:00",
+    "Tutor": "Karen"
+  },
+  {
+    "Course": "MATH 151",
+    "Day": "Tuesday",
+    "Start Time": "17:00",
+    "End Time": "17:00",
+    "Tutor": "Kodi"
+  },
+  {
+    "Course": "MATH 151",
+    "Day": "Wednesday",
+    "Start Time": "11:15",
+    "End Time": "12:45",
+    "Tutor": "Michael"
+  },
+  {
+    "Course": "MATH 151",
+    "Day": "Wednesday",
+    "Start Time": "11:30",
+    "End Time": "13:00",
+    "Tutor": "Manav"
+  },
+  {
+    "Course": "MATH 151",
+    "Day": "Wednesday",
+    "Start Time": "12:00",
+    "End Time": "14:00",
+    "Tutor": "Molemo"
+  },
+  {
+    "Course": "MATH 151",
+    "Day": "Wednesday",
+    "Start Time": "13:00",
+    "End Time": "14:00",
+    "Tutor": "Akanksha"
+  },
+  {
+    "Course": "MATH 151",
+    "Day": "Wednesday",
+    "Start Time": "14:00",
+    "End Time": "16:00",
+    "Tutor": "Dani"
+  },
+  {
+    "Course": "MATH 151",
+    "Day": "Wednesday",
+    "Start Time": "14:00",
+    "End Time": "16:30",
+    "Tutor": "Shayan"
+  },
+  {
+    "Course": "MATH 151",
+    "Day": "Wednesday",
+    "Start Time": "14:30",
+    "End Time": "15:30",
+    "Tutor": "Abe"
+  },
+  {
+    "Course": "MATH 151",
+    "Day": "Wednesday",
+    "Start Time": "15:00",
+    "End Time": "17:00",
+    "Tutor": "Zach"
+  },
+  {
+    "Course": "MATH 151",
+    "Day": "Wednesday",
+    "Start Time": "16:00",
+    "End Time": "17:00",
+    "Tutor": "Molly"
+  },
+  {
+    "Course": "MATH 151",
+    "Day": "Thursday",
+    "Start Time": "11:30",
+    "End Time": "12:30",
+    "Tutor": "Manav"
+  },
+  {
+    "Course": "MATH 151",
+    "Day": "Thursday",
+    "Start Time": "12:00",
+    "End Time": "13:00",
+    "Tutor": "Shayan"
+  },
+  {
+    "Course": "MATH 151",
+    "Day": "Thursday",
+    "Start Time": "12:30",
+    "End Time": "14:00",
+    "Tutor": "Shakib"
+  },
+  {
+    "Course": "MATH 151",
+    "Day": "Thursday",
+    "Start Time": "13:00",
+    "End Time": "14:00",
+    "Tutor": "Kodi"
+  },
+  {
+    "Course": "MATH 151",
+    "Day": "Thursday",
+    "Start Time": "13:00",
+    "End Time": "16:00",
+    "Tutor": "Avi"
+  },
+  {
+    "Course": "MATH 151",
+    "Day": "Thursday",
+    "Start Time": "15:00",
+    "End Time": "16:00",
+    "Tutor": "Shrikant"
+  },
+  {
+    "Course": "MATH 151",
+    "Day": "Thursday",
+    "Start Time": "15:00",
+    "End Time": "17:00",
+    "Tutor": "Akanksha"
+  },
+  {
+    "Course": "MATH 151",
+    "Day": "Thursday",
+    "Start Time": "15:30",
+    "End Time": "17:00",
+    "Tutor": "Zach"
+  },
+  {
+    "Course": "MATH 151",
+    "Day": "Thursday",
+    "Start Time": "16:00",
+    "End Time": "17:00",
+    "Tutor": "Karen"
+  },
+  {
+    "Course": "MATH 151",
+    "Day": "Thursday",
+    "Start Time": "17:00",
+    "End Time": "17:00",
+    "Tutor": "Himani"
+  },
+  {
+    "Course": "MATH 151",
+    "Day": "Thursday",
+    "Start Time": "17:00",
+    "End Time": "17:00",
+    "Tutor": "Kodi"
+  },
+  {
+    "Course": "MATH 151",
+    "Day": "Friday",
+    "Start Time": "11:00",
+    "End Time": "12:00",
+    "Tutor": "Zach"
+  },
+  {
+    "Course": "MATH 151",
+    "Day": "Friday",
+    "Start Time": "11:00",
+    "End Time": "13:00",
+    "Tutor": "Aren"
+  },
+  {
+    "Course": "MATH 151",
+    "Day": "Friday",
+    "Start Time": "11:30",
+    "End Time": "13:30",
+    "Tutor": "Karen"
+  },
+  {
+    "Course": "MATH 151",
+    "Day": "Friday",
+    "Start Time": "12:00",
+    "End Time": "13:00",
+    "Tutor": "Himani"
+  },
+  {
+    "Course": "MATH 151",
+    "Day": "Friday",
+    "Start Time": "13:00",
+    "End Time": "14:00",
+    "Tutor": "Shayan"
+  },
+  {
+    "Course": "MATH 151",
+    "Day": "Friday",
+    "Start Time": "13:00",
+    "End Time": "14:00",
+    "Tutor": "Molemo"
+  },
+  {
+    "Course": "MATH 152",
+    "Day": "Monday",
+    "Start Time": "11:00",
+    "End Time": "12:00",
+    "Tutor": "Rania"
+  },
+  {
+    "Course": "MATH 152",
+    "Day": "Monday",
+    "Start Time": "11:00",
+    "End Time": "12:00",
+    "Tutor": "Akanksha"
+  },
+  {
+    "Course": "MATH 152",
+    "Day": "Monday",
+    "Start Time": "11:30",
+    "End Time": "12:45",
+    "Tutor": "Michael"
+  },
+  {
+    "Course": "MATH 152",
+    "Day": "Monday",
+    "Start Time": "12:00",
+    "End Time": "13:00",
+    "Tutor": "Shrikant"
+  },
+  {
+    "Course": "MATH 152",
+    "Day": "Monday",
+    "Start Time": "12:30",
+    "End Time": "14:00",
+    "Tutor": "O’Tega"
+  },
+  {
+    "Course": "MATH 152",
+    "Day": "Monday",
+    "Start Time": "14:30",
+    "End Time": "15:30",
+    "Tutor": "Abe"
+  },
+  {
+    "Course": "MATH 152",
+    "Day": "Monday",
+    "Start Time": "16:00",
+    "End Time": "17:00",
+    "Tutor": "Rania"
+  },
+  {
+    "Course": "MATH 152",
+    "Day": "Monday",
+    "Start Time": "16:00",
+    "End Time": "17:00",
+    "Tutor": "Molly"
+  },
+  {
+    "Course": "MATH 152",
+    "Day": "Monday",
+    "Start Time": "16:00",
+    "End Time": "17:00",
+    "Tutor": "O’Tega"
+  },
+  {
+    "Course": "MATH 152",
+    "Day": "Tuesday",
+    "Start Time": "11:00",
+    "End Time": "12:30",
+    "Tutor": "Michael"
+  },
+  {
+    "Course": "MATH 152",
+    "Day": "Tuesday",
+    "Start Time": "13:00",
+    "End Time": "14:00",
+    "Tutor": "Shrikant"
+  },
+  {
+    "Course": "MATH 152",
+    "Day": "Tuesday",
+    "Start Time": "13:30",
+    "End Time": "17:00",
+    "Tutor": "Aren"
+  },
+  {
+    "Course": "MATH 152",
+    "Day": "Tuesday",
+    "Start Time": "14:00",
+    "End Time": "15:00",
+    "Tutor": "Abe"
+  },
+  {
+    "Course": "MATH 152",
+    "Day": "Tuesday",
+    "Start Time": "15:00",
+    "End Time": "16:30",
+    "Tutor": "Akanksha"
+  },
+  {
+    "Course": "MATH 152",
+    "Day": "Tuesday",
+    "Start Time": "16:00",
+    "End Time": "17:00",
+    "Tutor": "Karen"
+  },
+  {
+    "Course": "MATH 152",
+    "Day": "Wednesday",
+    "Start Time": "11:15",
+    "End Time": "12:45",
+    "Tutor": "Michael"
+  },
+  {
+    "Course": "MATH 152",
+    "Day": "Wednesday",
+    "Start Time": "12:00",
+    "End Time": "14:00",
+    "Tutor": "Molemo"
+  },
+  {
+    "Course": "MATH 152",
+    "Day": "Wednesday",
+    "Start Time": "13:00",
+    "End Time": "14:00",
+    "Tutor": "Akanksha"
+  },
+  {
+    "Course": "MATH 152",
+    "Day": "Wednesday",
+    "Start Time": "14:00",
+    "End Time": "16:30",
+    "Tutor": "Shayan"
+  },
+  {
+    "Course": "MATH 152",
+    "Day": "Wednesday",
+    "Start Time": "14:30",
+    "End Time": "15:30",
+    "Tutor": "Abe"
+  },
+  {
+    "Course": "MATH 152",
+    "Day": "Wednesday",
+    "Start Time": "15:00",
+    "End Time": "17:00",
+    "Tutor": "Zach"
+  },
+  {
+    "Course": "MATH 152",
+    "Day": "Wednesday",
+    "Start Time": "16:00",
+    "End Time": "17:00",
+    "Tutor": "Molly"
+  },
+  {
+    "Course": "MATH 152",
+    "Day": "Thursday",
+    "Start Time": "15:00",
+    "End Time": "16:00",
+    "Tutor": "Shrikant"
+  },
+  {
+    "Course": "MATH 152",
+    "Day": "Thursday",
+    "Start Time": "15:00",
+    "End Time": "17:00",
+    "Tutor": "Zach"
+  },
+  {
+    "Course": "MATH 152",
+    "Day": "Thursday",
+    "Start Time": "15:00",
+    "End Time": "17:00",
+    "Tutor": "Akanksha"
+  },
+  {
+    "Course": "MATH 152",
+    "Day": "Thursday",
+    "Start Time": "15:30",
+    "End Time": "17:00",
+    "Tutor": "Zach"
+  },
+  {
+    "Course": "MATH 152",
+    "Day": "Thursday",
+    "Start Time": "16:00",
+    "End Time": "17:00",
+    "Tutor": "Karen"
+  },
+  {
+    "Course": "MATH 152",
+    "Day": "Friday",
+    "Start Time": "11:00",
+    "End Time": "12:00",
+    "Tutor": "Zach"
+  },
+  {
+    "Course": "MATH 152",
+    "Day": "Friday",
+    "Start Time": "11:00",
+    "End Time": "13:00",
+    "Tutor": "Aren"
+  },
+  {
+    "Course": "MATH 152",
+    "Day": "Friday",
+    "Start Time": "11:30",
+    "End Time": "13:30",
+    "Tutor": "Karen"
+  },
+  {
+    "Course": "MATH 152",
+    "Day": "Friday",
+    "Start Time": "13:00",
+    "End Time": "14:00",
+    "Tutor": "Shayan"
+  },
+  {
+    "Course": "MATH 152",
+    "Day": "Friday",
+    "Start Time": "13:00",
+    "End Time": "14:00",
+    "Tutor": "Molemo"
+  },
+  {
+    "Course": "MATH 155",
+    "Day": "Monday",
+    "Start Time": "13:00",
+    "End Time": "14:30",
+    "Tutor": "Ini"
+  },
+  {
+    "Course": "MATH 155",
+    "Day": "Monday",
+    "Start Time": "14:30",
+    "End Time": "16:00",
+    "Tutor": "Adamo"
+  },
+  {
+    "Course": "MATH 155",
+    "Day": "Tuesday",
+    "Start Time": "11:30",
+    "End Time": "13:30",
+    "Tutor": "Manav"
+  },
+  {
+    "Course": "MATH 155",
+    "Day": "Tuesday",
+    "Start Time": "12:00",
+    "End Time": "14:00",
+    "Tutor": "Shakib"
+  },
+  {
+    "Course": "MATH 155",
+    "Day": "Tuesday",
+    "Start Time": "16:00",
+    "End Time": "17:00",
+    "Tutor": "Karen"
+  },
+  {
+    "Course": "MATH 155",
+    "Day": "Wednesday",
+    "Start Time": "11:30",
+    "End Time": "13:00",
+    "Tutor": "Manav"
+  },
+  {
+    "Course": "MATH 155",
+    "Day": "Thursday",
+    "Start Time": "11:30",
+    "End Time": "12:30",
+    "Tutor": "Manav"
+  },
+  {
+    "Course": "MATH 155",
+    "Day": "Thursday",
+    "Start Time": "12:30",
+    "End Time": "14:00",
+    "Tutor": "Shakib"
+  },
+  {
+    "Course": "MATH 155",
+    "Day": "Thursday",
+    "Start Time": "13:00",
+    "End Time": "16:00",
+    "Tutor": "Avi"
+  },
+  {
+    "Course": "MATH 155",
+    "Day": "Thursday",
+    "Start Time": "13:30",
+    "End Time": "14:30",
+    "Tutor": "Ini"
+  },
+  {
+    "Course": "MATH 155",
+    "Day": "Thursday",
+    "Start Time": "16:00",
+    "End Time": "17:00",
+    "Tutor": "Karen"
+  },
+  {
+    "Course": "MATH 155",
+    "Day": "Thursday",
+    "Start Time": "16:00",
+    "End Time": "17:00",
+    "Tutor": "Adamo"
+  },
+  {
+    "Course": "MATH 155",
+    "Day": "Friday",
+    "Start Time": "11:30",
+    "End Time": "13:30",
+    "Tutor": "Karen"
+  },
+  {
+    "Course": "MATH 215",
+    "Day": "Thursday",
+    "Start Time": "13:00",
+    "End Time": "16:00",
+    "Tutor": "Avi"
+  },
+  {
+    "Course": "MATH 221",
+    "Day": "Monday",
+    "Start Time": "11:00",
+    "End Time": "12:00",
+    "Tutor": "Akanksha"
+  },
+  {
+    "Course": "MATH 221",
+    "Day": "Monday",
+    "Start Time": "11:30",
+    "End Time": "12:45",
+    "Tutor": "Michael"
+  },
+  {
+    "Course": "MATH 221",
+    "Day": "Monday",
+    "Start Time": "14:30",
+    "End Time": "15:30",
+    "Tutor": "Abe"
+  },
+  {
+    "Course": "MATH 221",
+    "Day": "Monday",
+    "Start Time": "16:00",
+    "End Time": "17:00",
+    "Tutor": "Molly"
+  },
+  {
+    "Course": "MATH 221",
+    "Day": "Tuesday",
+    "Start Time": "11:00",
+    "End Time": "12:30",
+    "Tutor": "Michael"
+  },
+  {
+    "Course": "MATH 221",
+    "Day": "Tuesday",
+    "Start Time": "13:30",
+    "End Time": "17:00",
+    "Tutor": "Aren"
+  },
+  {
+    "Course": "MATH 221",
+    "Day": "Tuesday",
+    "Start Time": "14:00",
+    "End Time": "15:00",
+    "Tutor": "Abe"
+  },
+  {
+    "Course": "MATH 221",
+    "Day": "Tuesday",
+    "Start Time": "15:00",
+    "End Time": "16:30",
+    "Tutor": "Akanksha"
+  },
+  {
+    "Course": "MATH 221",
+    "Day": "Wednesday",
+    "Start Time": "11:15",
+    "End Time": "12:45",
+    "Tutor": "Michael"
+  },
+  {
+    "Course": "MATH 221",
+    "Day": "Wednesday",
+    "Start Time": "13:00",
+    "End Time": "14:00",
+    "Tutor": "Akanksha"
+  },
+  {
+    "Course": "MATH 221",
+    "Day": "Wednesday",
+    "Start Time": "14:30",
+    "End Time": "15:30",
+    "Tutor": "Abe"
+  },
+  {
+    "Course": "MATH 221",
+    "Day": "Wednesday",
+    "Start Time": "16:00",
+    "End Time": "17:00",
+    "Tutor": "Molly"
+  },
+  {
+    "Course": "MATH 221",
+    "Day": "Thursday",
+    "Start Time": "15:00",
+    "End Time": "17:00",
+    "Tutor": "Akanksha"
+  },
+  {
+    "Course": "MATH 221",
+    "Day": "Friday",
+    "Start Time": "11:00",
+    "End Time": "13:00",
+    "Tutor": "Aren"
+  },
+  {
+    "Course": "MATH 225",
+    "Day": "Monday",
+    "Start Time": "11:30",
+    "End Time": "12:45",
+    "Tutor": "Michael"
+  },
+  {
+    "Course": "MATH 225",
+    "Day": "Monday",
+    "Start Time": "14:30",
+    "End Time": "15:30",
+    "Tutor": "Abe"
+  },
+  {
+    "Course": "MATH 225",
+    "Day": "Tuesday",
+    "Start Time": "11:00",
+    "End Time": "12:30",
+    "Tutor": "Michael"
+  },
+  {
+    "Course": "MATH 225",
+    "Day": "Tuesday",
+    "Start Time": "13:30",
+    "End Time": "17:00",
+    "Tutor": "Aren"
+  },
+  {
+    "Course": "MATH 225",
+    "Day": "Tuesday",
+    "Start Time": "14:00",
+    "End Time": "15:00",
+    "Tutor": "Abe"
+  },
+  {
+    "Course": "MATH 225",
+    "Day": "Tuesday",
+    "Start Time": "17:00",
+    "End Time": "17:00",
+    "Tutor": "Kodi"
+  },
+  {
+    "Course": "MATH 225",
+    "Day": "Wednesday",
+    "Start Time": "11:15",
+    "End Time": "12:45",
+    "Tutor": "Michael"
+  },
+  {
+    "Course": "MATH 225",
+    "Day": "Wednesday",
+    "Start Time": "12:00",
+    "End Time": "14:00",
+    "Tutor": "Molemo"
+  },
+  {
+    "Course": "MATH 225",
+    "Day": "Wednesday",
+    "Start Time": "14:30",
+    "End Time": "15:30",
+    "Tutor": "Abe"
+  },
+  {
+    "Course": "MATH 225",
+    "Day": "Thursday",
+    "Start Time": "13:00",
+    "End Time": "14:00",
+    "Tutor": "Kodi"
+  },
+  {
+    "Course": "MATH 225",
+    "Day": "Thursday",
+    "Start Time": "17:00",
+    "End Time": "17:00",
+    "Tutor": "Kodi"
+  },
+  {
+    "Course": "MATH 225",
+    "Day": "Friday",
+    "Start Time": "11:00",
+    "End Time": "13:00",
+    "Tutor": "Aren"
+  },
+  {
+    "Course": "MATH 225",
+    "Day": "Friday",
+    "Start Time": "13:00",
+    "End Time": "14:00",
+    "Tutor": "Molemo"
+  },
+  {
+    "Course": "MATH 251",
+    "Day": "Monday",
+    "Start Time": "11:00",
+    "End Time": "12:00",
+    "Tutor": "Rania"
+  },
+  {
+    "Course": "MATH 251",
+    "Day": "Monday",
+    "Start Time": "11:00",
+    "End Time": "12:00",
+    "Tutor": "Akanksha"
+  },
+  {
+    "Course": "MATH 251",
+    "Day": "Monday",
+    "Start Time": "11:30",
+    "End Time": "12:45",
+    "Tutor": "Michael"
+  },
+  {
+    "Course": "MATH 251",
+    "Day": "Monday",
+    "Start Time": "16:00",
+    "End Time": "17:00",
+    "Tutor": "Rania"
+  },
+  {
+    "Course": "MATH 251",
+    "Day": "Monday",
+    "Start Time": "16:00",
+    "End Time": "17:00",
+    "Tutor": "Molly"
+  },
+  {
+    "Course": "MATH 251",
+    "Day": "Tuesday",
+    "Start Time": "11:00",
+    "End Time": "12:30",
+    "Tutor": "Michael"
+  },
+  {
+    "Course": "MATH 251",
+    "Day": "Tuesday",
+    "Start Time": "13:30",
+    "End Time": "17:00",
+    "Tutor": "Aren"
+  },
+  {
+    "Course": "MATH 251",
+    "Day": "Tuesday",
+    "Start Time": "15:00",
+    "End Time": "16:30",
+    "Tutor": "Akanksha"
+  },
+  {
+    "Course": "MATH 251",
+    "Day": "Wednesday",
+    "Start Time": "11:15",
+    "End Time": "12:45",
+    "Tutor": "Michael"
+  },
+  {
+    "Course": "MATH 251",
+    "Day": "Wednesday",
+    "Start Time": "12:00",
+    "End Time": "14:00",
+    "Tutor": "Molemo"
+  },
+  {
+    "Course": "MATH 251",
+    "Day": "Wednesday",
+    "Start Time": "13:00",
+    "End Time": "14:00",
+    "Tutor": "Akanksha"
+  },
+  {
+    "Course": "MATH 251",
+    "Day": "Wednesday",
+    "Start Time": "16:00",
+    "End Time": "17:00",
+    "Tutor": "Molly"
+  },
+  {
+    "Course": "MATH 251",
+    "Day": "Thursday",
+    "Start Time": "15:00",
+    "End Time": "17:00",
+    "Tutor": "Akanksha"
+  },
+  {
+    "Course": "MATH 251",
+    "Day": "Friday",
+    "Start Time": "11:00",
+    "End Time": "13:00",
+    "Tutor": "Aren"
+  },
+  {
+    "Course": "MATH 251",
+    "Day": "Friday",
+    "Start Time": "13:00",
+    "End Time": "14:00",
+    "Tutor": "Molemo"
+  },
+  {
+    "Course": "MATH 300",
+    "Day": "Monday",
+    "Start Time": "11:00",
+    "End Time": "12:00",
+    "Tutor": "Akanksha"
+  },
+  {
+    "Course": "MATH 300",
+    "Day": "Tuesday",
+    "Start Time": "13:30",
+    "End Time": "17:00",
+    "Tutor": "Aren"
+  },
+  {
+    "Course": "MATH 300",
+    "Day": "Tuesday",
+    "Start Time": "15:00",
+    "End Time": "16:30",
+    "Tutor": "Akanksha"
+  },
+  {
+    "Course": "MATH 300",
+    "Day": "Wednesday",
+    "Start Time": "13:00",
+    "End Time": "14:00",
+    "Tutor": "Akanksha"
+  },
+  {
+    "Course": "MATH 300",
+    "Day": "Thursday",
+    "Start Time": "13:00",
+    "End Time": "16:00",
+    "Tutor": "Avi"
+  },
+  {
+    "Course": "MATH 300",
+    "Day": "Thursday",
+    "Start Time": "15:00",
+    "End Time": "17:00",
+    "Tutor": "Akanksha"
+  },
+  {
+    "Course": "MATH 300",
+    "Day": "Friday",
+    "Start Time": "11:00",
+    "End Time": "13:00",
+    "Tutor": "Aren"
+  },
+  {
+    "Course": "MATH 301",
+    "Day": "Thursday",
+    "Start Time": "13:00",
+    "End Time": "16:00",
+    "Tutor": "Avi"
+  },
+  {
+    "Course": "PHYS 111",
+    "Day": "Monday",
+    "Start Time": "11:00",
+    "End Time": "13:00",
+    "Tutor": "Susanna"
+  },
+  {
+    "Course": "PHYS 111",
+    "Day": "Monday",
+    "Start Time": "12:00",
+    "End Time": "13:00",
+    "Tutor": "Shrikant"
+  },
+  {
+    "Course": "PHYS 111",
+    "Day": "Monday",
+    "Start Time": "12:30",
+    "End Time": "14:00",
+    "Tutor": "O’Tega"
+  },
+  {
+    "Course": "PHYS 111",
+    "Day": "Monday",
+    "Start Time": "16:00",
+    "End Time": "17:00",
+    "Tutor": "O’Tega"
+  },
+  {
+    "Course": "PHYS 111",
+    "Day": "Tuesday",
+    "Start Time": "13:00",
+    "End Time": "14:00",
+    "Tutor": "Shrikant"
+  },
+  {
+    "Course": "PHYS 111",
+    "Day": "Tuesday",
+    "Start Time": "13:30",
+    "End Time": "17:00",
+    "Tutor": "Aren"
+  },
+  {
+    "Course": "PHYS 111",
+    "Day": "Tuesday",
+    "Start Time": "15:00",
+    "End Time": "16:00",
+    "Tutor": "Shrikant"
+  },
+  {
+    "Course": "PHYS 111",
+    "Day": "Tuesday",
+    "Start Time": "17:00",
+    "End Time": "17:00",
+    "Tutor": "Kodi"
+  },
+  {
+    "Course": "PHYS 111",
+    "Day": "Wednesday",
+    "Start Time": "15:30",
+    "End Time": "17:00",
+    "Tutor": "Zach"
+  },
+  {
+    "Course": "PHYS 111",
+    "Day": "Thursday",
+    "Start Time": "13:00",
+    "End Time": "14:00",
+    "Tutor": "Kodi"
+  },
+  {
+    "Course": "PHYS 111",
+    "Day": "Thursday",
+    "Start Time": "13:00",
+    "End Time": "16:00",
+    "Tutor": "Avi"
+  },
+  {
+    "Course": "PHYS 111",
+    "Day": "Thursday",
+    "Start Time": "15:00",
+    "End Time": "16:00",
+    "Tutor": "Shrikant"
+  },
+  {
+    "Course": "PHYS 111",
+    "Day": "Thursday",
+    "Start Time": "15:30",
+    "End Time": "17:00",
+    "Tutor": "Zach"
+  },
+  {
+    "Course": "PHYS 111",
+    "Day": "Thursday",
+    "Start Time": "17:00",
+    "End Time": "17:00",
+    "Tutor": "Himani"
+  },
+  {
+    "Course": "PHYS 111",
+    "Day": "Thursday",
+    "Start Time": "17:00",
+    "End Time": "17:00",
+    "Tutor": "Kodi"
+  },
+  {
+    "Course": "PHYS 111",
+    "Day": "Friday",
+    "Start Time": "11:00",
+    "End Time": "12:00",
+    "Tutor": "Zach"
+  },
+  {
+    "Course": "PHYS 111",
+    "Day": "Friday",
+    "Start Time": "11:00",
+    "End Time": "13:00",
+    "Tutor": "Aren"
+  },
+  {
+    "Course": "PHYS 111",
+    "Day": "Friday",
+    "Start Time": "12:00",
+    "End Time": "13:00",
+    "Tutor": "Himani"
+  },
+  {
+    "Course": "PHYS 112",
+    "Day": "Monday",
+    "Start Time": "12:30",
+    "End Time": "14:00",
+    "Tutor": "O’Tega"
+  },
+  {
+    "Course": "PHYS 112",
+    "Day": "Monday",
+    "Start Time": "16:00",
+    "End Time": "17:00",
+    "Tutor": "O’Tega"
+  },
+  {
+    "Course": "PHYS 112",
+    "Day": "Tuesday",
+    "Start Time": "17:00",
+    "End Time": "17:00",
+    "Tutor": "Kodi"
+  },
+  {
+    "Course": "PHYS 112",
+    "Day": "Thursday",
+    "Start Time": "13:00",
+    "End Time": "14:00",
+    "Tutor": "Kodi"
+  },
+  {
+    "Course": "PHYS 112",
+    "Day": "Thursday",
+    "Start Time": "17:00",
+    "End Time": "17:00",
+    "Tutor": "Kodi"
+  },
+  {
+    "Course": "PHYS 121",
+    "Day": "Monday",
+    "Start Time": "12:00",
+    "End Time": "13:00",
+    "Tutor": "Shrikant"
+  },
+  {
+    "Course": "PHYS 121",
+    "Day": "Monday",
+    "Start Time": "12:30",
+    "End Time": "14:00",
+    "Tutor": "O’Tega"
+  },
+  {
+    "Course": "PHYS 121",
+    "Day": "Monday",
+    "Start Time": "14:00",
+    "End Time": "16:00",
+    "Tutor": "Dani"
+  },
+  {
+    "Course": "PHYS 121",
+    "Day": "Monday",
+    "Start Time": "16:00",
+    "End Time": "17:00",
+    "Tutor": "O’Tega"
+  },
+  {
+    "Course": "PHYS 121",
+    "Day": "Tuesday",
+    "Start Time": "13:00",
+    "End Time": "14:00",
+    "Tutor": "Shrikant"
+  },
+  {
+    "Course": "PHYS 121",
+    "Day": "Tuesday",
+    "Start Time": "13:30",
+    "End Time": "17:00",
+    "Tutor": "Aren"
+  },
+  {
+    "Course": "PHYS 121",
+    "Day": "Tuesday",
+    "Start Time": "15:00",
+    "End Time": "16:00",
+    "Tutor": "Shrikant"
+  },
+  {
+    "Course": "PHYS 121",
+    "Day": "Tuesday",
+    "Start Time": "17:00",
+    "End Time": "17:00",
+    "Tutor": "Kodi"
+  },
+  {
+    "Course": "PHYS 121",
+    "Day": "Wednesday",
+    "Start Time": "14:00",
+    "End Time": "16:00",
+    "Tutor": "Dani"
+  },
+  {
+    "Course": "PHYS 121",
+    "Day": "Wednesday",
+    "Start Time": "15:00",
+    "End Time": "17:00",
+    "Tutor": "Zach"
+  },
+  {
+    "Course": "PHYS 121",
+    "Day": "Thursday",
+    "Start Time": "13:00",
+    "End Time": "14:00",
+    "Tutor": "Kodi"
+  },
+  {
+    "Course": "PHYS 121",
+    "Day": "Thursday",
+    "Start Time": "13:00",
+    "End Time": "16:00",
+    "Tutor": "Avi"
+  },
+  {
+    "Course": "PHYS 121",
+    "Day": "Thursday",
+    "Start Time": "15:00",
+    "End Time": "16:00",
+    "Tutor": "Shrikant"
+  },
+  {
+    "Course": "PHYS 121",
+    "Day": "Thursday",
+    "Start Time": "15:30",
+    "End Time": "17:00",
+    "Tutor": "Zach"
+  },
+  {
+    "Course": "PHYS 121",
+    "Day": "Thursday",
+    "Start Time": "17:00",
+    "End Time": "17:00",
+    "Tutor": "Kodi"
+  },
+  {
+    "Course": "PHYS 121",
+    "Day": "Friday",
+    "Start Time": "11:00",
+    "End Time": "12:00",
+    "Tutor": "Zach"
+  },
+  {
+    "Course": "PHYS 121",
+    "Day": "Friday",
+    "Start Time": "11:00",
+    "End Time": "13:00",
+    "Tutor": "Aren"
+  },
+  {
+    "Course": "PHYS 122",
+    "Day": "Monday",
+    "Start Time": "12:00",
+    "End Time": "13:00",
+    "Tutor": "Shrikant"
+  },
+  {
+    "Course": "PHYS 122",
+    "Day": "Monday",
+    "Start Time": "12:30",
+    "End Time": "14:00",
+    "Tutor": "O’Tega"
+  },
+  {
+    "Course": "PHYS 122",
+    "Day": "Monday",
+    "Start Time": "14:30",
+    "End Time": "15:30",
+    "Tutor": "Abe"
+  },
+  {
+    "Course": "PHYS 122",
+    "Day": "Monday",
+    "Start Time": "16:00",
+    "End Time": "17:00",
+    "Tutor": "O’Tega"
+  },
+  {
+    "Course": "PHYS 122",
+    "Day": "Tuesday",
+    "Start Time": "13:00",
+    "End Time": "14:00",
+    "Tutor": "Shrikant"
+  },
+  {
+    "Course": "PHYS 122",
+    "Day": "Tuesday",
+    "Start Time": "14:00",
+    "End Time": "15:00",
+    "Tutor": "Abe"
+  },
+  {
+    "Course": "PHYS 122",
+    "Day": "Tuesday",
+    "Start Time": "15:00",
+    "End Time": "16:00",
+    "Tutor": "Shrikant"
+  },
+  {
+    "Course": "PHYS 122",
+    "Day": "Tuesday",
+    "Start Time": "17:00",
+    "End Time": "17:00",
+    "Tutor": "Kodi"
+  },
+  {
+    "Course": "PHYS 122",
+    "Day": "Wednesday",
+    "Start Time": "14:30",
+    "End Time": "15:30",
+    "Tutor": "Abe"
+  },
+  {
+    "Course": "PHYS 122",
+    "Day": "Thursday",
+    "Start Time": "13:00",
+    "End Time": "14:00",
+    "Tutor": "Kodi"
+  },
+  {
+    "Course": "PHYS 122",
+    "Day": "Thursday",
+    "Start Time": "15:00",
+    "End Time": "16:00",
+    "Tutor": "Shrikant"
+  },
+  {
+    "Course": "PHYS 122",
+    "Day": "Thursday",
+    "Start Time": "17:00",
+    "End Time": "17:00",
+    "Tutor": "Kodi"
+  },
+  {
+    "Course": "SCI 100",
+    "Day": "Monday",
+    "Start Time": "13:00",
+    "End Time": "14:30",
+    "Tutor": "Ini"
+  },
+  {
+    "Course": "SCI 100",
+    "Day": "Thursday",
+    "Start Time": "13:30",
+    "End Time": "14:30",
+    "Tutor": "Ini"
+  },
+  {
+    "Course": "STAT 121",
+    "Day": "Monday",
+    "Start Time": "12:30",
+    "End Time": "14:00",
+    "Tutor": "O’Tega"
+  },
+  {
+    "Course": "STAT 121",
+    "Day": "Monday",
+    "Start Time": "16:00",
+    "End Time": "17:00",
+    "Tutor": "O’Tega"
+  },
+  {
+    "Course": "STAT 121",
+    "Day": "Tuesday",
+    "Start Time": "12:30",
+    "End Time": "13:30",
+    "Tutor": "Chelsea"
+  },
+  {
+    "Course": "STAT 121",
+    "Day": "Tuesday",
+    "Start Time": "17:00",
+    "End Time": "17:00",
+    "Tutor": "Moyo"
+  },
+  {
+    "Course": "STAT 121",
+    "Day": "Wednesday",
+    "Start Time": "12:45",
+    "End Time": "14:30",
+    "Tutor": "Joseph"
+  },
+  {
+    "Course": "STAT 121",
+    "Day": "Wednesday",
+    "Start Time": "17:00",
+    "End Time": "17:00",
+    "Tutor": "Moyo"
+  },
+  {
+    "Course": "STAT 121",
+    "Day": "Thursday",
+    "Start Time": "13:00",
+    "End Time": "16:00",
+    "Tutor": "Avi"
+  },
+  {
+    "Course": "STAT 350",
+    "Day": "Monday",
+    "Start Time": "14:00",
+    "End Time": "16:00",
+    "Tutor": "Dani"
+  },
+  {
+    "Course": "STAT 350",
+    "Day": "Tuesday",
+    "Start Time": "16:00",
+    "End Time": "17:00",
+    "Tutor": "Karen"
+  },
+  {
+    "Course": "STAT 350",
+    "Day": "Wednesday",
+    "Start Time": "14:00",
+    "End Time": "16:00",
+    "Tutor": "Dani"
+  },
+  {
+    "Course": "STAT 350",
+    "Day": "Thursday",
+    "Start Time": "13:00",
+    "End Time": "16:00",
+    "Tutor": "Avi"
+  },
+  {
+    "Course": "STAT 350",
+    "Day": "Thursday",
+    "Start Time": "17:00",
+    "End Time": "17:00",
+    "Tutor": "Karen"
+  },
+  {
+    "Course": "STAT 350",
+    "Day": "Friday",
+    "Start Time": "11:30",
+    "End Time": "13:30",
+    "Tutor": "Karen"
+  },
+  {
+    "Course": "STAT 351",
+    "Day": "Monday",
+    "Start Time": "14:00",
+    "End Time": "16:00",
+    "Tutor": "Dani"
+  },
+  {
+    "Course": "STAT 351",
+    "Day": "Wednesday",
+    "Start Time": "14:00",
+    "End Time": "16:00",
+    "Tutor": "Dani"
+  },
+  {
+    "Course": "STAT 351",
+    "Day": "Thursday",
+    "Start Time": "13:00",
+    "End Time": "16:00",
+    "Tutor": "Avi"
+  },
+  {
+    "Course": "STAT 355",
+    "Day": "Monday",
+    "Start Time": "11:00",
+    "End Time": "12:00",
+    "Tutor": "Akanksha"
+  },
+  {
+    "Course": "STAT 355",
+    "Day": "Monday",
+    "Start Time": "14:00",
+    "End Time": "16:00",
+    "Tutor": "Dani"
+  },
+  {
+    "Course": "STAT 355",
+    "Day": "Tuesday",
+    "Start Time": "15:00",
+    "End Time": "16:30",
+    "Tutor": "Akanksha"
+  },
+  {
+    "Course": "STAT 355",
+    "Day": "Wednesday",
+    "Start Time": "13:00",
+    "End Time": "14:00",
+    "Tutor": "Akanksha"
+  },
+  {
+    "Course": "STAT 355",
+    "Day": "Wednesday",
+    "Start Time": "14:00",
+    "End Time": "16:00",
+    "Tutor": "Dani"
+  },
+  {
+    "Course": "STAT 355",
+    "Day": "Thursday",
+    "Start Time": "13:00",
+    "End Time": "16:00",
+    "Tutor": "Avi"
+  },
+  {
+    "Course": "STAT 355",
+    "Day": "Thursday",
+    "Start Time": "15:00",
+    "End Time": "17:00",
+    "Tutor": "Akanksha"
+  }
+]
