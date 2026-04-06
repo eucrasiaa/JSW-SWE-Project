@@ -1,0 +1,337 @@
+[
+    {
+        "Dept": "BIOL",
+        "CourseNumber": "101",
+        "LongTitle": "Concepts of Biology"
+    },
+    {
+        "Dept": "BIOL",
+        "CourseNumber": "140",
+        "LongTitle": "Foundations of Biology: Ecology and Evolution"
+    },
+    {
+        "Dept": "BIOL",
+        "CourseNumber": "141",
+        "LongTitle": "Foundations of Biology: Cells, Energy and Organisms"
+    },
+    {
+        "Dept": "BIOL",
+        "CourseNumber": "251",
+        "LongTitle": "Human Anatomy and Physiology I"
+    },
+    {
+        "Dept": "BIOL",
+        "CourseNumber": "273",
+        "LongTitle": "Microbiology for Allied Health"
+    },
+    {
+        "Dept": "BIOL",
+        "CourseNumber": "302",
+        "LongTitle": "Molecular and General Genetics"
+    },
+    {
+        "Dept": "BIOL",
+        "CourseNumber": "303",
+        "LongTitle": "Cell Biology"
+    },
+    {
+        "Dept": "BIOL",
+        "CourseNumber": "430",
+        "LongTitle": "Biological Chemistry"
+    },
+    {
+        "Dept": "CHEM",
+        "CourseNumber": "100",
+        "LongTitle": "The Chemical World"
+    },
+    {
+        "Dept": "CHEM",
+        "CourseNumber": "101",
+        "LongTitle": "Principles of Chemistry I"
+    },
+    {
+        "Dept": "CHEM",
+        "CourseNumber": "102",
+        "LongTitle": "Principles of Chemistry II"
+    },
+    {
+        "Dept": "CHEM",
+        "CourseNumber": "120",
+        "LongTitle": "Introduction to General, Organic, and Biochemistry"
+    },
+    {
+        "Dept": "CHEM",
+        "CourseNumber": "300",
+        "LongTitle": "Analytical Chemistry"
+    },
+    {
+        "Dept": "CHEM",
+        "CourseNumber": "303",
+        "LongTitle": "Physical Chemistry for the Biochemical Sciences"
+    },
+    {
+        "Dept": "CHEM",
+        "CourseNumber": "351",
+        "LongTitle": "Organic Chemistry I"
+    },
+    {
+        "Dept": "CHEM",
+        "CourseNumber": "352",
+        "LongTitle": "Organic Chemistry II"
+    },
+    {
+        "Dept": "CMPE",
+        "CourseNumber": "212",
+        "LongTitle": "Principles of Digital Design"
+    },
+    {
+        "Dept": "CMPE",
+        "CourseNumber": "306",
+        "LongTitle": "Introductory Circuit Theory"
+    },
+    {
+        "Dept": "CMPE",
+        "CourseNumber": "314",
+        "LongTitle": "Principles of Electronic Circuits"
+    },
+    {
+        "Dept": "CMSC",
+        "CourseNumber": "201",
+        "LongTitle": "Computer Science I"
+    },
+    {
+        "Dept": "CMSC",
+        "CourseNumber": "202",
+        "LongTitle": "Computer Science II"
+    },
+    {
+        "Dept": "CMSC",
+        "CourseNumber": "203",
+        "LongTitle": "Discrete Structures"
+    },
+    {
+        "Dept": "CMSC",
+        "CourseNumber": "313",
+        "LongTitle": "Computer Organization and Assembly Language Programming"
+    },
+    {
+        "Dept": "CMSC",
+        "CourseNumber": "331",
+        "LongTitle": "Principles of Programming Languages"
+    },
+    {
+        "Dept": "CMSC",
+        "CourseNumber": "341",
+        "LongTitle": "Data Structures"
+    },
+    {
+        "Dept": "CMSC",
+        "CourseNumber": "411",
+        "LongTitle": "Computer Architecture"
+    },
+    {
+        "Dept": "CMSC",
+        "CourseNumber": "421",
+        "LongTitle": "Principles of Operating Systems"
+    },
+    {
+        "Dept": "CMSC",
+        "CourseNumber": "426",
+        "LongTitle": "Principles of Computer Security"
+    },
+    {
+        "Dept": "CMSC",
+        "CourseNumber": "441",
+        "LongTitle": "Design and Analysis of Algorithms"
+    },
+    {
+        "Dept": "ECON",
+        "CourseNumber": "101",
+        "LongTitle": "Principles of Microeconomics"
+    },
+    {
+        "Dept": "ECON",
+        "CourseNumber": "102",
+        "LongTitle": "Principles of Macroeconomics"
+    },
+    {
+        "Dept": "GES",
+        "CourseNumber": "102",
+        "LongTitle": "People, Place, and Environment: A Global Geographic Perspective"
+    },
+    {
+        "Dept": "GES",
+        "CourseNumber": "110",
+        "LongTitle": "The Changing Earth: Climate, Ecosystems, Water, and Landscapes"
+    },
+    {
+        "Dept": "GES",
+        "CourseNumber": "120",
+        "LongTitle": "Environmental Science and Conservation"
+    },
+    {
+        "Dept": "GES",
+        "CourseNumber": "286",
+        "LongTitle": "Exploring the Environment: A Geo-Spatial Perspective"
+    },
+    {
+        "Dept": "GES",
+        "CourseNumber": "386",
+        "LongTitle": "Introduction to Geographic Information Systems"
+    },
+    {
+        "Dept": "GES",
+        "CourseNumber": "488",
+        "LongTitle": "Spatial Data Analysis and GIS Applications"
+    },
+    {
+        "Dept": "IS",
+        "CourseNumber": "147",
+        "LongTitle": "Introduction to Computer Programming"
+    },
+    {
+        "Dept": "IS",
+        "CourseNumber": "247",
+        "LongTitle": "Computer Programming II"
+    },
+    {
+        "Dept": "IS",
+        "CourseNumber": "300",
+        "LongTitle": "Management Information Systems"
+    },
+    {
+        "Dept": "IS",
+        "CourseNumber": "310",
+        "LongTitle": "Software and Hardware Concepts"
+    },
+    {
+        "Dept": "IS",
+        "CourseNumber": "451",
+        "LongTitle": "Network Design and Management"
+    },
+    {
+        "Dept": "MATH",
+        "CourseNumber": "104",
+        "LongTitle": "Quantitative Literacy"
+    },
+    {
+        "Dept": "MATH",
+        "CourseNumber": "106",
+        "LongTitle": "Algebra and Elementary Functions"
+    },
+    {
+        "Dept": "MATH",
+        "CourseNumber": "150",
+        "LongTitle": "Precalculus Mathematics"
+    },
+    {
+        "Dept": "MATH",
+        "CourseNumber": "151",
+        "LongTitle": "Calculus and Analytic Geometry I"
+    },
+    {
+        "Dept": "MATH",
+        "CourseNumber": "152",
+        "LongTitle": "Calculus and Analytic Geometry II"
+    },
+    {
+        "Dept": "MATH",
+        "CourseNumber": "155",
+        "LongTitle": "Applied Calculus"
+    },
+    {
+        "Dept": "MATH",
+        "CourseNumber": "215",
+        "LongTitle": "Applied Finite Mathematics"
+    },
+    {
+        "Dept": "MATH",
+        "CourseNumber": "221",
+        "LongTitle": "Introduction to Linear Algebra"
+    },
+    {
+        "Dept": "MATH",
+        "CourseNumber": "225",
+        "LongTitle": "Introduction to Differential Equations"
+    },
+    {
+        "Dept": "MATH",
+        "CourseNumber": "251",
+        "LongTitle": "Multivariable Calculus"
+    },
+    {
+        "Dept": "MATH",
+        "CourseNumber": "300",
+        "LongTitle": "Introduction to Mathematical Reasoning"
+    },
+    {
+        "Dept": "MATH",
+        "CourseNumber": "301",
+        "LongTitle": "Introduction to Contemporary Mathematics"
+    },
+    {
+        "Dept": "PHYS",
+        "CourseNumber": "111",
+        "LongTitle": "Basic Physics I"
+    },
+    {
+        "Dept": "PHYS",
+        "CourseNumber": "112",
+        "LongTitle": "Basic Physics II"
+    },
+    {
+        "Dept": "PHYS",
+        "CourseNumber": "121",
+        "LongTitle": "Introductory Physics I"
+    },
+    {
+        "Dept": "PHYS",
+        "CourseNumber": "122",
+        "LongTitle": "Introductory Physics II"
+    },
+    {
+        "Dept": "SCI",
+        "CourseNumber": "100",
+        "LongTitle": "Science of Water; An Interdisciplinary Study"
+    },
+    {
+        "Dept": "SPAN",
+        "CourseNumber": "101",
+        "LongTitle": "Elementary Spanish I"
+    },
+    {
+        "Dept": "SPAN",
+        "CourseNumber": "102",
+        "LongTitle": "Elementary Spanish II"
+    },
+    {
+        "Dept": "SPAN",
+        "CourseNumber": "201",
+        "LongTitle": "Intermediate Spanish I"
+    },
+    {
+        "Dept": "SPAN",
+        "CourseNumber": "202",
+        "LongTitle": "Intermediate Spanish II"
+    },
+    {
+        "Dept": "STAT",
+        "CourseNumber": "121",
+        "LongTitle": "Introduction to Statistics for the Social Sciences"
+    },
+    {
+        "Dept": "STAT",
+        "CourseNumber": "350",
+        "LongTitle": "Statistics with Applications in the Biological Sciences"
+    },
+    {
+        "Dept": "STAT",
+        "CourseNumber": "351",
+        "LongTitle": "Applied Statistics for Business and Economics"
+    },
+    {
+        "Dept": "STAT",
+        "CourseNumber": "355",
+        "LongTitle": "Introduction to Probability and Statistics for Scientists and Engineers"
+    }
+]

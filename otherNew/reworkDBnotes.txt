@@ -1,0 +1,60 @@
+
+
+.tables to show tables
+.schema  for schema
+
+TUTOR:
+
+student_ID text unique //for joins and such
+first_name  //internal
+last_name   //internal
+preferred_name text // for dispaying on site
+
+
+COURSE:
+
+course_code TEXT PK  // "BIOL 101" 
+department TEXT  // "BIOL" 
+course_number TEXT // "101" 
+long_title TEXT // "Concepts of Biology" 
+
+Weekly_Shifts:
+shift_id INT PK autoincrement
+tutor_id FK // tutor:student_id
+day_of_week text //'Monday'
+start_time // "11:00"
+end_time // "13:00"
+
+
+shiftCourse Junction:
+shift_id  FK // weekly_shifts
+course_code FK  // COURSE 
+
+SHIFT_EXCEPTIONS extra:
+ 
+exception_id  int autoinc PK // 
+shift_id  FK // Weekly_Shifts
+target_date  // specific Date it occurs to see if it applies this week
+status  TEXT // tied to Shift
+start_time // allow NULL
+end_time // allow NULL, if an adjustment occurs
+
+insert into this!
+<div id="live-tutoring-widget"></div>
+
+<div class="mceEditable" id="BIOL_251">
+<p><strong>Tutors for BIOL 251 are available on the following days and times:</strong></p>
+<p><strong>Tuesday</strong><br>
+12:30 p.m. – 1:30 p.m. – Chelsea<br>
+5:00 p.m. – 6:00 p.m. – Moyo</p>
+<p><strong>Wednesday</strong><br>
+5:00 p.m. – 6:00 p.m. – Moyo</p>
+<p><strong>Thursday</strong><br>
+5:00 p.m. – 6:00 p.m. – Moyo</p>
+</div>
+
+
+cat genTables.sql | docker compose exec -T web sqlite3 tutoring.db
+cat populate_database.sql | docker compose exec -T web sqlite3 tutoring.db
+cat views.sql | docker compose exec -T web sqlite3 tutoring.db
+
