@@ -1,0 +1,1 @@
+/home/willc/Documents/Docker/devSWE/newDockerSetup/target/debug/newDockerSetup: /home/willc/Documents/Docker/devSWE/newDockerSetup/htmls/index.html /home/willc/Documents/Docker/devSWE/newDockerSetup/src/main.rs

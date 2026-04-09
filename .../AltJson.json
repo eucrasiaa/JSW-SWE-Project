@@ -1,0 +1,1562 @@
+[
+  {
+    "Tutor": "Susanna",
+    "Schedule": [
+      {
+        "Day": "Monday",
+        "StartTime": "11:00",
+        "EndTime": "13:00",
+        "Courses": [
+          "BIOL 101",
+          "BIOL 140",
+          "BIOL 141",
+          "BIOL 302",
+          "CHEM 101",
+          "CHEM 351",
+          "PHYS 111"
+        ]
+      }
+    ]
+  },
+  {
+    "Tutor": "Angela",
+    "Schedule": [
+      {
+        "Day": "Monday",
+        "StartTime": "16:00",
+        "EndTime": "17:00",
+        "Courses": [
+          "BIOL 101",
+          "BIOL 140",
+          "BIOL 141",
+          "BIOL 302",
+          "BIOL 303",
+          "CHEM 101",
+          "CHEM 102",
+          "CHEM 351"
+        ]
+      },
+      {
+        "Day": "Wednesday",
+        "StartTime": "16:30",
+        "EndTime": "17:00",
+        "Courses": [
+          "BIOL 101",
+          "BIOL 140",
+          "BIOL 141",
+          "BIOL 302",
+          "BIOL 303",
+          "CHEM 101",
+          "CHEM 102",
+          "CHEM 351"
+        ]
+      }
+    ]
+  },
+  {
+    "Tutor": "Shakib",
+    "Schedule": [
+      {
+        "Day": "Tuesday",
+        "StartTime": "12:00",
+        "EndTime": "14:00",
+        "Courses": [
+          "BIOL 101",
+          "BIOL 140",
+          "BIOL 141",
+          "BIOL 302",
+          "MATH 151",
+          "MATH 155"
+        ]
+      },
+      {
+        "Day": "Thursday",
+        "StartTime": "12:30",
+        "EndTime": "14:00",
+        "Courses": [
+          "BIOL 101",
+          "BIOL 140",
+          "BIOL 141",
+          "BIOL 302",
+          "MATH 151",
+          "MATH 155"
+        ]
+      }
+    ]
+  },
+  {
+    "Tutor": "Zoya",
+    "Schedule": [
+      {
+        "Day": "Tuesday",
+        "StartTime": "13:00",
+        "EndTime": "16:00",
+        "Courses": [
+          "BIOL 101",
+          "BIOL 140",
+          "BIOL 141",
+          "BIOL 302",
+          "BIOL 303",
+          "BIOL 430"
+        ]
+      },
+      {
+        "Day": "Thursday",
+        "StartTime": "13:00",
+        "EndTime": "16:00",
+        "Courses": [
+          "BIOL 101",
+          "BIOL 140",
+          "BIOL 141",
+          "BIOL 302",
+          "BIOL 303",
+          "BIOL 430"
+        ]
+      }
+    ]
+  },
+  {
+    "Tutor": "Aren",
+    "Schedule": [
+      {
+        "Day": "Tuesday",
+        "StartTime": "13:30",
+        "EndTime": "17:00",
+        "Courses": [
+          "BIOL 101",
+          "BIOL 140",
+          "BIOL 141",
+          "MATH 151",
+          "MATH 152",
+          "MATH 221",
+          "MATH 225",
+          "MATH 251",
+          "MATH 300",
+          "PHYS 111",
+          "PHYS 121"
+        ]
+      },
+      {
+        "Day": "Friday",
+        "StartTime": "11:00",
+        "EndTime": "13:00",
+        "Courses": [
+          "BIOL 101",
+          "BIOL 140",
+          "BIOL 141",
+          "MATH 151",
+          "MATH 152",
+          "MATH 221",
+          "MATH 225",
+          "MATH 251",
+          "MATH 300",
+          "PHYS 111",
+          "PHYS 121"
+        ]
+      },
+      {
+        "Day": "Wednesday",
+        "StartTime": "11:00",
+        "EndTime": "12:30",
+        "Courses": [
+          "CMSC 201",
+          "CMSC 203"
+        ]
+      }
+    ]
+  },
+  {
+    "Tutor": "Tristan",
+    "Schedule": [
+      {
+        "Day": "Wednesday",
+        "StartTime": "11:30",
+        "EndTime": "13:00",
+        "Courses": [
+          "BIOL 101",
+          "BIOL 140",
+          "BIOL 141",
+          "BIOL 302",
+          "BIOL 303",
+          "CHEM 351"
+        ]
+      }
+    ]
+  },
+  {
+    "Tutor": "Lillian",
+    "Schedule": [
+      {
+        "Day": "Wednesday",
+        "StartTime": "13:00",
+        "EndTime": "14:00",
+        "Courses": [
+          "BIOL 101",
+          "BIOL 140",
+          "BIOL 141",
+          "CHEM 351"
+        ]
+      }
+    ]
+  },
+  {
+    "Tutor": "Avi",
+    "Schedule": [
+      {
+        "Day": "Thursday",
+        "StartTime": "13:00",
+        "EndTime": "16:00",
+        "Courses": [
+          "BIOL 101",
+          "BIOL 140",
+          "BIOL 141",
+          "BIOL 302",
+          "BIOL 303",
+          "CHEM 100",
+          "CHEM 101",
+          "CHEM 102",
+          "CHEM 120",
+          "CHEM 300",
+          "CHEM 303",
+          "MATH 104",
+          "MATH 106",
+          "MATH 150",
+          "MATH 151",
+          "MATH 155",
+          "MATH 215",
+          "MATH 300",
+          "MATH 301",
+          "PHYS 111",
+          "PHYS 121",
+          "STAT 121",
+          "STAT 350",
+          "STAT 351",
+          "STAT 355"
+        ]
+      }
+    ]
+  },
+  {
+    "Tutor": "Chelsea",
+    "Schedule": [
+      {
+        "Day": "Tuesday",
+        "StartTime": "12:30",
+        "EndTime": "13:30",
+        "Courses": [
+          "BIOL 251",
+          "BIOL 273",
+          "MATH 106",
+          "STAT 121"
+        ]
+      }
+    ]
+  },
+  {
+    "Tutor": "Moyo",
+    "Schedule": [
+      {
+        "Day": "Tuesday",
+        "StartTime": "17:00",
+        "EndTime": "17:00",
+        "Courses": [
+          "BIOL 251",
+          "BIOL 273",
+          "CHEM 120",
+          "STAT 121"
+        ]
+      },
+      {
+        "Day": "Wednesday",
+        "StartTime": "17:00",
+        "EndTime": "17:00",
+        "Courses": [
+          "BIOL 251",
+          "BIOL 273",
+          "CHEM 120",
+          "STAT 121"
+        ]
+      }
+    ]
+  },
+  {
+    "Tutor": "Iniya",
+    "Schedule": [
+      {
+        "Day": "Tuesday",
+        "StartTime": "13:00",
+        "EndTime": "14:30",
+        "Courses": [
+          "CHEM 101",
+          "CHEM 102"
+        ]
+      },
+      {
+        "Day": "Tuesday",
+        "StartTime": "16:00",
+        "EndTime": "17:00",
+        "Courses": [
+          "CHEM 101",
+          "CHEM 102"
+        ]
+      },
+      {
+        "Day": "Wednesday",
+        "StartTime": "11:00",
+        "EndTime": "12:00",
+        "Courses": [
+          "CHEM 101",
+          "CHEM 102"
+        ]
+      }
+    ]
+  },
+  {
+    "Tutor": "Molemo",
+    "Schedule": [
+      {
+        "Day": "Wednesday",
+        "StartTime": "12:00",
+        "EndTime": "14:00",
+        "Courses": [
+          "CHEM 101",
+          "CHEM 102",
+          "MATH 151",
+          "MATH 152",
+          "MATH 225",
+          "MATH 251"
+        ]
+      },
+      {
+        "Day": "Friday",
+        "StartTime": "13:00",
+        "EndTime": "14:00",
+        "Courses": [
+          "CHEM 101",
+          "CHEM 102",
+          "MATH 151",
+          "MATH 152",
+          "MATH 225",
+          "MATH 251"
+        ]
+      }
+    ]
+  },
+  {
+    "Tutor": "Shayan",
+    "Schedule": [
+      {
+        "Day": "Wednesday",
+        "StartTime": "14:00",
+        "EndTime": "16:30",
+        "Courses": [
+          "CHEM 101",
+          "CHEM 102",
+          "CHEM 351",
+          "MATH 151",
+          "MATH 152"
+        ]
+      },
+      {
+        "Day": "Thursday",
+        "StartTime": "12:00",
+        "EndTime": "13:00",
+        "Courses": [
+          "CHEM 101",
+          "CHEM 102",
+          "CHEM 351",
+          "MATH 151"
+        ]
+      },
+      {
+        "Day": "Friday",
+        "StartTime": "13:00",
+        "EndTime": "14:00",
+        "Courses": [
+          "CHEM 101",
+          "CHEM 102",
+          "CHEM 351",
+          "MATH 151",
+          "MATH 152"
+        ]
+      }
+    ]
+  },
+  {
+    "Tutor": "Zach",
+    "Schedule": [
+      {
+        "Day": "Wednesday",
+        "StartTime": "15:00",
+        "EndTime": "17:00",
+        "Courses": [
+          "CHEM 101",
+          "CHEM 102",
+          "MATH 151",
+          "MATH 152",
+          "PHYS 121"
+        ]
+      },
+      {
+        "Day": "Thursday",
+        "StartTime": "15:30",
+        "EndTime": "17:00",
+        "Courses": [
+          "CHEM 101",
+          "CHEM 102",
+          "MATH 151",
+          "MATH 152",
+          "PHYS 111",
+          "PHYS 121"
+        ]
+      },
+      {
+        "Day": "Friday",
+        "StartTime": "11:00",
+        "EndTime": "12:00",
+        "Courses": [
+          "CHEM 101",
+          "CHEM 102",
+          "MATH 151",
+          "MATH 152",
+          "PHYS 111",
+          "PHYS 121"
+        ]
+      },
+      {
+        "Day": "Thursday",
+        "StartTime": "15:00",
+        "EndTime": "17:00",
+        "Courses": [
+          "MATH 152"
+        ]
+      },
+      {
+        "Day": "Wednesday",
+        "StartTime": "15:30",
+        "EndTime": "17:00",
+        "Courses": [
+          "PHYS 111"
+        ]
+      }
+    ]
+  },
+  {
+    "Tutor": "Himani",
+    "Schedule": [
+      {
+        "Day": "Thursday",
+        "StartTime": "17:00",
+        "EndTime": "17:00",
+        "Courses": [
+          "CHEM 101",
+          "CHEM 102",
+          "MATH 151",
+          "PHYS 111"
+        ]
+      },
+      {
+        "Day": "Friday",
+        "StartTime": "12:00",
+        "EndTime": "13:00",
+        "Courses": [
+          "CHEM 101",
+          "CHEM 102",
+          "MATH 151",
+          "PHYS 111"
+        ]
+      }
+    ]
+  },
+  {
+    "Tutor": "Theo",
+    "Schedule": [
+      {
+        "Day": "Monday",
+        "StartTime": "12:00",
+        "EndTime": "14:00",
+        "Courses": [
+          "CHEM 102",
+          "CHEM 300",
+          "CHEM 352"
+        ]
+      }
+    ]
+  },
+  {
+    "Tutor": "Aya",
+    "Schedule": [
+      {
+        "Day": "Monday",
+        "StartTime": "14:00",
+        "EndTime": "16:00",
+        "Courses": [
+          "CHEM 351",
+          "CHEM 352"
+        ]
+      },
+      {
+        "Day": "Thursday",
+        "StartTime": "11:00",
+        "EndTime": "13:00",
+        "Courses": [
+          "CHEM 351",
+          "CHEM 352"
+        ]
+      }
+    ]
+  },
+  {
+    "Tutor": "Karen",
+    "Schedule": [
+      {
+        "Day": "Tuesday",
+        "StartTime": "16:00",
+        "EndTime": "17:00",
+        "Courses": [
+          "CHEM 351",
+          "CHEM 352",
+          "MATH 151",
+          "MATH 152",
+          "MATH 155",
+          "STAT 350"
+        ]
+      },
+      {
+        "Day": "Thursday",
+        "StartTime": "16:00",
+        "EndTime": "17:00",
+        "Courses": [
+          "CHEM 351",
+          "CHEM 352",
+          "MATH 151",
+          "MATH 152",
+          "MATH 155"
+        ]
+      },
+      {
+        "Day": "Friday",
+        "StartTime": "11:30",
+        "EndTime": "13:30",
+        "Courses": [
+          "CHEM 351",
+          "CHEM 352",
+          "MATH 151",
+          "MATH 152",
+          "MATH 155",
+          "STAT 350"
+        ]
+      },
+      {
+        "Day": "Thursday",
+        "StartTime": "17:00",
+        "EndTime": "17:00",
+        "Courses": [
+          "STAT 350"
+        ]
+      }
+    ]
+  },
+  {
+    "Tutor": "Shrikant",
+    "Schedule": [
+      {
+        "Day": "Monday",
+        "StartTime": "11:00",
+        "EndTime": "12:00",
+        "Courses": [
+          "CMPE 212",
+          "CMSC 201",
+          "CMSC 202",
+          "CMSC 203",
+          "CMSC 341"
+        ]
+      },
+      {
+        "Day": "Wednesday",
+        "StartTime": "11:00",
+        "EndTime": "12:00",
+        "Courses": [
+          "CMPE 212",
+          "CMSC 201",
+          "CMSC 202",
+          "CMSC 203",
+          "CMSC 341"
+        ]
+      },
+      {
+        "Day": "Thursday",
+        "StartTime": "17:00",
+        "EndTime": "17:00",
+        "Courses": [
+          "CMPE 212",
+          "CMSC 341"
+        ]
+      },
+      {
+        "Day": "Friday",
+        "StartTime": "11:00",
+        "EndTime": "14:00",
+        "Courses": [
+          "CMPE 212",
+          "CMSC 201",
+          "CMSC 202",
+          "CMSC 203",
+          "CMSC 341"
+        ]
+      },
+      {
+        "Day": "Thursday",
+        "StartTime": "17:00",
+        "EndTime": "18:00",
+        "Courses": [
+          "CMSC 201",
+          "CMSC 202",
+          "CMSC 203"
+        ]
+      },
+      {
+        "Day": "Monday",
+        "StartTime": "12:00",
+        "EndTime": "13:00",
+        "Courses": [
+          "MATH 151",
+          "MATH 152",
+          "PHYS 111",
+          "PHYS 121",
+          "PHYS 122"
+        ]
+      },
+      {
+        "Day": "Tuesday",
+        "StartTime": "13:00",
+        "EndTime": "14:00",
+        "Courses": [
+          "MATH 151",
+          "MATH 152",
+          "PHYS 111",
+          "PHYS 121",
+          "PHYS 122"
+        ]
+      },
+      {
+        "Day": "Thursday",
+        "StartTime": "15:00",
+        "EndTime": "16:00",
+        "Courses": [
+          "MATH 151",
+          "MATH 152",
+          "PHYS 111",
+          "PHYS 121",
+          "PHYS 122"
+        ]
+      },
+      {
+        "Day": "Tuesday",
+        "StartTime": "15:00",
+        "EndTime": "16:00",
+        "Courses": [
+          "PHYS 111",
+          "PHYS 121",
+          "PHYS 122"
+        ]
+      }
+    ]
+  },
+  {
+    "Tutor": "Javan",
+    "Schedule": [
+      {
+        "Day": "Monday",
+        "StartTime": "13:00",
+        "EndTime": "16:00",
+        "Courses": [
+          "CMPE 212",
+          "CMPE 306",
+          "CMSC 201",
+          "CMSC 202"
+        ]
+      },
+      {
+        "Day": "Wednesday",
+        "StartTime": "13:00",
+        "EndTime": "16:00",
+        "Courses": [
+          "CMPE 212",
+          "CMPE 306",
+          "CMSC 201",
+          "CMSC 202"
+        ]
+      }
+    ]
+  },
+  {
+    "Tutor": "Elvis",
+    "Schedule": [
+      {
+        "Day": "Monday",
+        "StartTime": "11:00",
+        "EndTime": "14:00",
+        "Courses": [
+          "CMPE 306",
+          "CMPE 314"
+        ]
+      },
+      {
+        "Day": "Tuesday",
+        "StartTime": "16:00",
+        "EndTime": "17:00",
+        "Courses": [
+          "CMPE 306",
+          "CMPE 314"
+        ]
+      },
+      {
+        "Day": "Wednesday",
+        "StartTime": "11:00",
+        "EndTime": "14:00",
+        "Courses": [
+          "CMPE 306",
+          "CMPE 314"
+        ]
+      }
+    ]
+  },
+  {
+    "Tutor": "Ian",
+    "Schedule": [
+      {
+        "Day": "Monday",
+        "StartTime": "11:00",
+        "EndTime": "12:30",
+        "Courses": [
+          "CMPE 314",
+          "CMSC 201",
+          "CMSC 202",
+          "CMSC 341",
+          "CMSC 411",
+          "CMSC 421",
+          "CMSC 426"
+        ]
+      },
+      {
+        "Day": "Tuesday",
+        "StartTime": "11:30",
+        "EndTime": "14:00",
+        "Courses": [
+          "CMPE 314",
+          "CMSC 201",
+          "CMSC 202",
+          "CMSC 341",
+          "CMSC 411",
+          "CMSC 421",
+          "CMSC 426"
+        ]
+      },
+      {
+        "Day": "Wednesday",
+        "StartTime": "11:00",
+        "EndTime": "12:30",
+        "Courses": [
+          "CMPE 314",
+          "CMSC 201",
+          "CMSC 202",
+          "CMSC 341",
+          "CMSC 411",
+          "CMSC 421",
+          "CMSC 426"
+        ]
+      },
+      {
+        "Day": "Thursday",
+        "StartTime": "11:30",
+        "EndTime": "14:00",
+        "Courses": [
+          "CMPE 314",
+          "CMSC 201",
+          "CMSC 202",
+          "CMSC 341",
+          "CMSC 411",
+          "CMSC 421",
+          "CMSC 426"
+        ]
+      }
+    ]
+  },
+  {
+    "Tutor": "Kodi",
+    "Schedule": [
+      {
+        "Day": "Monday",
+        "StartTime": "11:00",
+        "EndTime": "12:30",
+        "Courses": [
+          "CMSC 201",
+          "CMSC 202",
+          "CMSC 203"
+        ]
+      },
+      {
+        "Day": "Wednesday",
+        "StartTime": "11:00",
+        "EndTime": "12:30",
+        "Courses": [
+          "CMSC 201",
+          "CMSC 202",
+          "CMSC 203"
+        ]
+      },
+      {
+        "Day": "Wednesday",
+        "StartTime": "14:30",
+        "EndTime": "15:45",
+        "Courses": [
+          "CMSC 201",
+          "CMSC 202",
+          "CMSC 203"
+        ]
+      },
+      {
+        "Day": "Friday",
+        "StartTime": "11:00",
+        "EndTime": "14:00",
+        "Courses": [
+          "CMSC 201",
+          "CMSC 202",
+          "CMSC 203"
+        ]
+      },
+      {
+        "Day": "Tuesday",
+        "StartTime": "17:00",
+        "EndTime": "17:00",
+        "Courses": [
+          "MATH 151",
+          "MATH 225",
+          "PHYS 111",
+          "PHYS 112",
+          "PHYS 121",
+          "PHYS 122"
+        ]
+      },
+      {
+        "Day": "Thursday",
+        "StartTime": "13:00",
+        "EndTime": "14:00",
+        "Courses": [
+          "MATH 151",
+          "MATH 225",
+          "PHYS 111",
+          "PHYS 112",
+          "PHYS 121",
+          "PHYS 122"
+        ]
+      },
+      {
+        "Day": "Thursday",
+        "StartTime": "17:00",
+        "EndTime": "17:00",
+        "Courses": [
+          "MATH 151",
+          "MATH 225",
+          "PHYS 111",
+          "PHYS 112",
+          "PHYS 121",
+          "PHYS 122"
+        ]
+      }
+    ]
+  },
+  {
+    "Tutor": "Kaila",
+    "Schedule": [
+      {
+        "Day": "Monday",
+        "StartTime": "12:30",
+        "EndTime": "16:00",
+        "Courses": [
+          "CMSC 201",
+          "CMSC 202",
+          "CMSC 203",
+          "CMSC 313",
+          "CMSC 341",
+          "CMSC 471"
+        ]
+      },
+      {
+        "Day": "Wednesday",
+        "StartTime": "12:30",
+        "EndTime": "16:00",
+        "Courses": [
+          "CMSC 201",
+          "CMSC 202",
+          "CMSC 203",
+          "CMSC 313",
+          "CMSC 331",
+          "CMSC 341",
+          "CMSC 471"
+        ]
+      },
+      {
+        "Day": "Friday",
+        "StartTime": "11:00",
+        "EndTime": "14:00",
+        "Courses": [
+          "CMSC 201",
+          "CMSC 202",
+          "CMSC 203",
+          "CMSC 313",
+          "CMSC 331",
+          "CMSC 341",
+          "CMSC 471"
+        ]
+      }
+    ]
+  },
+  {
+    "Tutor": "Sina",
+    "Schedule": [
+      {
+        "Day": "Monday",
+        "StartTime": "14:30",
+        "EndTime": "17:00",
+        "Courses": [
+          "CMSC 201",
+          "CMSC 202",
+          "CMSC 341",
+          "CMSC 411",
+          "CMSC 421",
+          "CMSC 426",
+          "CMSC 441"
+        ]
+      },
+      {
+        "Day": "Tuesday",
+        "StartTime": "12:30",
+        "EndTime": "17:00",
+        "Courses": [
+          "CMSC 201",
+          "CMSC 202",
+          "CMSC 341",
+          "CMSC 411",
+          "CMSC 421",
+          "CMSC 426",
+          "CMSC 441"
+        ]
+      },
+      {
+        "Day": "Thursday",
+        "StartTime": "12:30",
+        "EndTime": "17:00",
+        "Courses": [
+          "CMSC 201",
+          "CMSC 202",
+          "CMSC 341",
+          "CMSC 411",
+          "CMSC 421",
+          "CMSC 426",
+          "CMSC 441"
+        ]
+      },
+      {
+        "Day": "Friday",
+        "StartTime": "11:00",
+        "EndTime": "14:00",
+        "Courses": [
+          "CMSC 201",
+          "CMSC 202",
+          "CMSC 341",
+          "CMSC 411",
+          "CMSC 421",
+          "CMSC 426",
+          "CMSC 441"
+        ]
+      }
+    ]
+  },
+  {
+    "Tutor": "Lily",
+    "Schedule": [
+      {
+        "Day": "Monday",
+        "StartTime": "15:00",
+        "EndTime": "17:00",
+        "Courses": [
+          "CMSC 201",
+          "CMSC 202"
+        ]
+      },
+      {
+        "Day": "Wednesday",
+        "StartTime": "15:00",
+        "EndTime": "16:00",
+        "Courses": [
+          "CMSC 201",
+          "CMSC 202"
+        ]
+      }
+    ]
+  },
+  {
+    "Tutor": "Max A.",
+    "Schedule": [
+      {
+        "Day": "Tuesday",
+        "StartTime": "11:00",
+        "EndTime": "14:15",
+        "Courses": [
+          "CMSC 201",
+          "CMSC 202",
+          "CMSC 203",
+          "CMSC 331",
+          "CMSC 341"
+        ]
+      },
+      {
+        "Day": "Thursday",
+        "StartTime": "11:00",
+        "EndTime": "14:15",
+        "Courses": [
+          "CMSC 201",
+          "CMSC 202",
+          "CMSC 203",
+          "CMSC 331",
+          "CMSC 341"
+        ]
+      },
+      {
+        "Day": "Thursday",
+        "StartTime": "16:00",
+        "EndTime": "17:00",
+        "Courses": [
+          "CMSC 201",
+          "CMSC 202",
+          "CMSC 203",
+          "CMSC 341"
+        ]
+      }
+    ]
+  },
+  {
+    "Tutor": "Kyle",
+    "Schedule": [
+      {
+        "Day": "Tuesday",
+        "StartTime": "11:00",
+        "EndTime": "12:30",
+        "Courses": [
+          "CMSC 201",
+          "CMSC 202",
+          "CMSC 341"
+        ]
+      },
+      {
+        "Day": "Tuesday",
+        "StartTime": "17:00",
+        "EndTime": "17:00",
+        "Courses": [
+          "CMSC 201",
+          "CMSC 341"
+        ]
+      },
+      {
+        "Day": "Thursday",
+        "StartTime": "11:00",
+        "EndTime": "12:30",
+        "Courses": [
+          "CMSC 201",
+          "CMSC 202",
+          "CMSC 341"
+        ]
+      },
+      {
+        "Day": "Tuesday",
+        "StartTime": "17:00",
+        "EndTime": "18:00",
+        "Courses": [
+          "CMSC 202"
+        ]
+      }
+    ]
+  },
+  {
+    "Tutor": "Max M.",
+    "Schedule": [
+      {
+        "Day": "Monday",
+        "StartTime": "12:00",
+        "EndTime": "15:00",
+        "Courses": [
+          "CMSC 203",
+          "CMSC 313",
+          "CMSC 421"
+        ]
+      },
+      {
+        "Day": "Wednesday",
+        "StartTime": "12:30",
+        "EndTime": "15:00",
+        "Courses": [
+          "CMSC 203",
+          "CMSC 313",
+          "CMSC 421"
+        ]
+      }
+    ]
+  },
+  {
+    "Tutor": "Adamo",
+    "Schedule": [
+      {
+        "Day": "Monday",
+        "StartTime": "14:30",
+        "EndTime": "16:00",
+        "Courses": [
+          "ECON 101",
+          "ECON 102",
+          "MATH 155"
+        ]
+      },
+      {
+        "Day": "Thursday",
+        "StartTime": "16:00",
+        "EndTime": "17:00",
+        "Courses": [
+          "ECON 101",
+          "ECON 102",
+          "MATH 155"
+        ]
+      }
+    ]
+  },
+  {
+    "Tutor": "Bridget",
+    "Schedule": [
+      {
+        "Day": "Tuesday",
+        "StartTime": "12:00",
+        "EndTime": "15:00",
+        "Courses": [
+          "GES 102",
+          "GES 110",
+          "GES 120",
+          "GES 286",
+          "GES 386",
+          "GES 488"
+        ]
+      },
+      {
+        "Day": "Thursday",
+        "StartTime": "13:00",
+        "EndTime": "15:00",
+        "Courses": [
+          "GES 102",
+          "GES 110",
+          "GES 120",
+          "GES 286",
+          "GES 386",
+          "GES 488"
+        ]
+      }
+    ]
+  },
+  {
+    "Tutor": "Sophia",
+    "Schedule": [
+      {
+        "Day": "Tuesday",
+        "StartTime": "12:00",
+        "EndTime": "13:00",
+        "Courses": [
+          "IS 147",
+          "IS 247",
+          "IS 300",
+          "IS 310"
+        ]
+      },
+      {
+        "Day": "Tuesday",
+        "StartTime": "16:00",
+        "EndTime": "17:00",
+        "Courses": [
+          "IS 147",
+          "IS 247",
+          "IS 300",
+          "IS 310"
+        ]
+      },
+      {
+        "Day": "Thursday",
+        "StartTime": "12:00",
+        "EndTime": "13:00",
+        "Courses": [
+          "IS 147",
+          "IS 247",
+          "IS 300",
+          "IS 310"
+        ]
+      },
+      {
+        "Day": "Thursday",
+        "StartTime": "16:00",
+        "EndTime": "17:00",
+        "Courses": [
+          "IS 147",
+          "IS 247",
+          "IS 300",
+          "IS 310"
+        ]
+      }
+    ]
+  },
+  {
+    "Tutor": "Akanksha",
+    "Schedule": [
+      {
+        "Day": "Monday",
+        "StartTime": "11:00",
+        "EndTime": "12:00",
+        "Courses": [
+          "MATH 106",
+          "MATH 150",
+          "MATH 151",
+          "MATH 152",
+          "MATH 221",
+          "MATH 251",
+          "MATH 300",
+          "STAT 355"
+        ]
+      },
+      {
+        "Day": "Tuesday",
+        "StartTime": "15:00",
+        "EndTime": "16:30",
+        "Courses": [
+          "MATH 106",
+          "MATH 150",
+          "MATH 151",
+          "MATH 152",
+          "MATH 221",
+          "MATH 251",
+          "MATH 300",
+          "STAT 355"
+        ]
+      },
+      {
+        "Day": "Wednesday",
+        "StartTime": "13:00",
+        "EndTime": "14:00",
+        "Courses": [
+          "MATH 106",
+          "MATH 150",
+          "MATH 151",
+          "MATH 152",
+          "MATH 221",
+          "MATH 251",
+          "MATH 300",
+          "STAT 355"
+        ]
+      },
+      {
+        "Day": "Thursday",
+        "StartTime": "15:00",
+        "EndTime": "17:00",
+        "Courses": [
+          "MATH 106",
+          "MATH 150",
+          "MATH 151",
+          "MATH 152",
+          "MATH 221",
+          "MATH 251",
+          "MATH 300",
+          "STAT 355"
+        ]
+      }
+    ]
+  },
+  {
+    "Tutor": "Michael",
+    "Schedule": [
+      {
+        "Day": "Monday",
+        "StartTime": "11:30",
+        "EndTime": "12:45",
+        "Courses": [
+          "MATH 106",
+          "MATH 150",
+          "MATH 151",
+          "MATH 152",
+          "MATH 221",
+          "MATH 225",
+          "MATH 251"
+        ]
+      },
+      {
+        "Day": "Tuesday",
+        "StartTime": "11:00",
+        "EndTime": "12:30",
+        "Courses": [
+          "MATH 106",
+          "MATH 150",
+          "MATH 151",
+          "MATH 152",
+          "MATH 221",
+          "MATH 225",
+          "MATH 251"
+        ]
+      },
+      {
+        "Day": "Wednesday",
+        "StartTime": "11:15",
+        "EndTime": "12:45",
+        "Courses": [
+          "MATH 106",
+          "MATH 150",
+          "MATH 151",
+          "MATH 152",
+          "MATH 221",
+          "MATH 225",
+          "MATH 251"
+        ]
+      }
+    ]
+  },
+  {
+    "Tutor": "Ini",
+    "Schedule": [
+      {
+        "Day": "Monday",
+        "StartTime": "13:00",
+        "EndTime": "14:30",
+        "Courses": [
+          "MATH 106",
+          "MATH 155",
+          "SCI 100"
+        ]
+      },
+      {
+        "Day": "Thursday",
+        "StartTime": "13:30",
+        "EndTime": "14:30",
+        "Courses": [
+          "MATH 106",
+          "MATH 155",
+          "SCI 100"
+        ]
+      }
+    ]
+  },
+  {
+    "Tutor": "Abe",
+    "Schedule": [
+      {
+        "Day": "Monday",
+        "StartTime": "14:30",
+        "EndTime": "15:30",
+        "Courses": [
+          "MATH 106",
+          "MATH 151",
+          "MATH 152",
+          "MATH 221",
+          "MATH 225",
+          "PHYS 122"
+        ]
+      },
+      {
+        "Day": "Tuesday",
+        "StartTime": "14:00",
+        "EndTime": "15:00",
+        "Courses": [
+          "MATH 106",
+          "MATH 151",
+          "MATH 152",
+          "MATH 221",
+          "MATH 225",
+          "PHYS 122"
+        ]
+      },
+      {
+        "Day": "Wednesday",
+        "StartTime": "14:30",
+        "EndTime": "15:30",
+        "Courses": [
+          "MATH 106",
+          "MATH 151",
+          "MATH 152",
+          "MATH 221",
+          "MATH 225",
+          "PHYS 122"
+        ]
+      }
+    ]
+  },
+  {
+    "Tutor": "Molly",
+    "Schedule": [
+      {
+        "Day": "Monday",
+        "StartTime": "16:00",
+        "EndTime": "17:00",
+        "Courses": [
+          "MATH 106",
+          "MATH 151",
+          "MATH 152",
+          "MATH 221",
+          "MATH 251"
+        ]
+      },
+      {
+        "Day": "Wednesday",
+        "StartTime": "16:00",
+        "EndTime": "17:00",
+        "Courses": [
+          "MATH 106",
+          "MATH 151",
+          "MATH 152",
+          "MATH 221",
+          "MATH 251"
+        ]
+      }
+    ]
+  },
+  {
+    "Tutor": "Manav",
+    "Schedule": [
+      {
+        "Day": "Tuesday",
+        "StartTime": "11:30",
+        "EndTime": "13:30",
+        "Courses": [
+          "MATH 106",
+          "MATH 150",
+          "MATH 151",
+          "MATH 155"
+        ]
+      },
+      {
+        "Day": "Wednesday",
+        "StartTime": "11:30",
+        "EndTime": "13:00",
+        "Courses": [
+          "MATH 106",
+          "MATH 150",
+          "MATH 151",
+          "MATH 155"
+        ]
+      },
+      {
+        "Day": "Thursday",
+        "StartTime": "11:30",
+        "EndTime": "12:30",
+        "Courses": [
+          "MATH 106",
+          "MATH 150",
+          "MATH 151",
+          "MATH 155"
+        ]
+      }
+    ]
+  },
+  {
+    "Tutor": "O’Tega",
+    "Schedule": [
+      {
+        "Day": "Monday",
+        "StartTime": "12:30",
+        "EndTime": "14:00",
+        "Courses": [
+          "MATH 150",
+          "MATH 151",
+          "MATH 152",
+          "PHYS 111",
+          "PHYS 112",
+          "PHYS 121",
+          "PHYS 122",
+          "STAT 121"
+        ]
+      },
+      {
+        "Day": "Monday",
+        "StartTime": "16:00",
+        "EndTime": "17:00",
+        "Courses": [
+          "MATH 150",
+          "MATH 151",
+          "MATH 152",
+          "PHYS 111",
+          "PHYS 112",
+          "PHYS 121",
+          "PHYS 122",
+          "STAT 121"
+        ]
+      }
+    ]
+  },
+  {
+    "Tutor": "Rania",
+    "Schedule": [
+      {
+        "Day": "Monday",
+        "StartTime": "11:00",
+        "EndTime": "12:00",
+        "Courses": [
+          "MATH 151",
+          "MATH 152",
+          "MATH 251"
+        ]
+      },
+      {
+        "Day": "Monday",
+        "StartTime": "16:00",
+        "EndTime": "17:00",
+        "Courses": [
+          "MATH 151",
+          "MATH 152",
+          "MATH 251"
+        ]
+      }
+    ]
+  },
+  {
+    "Tutor": "Dani",
+    "Schedule": [
+      {
+        "Day": "Monday",
+        "StartTime": "14:00",
+        "EndTime": "16:00",
+        "Courses": [
+          "MATH 151",
+          "PHYS 121",
+          "STAT 350",
+          "STAT 351",
+          "STAT 355"
+        ]
+      },
+      {
+        "Day": "Wednesday",
+        "StartTime": "14:00",
+        "EndTime": "16:00",
+        "Courses": [
+          "MATH 151",
+          "PHYS 121",
+          "STAT 350",
+          "STAT 351",
+          "STAT 355"
+        ]
+      }
+    ]
+  },
+  {
+    "Tutor": "Joseph",
+    "Schedule": [
+      {
+        "Day": "Wednesday",
+        "StartTime": "12:45",
+        "EndTime": "14:30",
+        "Courses": [
+          "STAT 121"
+        ]
+      }
+    ]
+  }
+]
