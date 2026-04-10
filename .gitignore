@@ -1,0 +1,12 @@
+# Python
+__pycache__/
+*.py[cod]
+venv/
+.env
+
+#dev aid scripts
+dev-scripts/
+
+# database  on prod
+
+newDockerSetup/target/

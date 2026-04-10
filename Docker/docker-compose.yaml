@@ -1,0 +1,11 @@
+services:
+  web:
+    build: .
+    container_name: JSW-Tutoring-Webserver_DB
+    ports:
+      - "4413:4413"
+    volumes:
+      - .:/app  # Maps current dir to /app for live-reloading
+    environment:
+      - FLASK_ENV=development
+      - FLASK_DEBUG=1
