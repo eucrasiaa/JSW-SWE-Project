@@ -4,6 +4,10 @@ from datetime import datetime
 from flask import Flask, render_template, request, Response, jsonify
 from gevent.queue import Queue
 
+
+######################
+### IMPORTANT NOTE: LOTS OF QUERIES ARE FIXED TIMES+DATES, ENSURE THEY ARE DYNAMIC ON REAL SYSTEM!!
+######################
 app = Flask(__name__)
 
 # ok we'll pass upates via server side events, we have probably not heacvy user traffic so its less insane than a websocket ig?
@@ -25,7 +29,8 @@ def get_db_connection():
 def get_todays_shifts():
     # would use datetime.now().strftime('%A')
     day_of_week = 'Monday' 
-    
+    # day_of_week = datetime.now().strftime('%A')
+
     conn = get_db_connection()
     shifts = conn.execute(
         "SELECT * FROM vw_base_weekly_schedule WHERE day_of_week = ?", 

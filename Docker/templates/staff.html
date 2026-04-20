@@ -36,7 +36,7 @@
             const tbody = document.getElementById('staff-table-body');
             tbody.innerHTML = '';
 
-            const statuses = ['Scheduled', 'Arrived', 'Late', 'Canceled', 'Full'];
+            const statuses = ['Scheduled', 'Arrived', 'Late', 'Canceled', 'Full','Custom'];
 
             shifts.forEach(shift => {
                 const tr = document.createElement('tr');
@@ -57,13 +57,26 @@
                 tbody.appendChild(tr);
             });
         }
+
         async function updateStatus(shiftId, newStatus) {
-            await fetch('/api/update_live_status', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ shift_id: shiftId, status: newStatus })
-            });
-            console.log(`Updated shift ${shiftId} to ${newStatus}`);
+          let finalStatus = newStatus;
+
+          if (newStatus === "Custom") {
+            const customValue = prompt("Enter custom status:");
+
+            if (!customValue) {
+              loadStaffDashboard();
+              return;
+            }
+            finalStatus = customValue;
+          }
+
+          await fetch('/api/update_live_status', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ shift_id: shiftId, status: finalStatus })
+          });
+          console.log(`Updated shift ${shiftId} to ${finalStatus}`);
         }
         loadStaffDashboard();
     </script>

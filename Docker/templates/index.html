@@ -3362,6 +3362,50 @@
   .status-late { border-color: orange; }
   .status-canceled { border-color: red; opacity: 0.6; }
   .status-full { border-color: purple; }
+  
+
+span[class^="status-"] {
+    border: 1px solid gray;
+    padding: 0px 4px;
+    background-color: gray;
+    color: white;
+    font-size: 0.9em;
+    border-radius: 3px;
+    margin-right: 5px;
+    display: inline-block;
+font-family: monospace; 
+}
+
+span.status-scheduled {
+    border-color: #666;
+    background-color: #666;
+}
+span.status-scheduled::after {content: "Scheduled";}
+
+
+span.status-arrived  {
+    border-color: green;
+    background-color: green;
+}
+span.status-arrived::after  { content: "Arrived"; }
+
+span.status-late  {
+    border-color: orange;
+    background-color: orange;
+}
+span.status-late::after  { content: "Late!"; }
+
+span.status-canceled  {
+    border-color: red;
+    background-color: red;
+}
+span.status-canceled::after  { content: "Canceled!"; }
+
+span.status-full  {
+    border-color: purple;
+    background-color: purple;
+}
+span.status-full::after { content: "Full"; }
 </style>
   <style type="text/css">:root, :host {
   --fa-font-solid: normal 900 1em/1 "Font Awesome 7 Pro";
@@ -9823,13 +9867,57 @@ Noon – 1:00 p.m. – Shakib<br>
   };
 
   searchInput.addEventListener('input', renderShifts);
+  function sortByTime(arr,key){
+    return arr.sort(function(a,b){
+      var x = a[key].split(":").join("");
+      var y = b[key].split(":").join("");
+      return ((x<y)?-1 : ((x>y) ?1:0));
+    });
+  };
+
+  function cullatHour(arr,HourMin="0"){
+    let now;
+
+    if (HourMin !== "0") {
+      now = new Date(Date.parse(HourMin)).getTime();
+      console.log(now,HourMin);
+    } else {
+      now = new Date().getTime();
+    }
+
+
+    const twoHours = 2 * 60 * 60 * 1000;
+
+    const rangeStartObj = new Date(Math.max(now - twoHours, new Date().setHours(0,0,0,0)));
+    const rangeEndObj = new Date(now + twoHours);
+
+    const formatHHMM = (date) => {
+      const h = date.getHours().toString().padStart(2, '0');
+      const m = date.getMinutes().toString().padStart(2, '0');
+      return parseInt(h + m);
+    };
+
+    const rangeStart = formatHHMM(rangeStartObj);
+    const rangeEnd = formatHHMM(rangeEndObj);
+
+    const filteredData = arr.filter(item => {
+      const itemStart = parseInt(item.start.replace(":", ""));
+      const itemEnd = parseInt(item.end.replace(":", ""));
+      console.log(item, itemStart,itemEnd, rangeStart,rangeEnd);
+      return itemStart <= rangeEnd && itemEnd >= rangeStart;
+    });
+
+    return filteredData;
+  };
 
   function renderShifts() {
     const query = searchInput.value.toLowerCase();
     container.innerHTML = ''; 
 
     const filtered = currentShifts.filter(shift => {
+
       const coursesStr = shift.courses ? shift.courses.toLowerCase() : "";
+      if (query.length === 0) {return false};
       return coursesStr.includes(query) || shift.tutor.toLowerCase().includes(query);
     });
 
@@ -9846,4 +9934,5 @@ Noon – 1:00 p.m. – Shakib<br>
     });
   }
 </script>
-</body></html>
+</body>
+</html>
