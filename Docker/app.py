@@ -52,6 +52,55 @@ def get_todays_shifts():
         })
     return result
 
+
+def insert_cancelation(session_id):
+    conn = get_db_connection()
+    shifts = conn.execute(
+        'SELECT shift_id FROM weekly_shift WHERE session_id = ?', 
+        (session_id,)
+    ).fetchall()
+    for shift in shifts:
+        conn.execute(
+            '''INSERT INTO exceptions (shift_id, target_date, status) 
+               VALUES (?, ?, ?)''',
+            (shift['shift_id'], target_date, 'canceled')
+        )
+    
+    conn.commit()
+    conn.close()
+
+@app.route('/api/shifts')
+def get_shifts_by_date():
+    target_date = request.args.get('date')
+    conn = get_db_connection()
+    
+    query = '''
+        SELECT 
+            s.shift_id, 
+            s.start_time, 
+            s.end_time, 
+            s.tutor_name, 
+            s.courses_taught,
+            e.status AS exception_status
+        FROM vw_base_weekly_schedule s
+        LEFT JOIN exceptions e ON s.shift_id = e.shift_id 
+        WHERE day_of_week = ? 
+    '''
+    shifts = conn.execute(query, (target_date,)).fetchall()
+    conn.close()
+    result = []
+    for shift in shifts:
+        s = dict(shift)
+        result.append({
+            'shift_id': s['shift_id'],
+            'tutor': s['tutor_name'],
+            'start': s['start_time'],
+            'end': s['end_time'],
+            'courses': s['courses_taught'],
+        })
+    return result
+    
+
 def notify_clients():
     data = get_todays_shifts()
     for q in clients:
@@ -64,6 +113,10 @@ def index():
 @app.route('/staff')
 def staff():
     return render_template('staff.html')
+
+@app.route('/staff-cancel')
+def staff_cancel():
+    return render_template('staff-cancel.html')
 
 @app.route('/api/shifts/today')
 def api_shifts_today():

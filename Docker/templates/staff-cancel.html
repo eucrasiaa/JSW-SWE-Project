@@ -3,18 +3,27 @@
 <!-- placeholder slop for testing LOL -->
 <head>
     <meta charset="UTF-8">
-    <title>Staff Dashboard</title>
+    <title>Staff Dashboard - Cancellations</title>
     <style>
         table { width: 100%; border-collapse: collapse; margin-top: 20px; }
         th, td { border: 1px solid #ccc; padding: 10px; text-align: left; }
         th { background: #eee; }
+        .datesel {display:flex;border: 2px solid black;align-content: center;justify-content: center;align-items: center;width: 50%; gap:10%;}
     </style>
 </head>
-<body>
+<body style="
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;">
 
-    <h1>Staff Dashboard - Live Status</h1>
-    <p>Change statuses below.</p>
-
+    <h1>Staff Dashboard - Cancellations</h1>
+    <p>Upcoming Cancelations Input Here</p>
+<div style="" class="datesel"><div><p>Select Date To Edit</p></div><div style="
+    justify-content: flex-start;
+">
+<input id="cancel_date_sel" type="date">
+</div></div>
     <table id="staff-live-table">
         <thead>
             <tr>
@@ -29,29 +38,59 @@
     </table>
 
     <script>
-        async function loadStaffDashboard() {
+
+document.getElementById('cancel_date_sel').addEventListener('change', (e) => {
+    const dateValue = e.target.value; 
+    
+    if (!dateValue) return; 
+
+    const date = new Date(dateValue);
+    const dayIndex = date.getUTCDay(); 
+    const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+    const dayName = days[dayIndex];
+    loadStaffDashboard(dayName);
+});
+
+async function loadStaffDashboard(selectedDate) {
+    //fallback to just today?
+    const date = selectedDate || new Date().toISOString().split('T')[0];
+    const response = await fetch(`/api/shifts?date=${date}`);
+    const shifts = await response.json();
+    
+    const tbody = document.getElementById('staff-table-body');
+    tbody.innerHTML = '';
+    shifts.forEach(shift => {
+        const tr = document.createElement('tr');
+        // Use the status from the exception table if it exists, otherwise default to 'Scheduled'
+
+        tr.innerHTML = `
+            <td>${shift.start} - ${shift.end}</td>
+            <td>${shift.tutor}</td>
+            <td>${shift.courses || "None"}</td>
+            <td>
+            </td>
+        `;
+        tbody.appendChild(tr);
+    });
+}
+
+
+        async function loadStaffDashboardalt() {
+          return;
             const response = await fetch('/api/shifts/today');
             const shifts = await response.json();
             
             const tbody = document.getElementById('staff-table-body');
             tbody.innerHTML = '';
 
-            const statuses = ['Scheduled', 'Arrived', 'Late', 'Canceled', 'Full','Custom'];
 
             shifts.forEach(shift => {
                 const tr = document.createElement('tr');
-                let optionsHtml = statuses.map(s => 
-                    `<option value="${s}" ${shift.status === s ? 'selected' : ''}>${s}</option>`
-                ).join('');
-
                 tr.innerHTML = `
-                    <td>${shift.start} - ${shift.end}</td>
+                    <td>${shift.start_time} - ${shift.end_time}</td>
                     <td>${shift.tutor}</td>
                     <td>${shift.courses || "None"}</td>
                     <td>
-                        <select onchange="updateStatus('${shift.shift_id}', this.value)">
-                            ${optionsHtml}
-                        </select>
                     </td>
                 `;
                 tbody.appendChild(tr);
@@ -82,3 +121,4 @@
     </script>
 </body>
 </html>
+
