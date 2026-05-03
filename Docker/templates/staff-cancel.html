@@ -5,9 +5,14 @@
     <meta charset="UTF-8">
     <title>Staff Dashboard - Cancellations</title>
     <style>
+      :root{
+        --no-changes= "#28a745";
+        --change=""
+      }
         table { width: 100%; border-collapse: collapse; margin-top: 20px; }
         th, td { border: 1px solid #ccc; padding: 10px; text-align: left; }
         th { background: #eee; }
+        .remove-button {margin-left:40px}
         .datesel {display:flex;border: 2px solid black;align-content: center;justify-content: center;align-items: center;width: 50%; gap:10%;}
     </style>
 </head>
@@ -25,12 +30,12 @@
         Submit 0 Changes
     </button>
 
-    <button onclick="toggleVisualizer('pending')" style="padding: 10px;">View Local Queue</button>
-    <button onclick="toggleVisualizer('history')" style="padding: 10px;">View All History</button>
+    <button onclick="toggleVisualizer('pending')" style="padding: 10px;">View Pending Changes</button>
+    <button onclick="toggleVisualizer('allcancel')" style="padding: 10px;">View All Cancelations</button>
 </div>
 
 <div id="visualizer-container" style="width: 80%; margin-top: 20px; padding: 15px; border: 1px dashed #666; background: #f9f9f9;">
-    <h3 id="viz-title">Local Queue</h3>
+    <h3 id="viz-title">Pending Changes</h3>
     <div id="viz-content">No pending changes.</div>
 </div>
 <div style="" class="datesel"><div><p>Select Date To Edit</p></div><div style="
@@ -54,44 +59,47 @@
     <script>
 
 
-let pendingChanges = {}; 
-let currentSelectedDate = "";
+      let pendingChanges = {}; 
+      let currentSelectedDate = "";
 
+      let loaded = {};
+      // todo this is such a terrible way to do it but also its working. so maybe 
+      // make more boolean states for tracking buttttt who care
 
-document.getElementById('cancel_date_sel').addEventListener('change', (e) => {
-    //const dateValue = e.target.value; 
-    console.log("pressed!") 
-    dateValue = e.target.value; 
-    if (!dateValue) return;
-    currentSelectedDate = dateValue;
-    const date = new Date(dateValue);
-    const dayIndex = date.getUTCDay(); 
-    const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-    const dayName = days[dayIndex];
-    
-    pendingChanges = {}; 
-    loadStaffDashboard(currentSelectedDate, dayName);
-});
+      document.getElementById('cancel_date_sel').addEventListener('change', (e) => {
+        //const dateValue = e.target.value; 
+        console.log("pressed!") 
+        dateValue = e.target.value; 
+        if (!dateValue) return;
+        currentSelectedDate = dateValue;
+        const date = new Date(dateValue);
+        const dayIndex = date.getUTCDay(); 
+        const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+        const dayName = days[dayIndex];
 
-async function loadStaffDashboard(currentSelectedDate, dayName) {
-    //fallback to just today?
-    const date = dayName || new Date().toISOString().split('T')[0];
-    // was previously just doing Day of week. for some reason. pass full date!!!!
-    const response = await fetch(`/api/shifts?date=${currentSelectedDate}&day=${dayName}`);
-    const shifts = await response.json();
-    
-    const tbody = document.getElementById('staff-table-body');
-    tbody.innerHTML = '';
-    shifts.forEach(shift => {
-        const tr = document.createElement('tr');
-        // use the status from the exception table if it exists, otherwise default to 'scheduled'
+        //pendingChanges = {}; 
+        loadStaffDashboard(currentSelectedDate, dayName);
+      });
 
-        const currentStatus = pendingChanges[shift.shift_id] || shift.exception_status || 'active';
-        tr.innerHTML = `
+      async function loadStaffDashboard(currentSelectedDate, dayName) {
+        //fallback to just today?
+        const date = dayName || new Date().toISOString().split('T')[0];
+        // was previously just doing Day of week. for some reason. pass full date!!!!
+        const response = await fetch(`/api/shifts?date=${currentSelectedDate}&day=${dayName}`);
+        const shifts = await response.json();
+        loaded = shifts;
+        const tbody = document.getElementById('staff-table-body');
+        tbody.innerHTML = '';
+        shifts.forEach(shift => {
+          const tr = document.createElement('tr');
+          // use the status from the exception table if it exists, otherwise default to 'scheduled'
+
+          const currentStatus = pendingChanges[shift.shift_id] || shift.exception_status || 'active';
+          tr.innerHTML = `
             <td>${shift.start_time} - ${shift.end_time}</td>
             <td>${shift.tutor_name}</td>
             <td>${shift.courses_taught || "None"}</td>
-            <td>
+            <td id="radios-${shift.shift_id}">
                 <label>
                     <input type="radio" name="status-${shift.shift_id}" value="active" 
                         ${currentStatus === 'active' ? 'checked' : ''} 
@@ -106,156 +114,201 @@ async function loadStaffDashboard(currentSelectedDate, dayName) {
                 </label>
             </td>
         `;
-        tbody.appendChild(tr);
-        tbody.appendChild(tr);
-    });
-}
+          tbody.appendChild(tr);
+          tbody.appendChild(tr);
+        });
+      }
 
-function updateQueueUI() {
-    const btn = document.getElementById('submit-btn');
-    const count = Object.keys(pendingChanges).length;
-    
-    btn.innerText = `Submit ${count} Changes`;
-    btn.disabled = count === 0;
-    btn.style.opacity = count === 0 ? "0.5" : "1";
+      function updateQueueUI() {
+        const btn = document.getElementById('submit-btn');
+        const count = Object.keys(pendingChanges).length;
 
-    if (document.getElementById('viz-title').innerText === "Local Queue") {
-        renderPendingList();
-    }
-}
+        btn.innerText = `Submit ${count} Changes`;
+        btn.disabled = count === 0;
+        btn.style.opacity = count === 0 ? "0.5" : "1";
 
-async function toggleVisualizer(mode) {
-    const title = document.getElementById('viz-title');
-    const content = document.getElementById('viz-content');
+        // ew.
+        if (document.getElementById('viz-title').innerText === "Pending Changes") {
+          renderPendingList();
+        }
+      }
 
-    if (mode === 'pending') {
-        title.innerText = "Local Queue";
-        console.log("Hi");
-        renderPendingList();
-    } else {
-        title.innerText = "All Recorded Exceptions (API)";
-        content.innerHTML = "Loading history...";
-        
-        try {
+      async function toggleVisualizer(mode) {
+        const title = document.getElementById('viz-title');
+        const content = document.getElementById('viz-content');
+
+        if (mode === 'pending') {
+          title.innerText = "Pending Changes";
+          console.log("Hi");
+          renderPendingList();
+        } else {
+          title.innerText = "All Cancellations" ;
+          content.innerHTML = "Loading...";
+
+          try {
             const resp = await fetch('/api/exceptions/all');
             const data = await resp.json();
-            
+
             if (data.length === 0) {
-                content.innerHTML = "No exceptions found in database.";
-                return;
+              content.innerHTML = "No cancellations found in database!";
+              return;
             }
 
             let html = `<table><tr><th>Date</th><th>Tutor</th><th>Status</th></tr>`;
             data.forEach(ex => {
-                html += `<tr><td>${ex.target_date}</td><td>${ex.tutor_name}</td><td>${ex.status}</td></tr>`;
+              html += `<tr><td>${ex.target_date}</td><td>${ex.tutor_name}</td><td>${ex.status}</td></tr>`;
             });
             content.innerHTML = html + `</table>`;
-        } catch (e) {
-            content.innerHTML = "Error loading history.";
+          } catch (e) {
+            content.innerHTML = "Error loading cancellations.";
+          }
         }
-    }
-}
+      }
 
-function renderPendingList() {
-    const content = document.getElementById('viz-content');
-    const keys = Object.keys(pendingChanges);
-    
-    if (keys.length === 0) {
-        content.innerHTML = "No changes for this session.";
-        return;
-    }
+      function renderPendingList() {
+        const content = document.getElementById('viz-content');
+        const keys = Object.keys(pendingChanges);
 
-    let list = "<ul>";
-    for (const [id, status] of Object.entries(pendingChanges)) {
-        list += `<li>Shift ID <strong>${id}</strong> set to <strong>${status}</strong></li>`;
-    }
-    content.innerHTML = list + "</ul>";
-}
+        if (keys.length === 0) {
+          content.innerHTML = "No changes for this session.";
+          return;
+        }
+        let list = "<ul>";
+        for (const [id, status] of Object.entries(pendingChanges)) {
+          const foundShift = loaded.find(item => item.shift_id == id);
+          console.log(foundShift);
+          let nname = `delete pending change for ${id}?`
+          if (foundShift){
+            nname= foundShift.tutor_name+"'s shift on " + dateValue + "  (" + foundShift.start_time+"-"+foundShift.end_time+") "
+            list += `<li><strong>${nname}</strong> set to <strong>${status}</strong>`;
+          }
+          else{
+            list += `<li>Shift ID <strong>${id}</strong> set to <strong>${status}</strong>`;
+          }
+          let safeName = nname.replace(/'/g, "\\'"); 
+          let confirmMsg = `remove ${safeName}?`;
+          list+=`<button class="remove-button" onclick="popfromqueue('${id}', '${confirmMsg}')">&times</button></li>`
 
-function queueStatusChange(shiftId, status) {
-    pendingChanges[shiftId] = status;
-  updateQueueUI();
-    console.log("pending:", pendingChanges);
-}
 
-// prompt for confirmation, push to api!
-async function updateCancellations() {
-    const changesCount = Object.keys(pendingChanges).length;
-    if (changesCount === 0) return alert("No updates queued...");
+        }
 
-    const confirmed = confirm(`updating ${changesCount} shifts on ${currentSelectedDate}?`);
-    
-    if (confirmed) {
-        try {
+        content.innerHTML = list + "</ul>";
+      }
+
+      function popfromqueue(id, textContent){
+        const confirmed = confirm(textContent);
+        if (confirmed) {
+          delete pendingChanges[id];
+        }
+        //fix visual if exists
+        fixDisplay(id);
+        //re-draw list of pending
+        renderPendingList();
+        //reset button number to -1 or to greyed out
+        updateQueueUI();
+      }
+      function queueStatusChange(shiftId, status) {
+        pendingChanges[shiftId] = status;
+        updateQueueUI();
+        console.log("pending:", pendingChanges);
+      }
+      // if a queued elem is canceled, reset the radio box!
+      function fixDisplay(id){
+
+        const foundShift = loaded.find(item => item.shift_id == id);
+        if (foundShift){
+          let originalStatus = foundShift.exception_status;
+          if (originalStatus == null) {
+            originalStatus = "active";
+          }
+
+          // 3. Find the specific radio button with that value and check it
+          const selector = `input[name="status-${id}"][value="${originalStatus}"]`;
+          const radioBtn = document.querySelector(selector);
+
+          if (radioBtn) {
+            radioBtn.checked = true;
+          }
+        }
+      }
+      // prompt for confirmation, push to api!
+      async function updateCancellations() {
+        const changesCount = Object.keys(pendingChanges).length;
+        if (changesCount === 0) return alert("No updates queued...");
+
+        const confirmed = confirm(`updating ${changesCount} shifts on ${currentSelectedDate}?`);
+
+        if (confirmed) {
+          try {
             const response = await fetch('/api/batch_update_exceptions', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                    date: currentSelectedDate,
-                    updates: pendingChanges
-                })
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({
+                date: currentSelectedDate,
+                updates: pendingChanges
+              })
             });
 
             if (response.ok) {
               // empty queue, refresh list, alert suffessful. etc
-                alert("Canceled successfully!");
-                pendingChanges = {};
-              toggleVisualizer('history');
-                const date = new Date(currentSelectedDate);
-                const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-                loadStaffDashboard(currentSelectedDate, days[date.getUTCDay()]);
+              alert("Canceled successfully!");
+              pendingChanges = {};
+              toggleVisualizer('allcancel');
+              const date = new Date(currentSelectedDate);
+              const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+              loadStaffDashboard(currentSelectedDate, days[date.getUTCDay()]);
             }
-        } catch (err) {
+          } catch (err) {
             console.error(err);
             alert("an error occcured, please try again?");
+          }
         }
-    }
-}
+      }
 
 
-        async function loadStaffDashboardalt() {
-          return;
-            const response = await fetch('/api/shifts/today');
-            const shifts = await response.json();
-            
-            const tbody = document.getElementById('staff-table-body');
-            tbody.innerHTML = '';
+      async function loadStaffDashboardalt() {
+        return;
+        const response = await fetch('/api/shifts/today');
+        const shifts = await response.json();
+
+        const tbody = document.getElementById('staff-table-body');
+        tbody.innerHTML = '';
 
 
-            shifts.forEach(shift => {
-                const tr = document.createElement('tr');
-                tr.innerHTML = `
+        shifts.forEach(shift => {
+          const tr = document.createElement('tr');
+          tr.innerHTML = `
                     <td>${shift.start_time} - ${shift.end_time}</td>
                     <td>${shift.tutor}</td>
                     <td>${shift.courses || "None"}</td>
                     <td>
                     </td>
                 `;
-                tbody.appendChild(tr);
-            });
-        }
+          tbody.appendChild(tr);
+        });
+      }
 
-        async function updateStatus(shiftId, newStatus) {
-          let finalStatus = newStatus;
+      async function updateStatus(shiftId, newStatus) {
+        let finalStatus = newStatus;
 
-          if (newStatus === "Custom") {
-            const customValue = prompt("Enter custom status:");
+        if (newStatus === "Custom") {
+          const customValue = prompt("Enter custom status:");
 
-            if (!customValue) {
-              loadStaffDashboard();
-              return;
-            }
-            finalStatus = customValue;
+          if (!customValue) {
+            loadStaffDashboard();
+            return;
           }
-
-          await fetch('/api/update_live_status', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ shift_id: shiftId, status: finalStatus })
-          });
-          console.log(`Updated shift ${shiftId} to ${finalStatus}`);
+          finalStatus = customValue;
         }
-        loadStaffDashboard();
+
+        await fetch('/api/update_live_status', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ shift_id: shiftId, status: finalStatus })
+        });
+        console.log(`Updated shift ${shiftId} to ${finalStatus}`);
+      }
+      loadStaffDashboard();
     </script>
 </body>
 </html>

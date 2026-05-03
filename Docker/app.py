@@ -240,6 +240,18 @@ def get_shifts_by_date():
     
     return jsonify([dict(s) for s in shifts])
 
+# for populating history
+# ?id=#
+@app.route('/api/by_shift_id')
+def get_by_shift_id():
+        targetid = request.args.get('id')
+        conn = get_db_connection()
+        query='''
+        SELECT * FROM weekly_shift JOIN tutor on tutor.student_id = tutor_ID WHERE shift_id = ?
+        '''
+        shift_by_id = conn.execute(query, targetid).fetchall()
+        conn.close()
+        return jsonify([dict(s) for s in shift_by_id])
 @app.route('/api/batch_update_exceptions', methods=['POST'])
 def batch_update_exceptions():
     data = request.json
