@@ -56,6 +56,7 @@ def get_todays_shifts_OLD():
 def get_todays_shifts(target_date=None):
     # rewrite + debug date handling!
     now = datetime.now()
+
     if not target_date:
         target_date = now.strftime('%Y-%m-%d')
     # convert to day of week text
@@ -216,13 +217,13 @@ def stream_statuses():
 
 @app.route('/api/shifts')
 def get_shifts_by_date():
-    # The date (YYYY-MM-DD) for the exception join
+    # yyyy-mm-dd
     target_date = request.args.get('date') 
-    # The day name (Monday) for the base schedule filter
+    # Monday, Tuesday, etc
     day_name = request.args.get('day') 
 
     conn = get_db_connection()
-    # Join the base schedule with exceptions ONLY for that specific date
+    # join the base schedule with exceptions only for that specific date
     query = '''
         SELECT 
             s.shift_id, 

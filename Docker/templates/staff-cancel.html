@@ -5,15 +5,67 @@
     <meta charset="UTF-8">
     <title>Staff Dashboard - Cancellations</title>
     <style>
-      :root{
-        --no-changes= "#28a745";
-        --change=""
-      }
+:root{
+  --no-changes= "#28a745";
+  --change=""
+}
         table { width: 100%; border-collapse: collapse; margin-top: 20px; }
         th, td { border: 1px solid #ccc; padding: 10px; text-align: left; }
         th { background: #eee; }
         .remove-button {margin-left:40px}
         .datesel {display:flex;border: 2px solid black;align-content: center;justify-content: center;align-items: center;width: 50%; gap:10%;}
+        .staff-header {
+          display: flex;
+          width: 100%; 
+        }
+
+        .staff-btn {
+          flex: 1;
+          text-align: center;
+          padding: 20px 0;
+          text-decoration: none;
+          font-family: Arial, sans-serif;
+          font-weight: bold;
+          font-size: 1.2rem;
+          transition: background 0.3s;
+          border: none;
+          background-color:  #d1d1d1;
+          color: black;
+
+        }
+        .currPage{
+          background-color: #717171;
+          color: white;
+
+        }
+        .currPage span{
+          text-decoration: none; 
+          border-bottom: 2px solid white; 
+
+          padding-bottom: 5px; 
+          display: inline-block;
+        }
+
+        /* MODERN CSS IS SOOOO FUN I LOVE MY CONDITIONALS */
+        .staff-header:hover .currPage::before,
+        .staff-header:hover .currPage::after {
+          opacity: 0;
+        }
+
+        .staff-header .staff-btn:hover::before,
+        .staff-header .staff-btn:hover::after {
+          opacity: 1;
+        }
+        .staff-btn::before { content: "> "; opacity: 0; }
+        .staff-btn::after { content: " <"; opacity: 0; }
+        .currPage::before, 
+        .currPage::after { 
+          opacity: 1; 
+        }
+        .staff-btn:hover {
+          filter: brightness(90%);
+          cursor: pointer;
+        }
     </style>
 </head>
 <body style="
@@ -22,6 +74,10 @@
     align-content: center;
     align-items: center;">
 
+  <header class="staff-header">
+    <a href="/staff" class="staff-btn "><span>Update Live Status<span></a>
+    <a href="/staff-cancel" class="staff-btn currPage"><span>Cancel Session<span></a>
+</header>
     <h1>Staff Dashboard - Cancellations</h1>
     <p>Upcoming Cancelations Input Here</p>
     <div style="margin-top: 20px; display: flex; gap: 10px;">
