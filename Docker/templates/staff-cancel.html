@@ -19,6 +19,20 @@
 
     <h1>Staff Dashboard - Cancellations</h1>
     <p>Upcoming Cancelations Input Here</p>
+    <div style="margin-top: 20px; display: flex; gap: 10px;">
+    <button id="submit-btn" onclick="updateCancellations()" 
+            style="padding: 10px 20px; background: #28a745; color: white; border: none; cursor: pointer; opacity: 0.5;" disabled>
+        Submit 0 Changes
+    </button>
+
+    <button onclick="toggleVisualizer('pending')" style="padding: 10px;">View Local Queue</button>
+    <button onclick="toggleVisualizer('history')" style="padding: 10px;">View All History</button>
+</div>
+
+<div id="visualizer-container" style="width: 80%; margin-top: 20px; padding: 15px; border: 1px dashed #666; background: #f9f9f9;">
+    <h3 id="viz-title">Local Queue</h3>
+    <div id="viz-content">No pending changes.</div>
+</div>
 <div style="" class="datesel"><div><p>Select Date To Edit</p></div><div style="
     justify-content: flex-start;
 ">
@@ -97,9 +111,70 @@ async function loadStaffDashboard(currentSelectedDate, dayName) {
     });
 }
 
+function updateQueueUI() {
+    const btn = document.getElementById('submit-btn');
+    const count = Object.keys(pendingChanges).length;
+    
+    btn.innerText = `Submit ${count} Changes`;
+    btn.disabled = count === 0;
+    btn.style.opacity = count === 0 ? "0.5" : "1";
+
+    if (document.getElementById('viz-title').innerText === "Local Queue") {
+        renderPendingList();
+    }
+}
+
+async function toggleVisualizer(mode) {
+    const title = document.getElementById('viz-title');
+    const content = document.getElementById('viz-content');
+
+    if (mode === 'pending') {
+        title.innerText = "Local Queue";
+        console.log("Hi");
+        renderPendingList();
+    } else {
+        title.innerText = "All Recorded Exceptions (API)";
+        content.innerHTML = "Loading history...";
+        
+        try {
+            const resp = await fetch('/api/exceptions/all');
+            const data = await resp.json();
+            
+            if (data.length === 0) {
+                content.innerHTML = "No exceptions found in database.";
+                return;
+            }
+
+            let html = `<table><tr><th>Date</th><th>Tutor</th><th>Status</th></tr>`;
+            data.forEach(ex => {
+                html += `<tr><td>${ex.target_date}</td><td>${ex.tutor_name}</td><td>${ex.status}</td></tr>`;
+            });
+            content.innerHTML = html + `</table>`;
+        } catch (e) {
+            content.innerHTML = "Error loading history.";
+        }
+    }
+}
+
+function renderPendingList() {
+    const content = document.getElementById('viz-content');
+    const keys = Object.keys(pendingChanges);
+    
+    if (keys.length === 0) {
+        content.innerHTML = "No changes for this session.";
+        return;
+    }
+
+    let list = "<ul>";
+    for (const [id, status] of Object.entries(pendingChanges)) {
+        list += `<li>Shift ID <strong>${id}</strong> set to <strong>${status}</strong></li>`;
+    }
+    content.innerHTML = list + "</ul>";
+}
 
 function queueStatusChange(shiftId, status) {
     pendingChanges[shiftId] = status;
+  updateQueueUI();
     console.log("pending:", pendingChanges);
 }
 
@@ -124,7 +199,8 @@ async function updateCancellations() {
             if (response.ok) {
               // empty queue, refresh list, alert suffessful. etc
                 alert("Canceled successfully!");
-                pendingChanges = {}; 
+                pendingChanges = {};
+              toggleVisualizer('history');
                 const date = new Date(currentSelectedDate);
                 const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
                 loadStaffDashboard(currentSelectedDate, days[date.getUTCDay()]);
