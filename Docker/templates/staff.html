@@ -8,13 +8,75 @@
         table { width: 100%; border-collapse: collapse; margin-top: 20px; }
         th, td { border: 1px solid #ccc; padding: 10px; text-align: left; }
         th { background: #eee; }
+                .staff-header {
+          display: flex;
+          width: 100%; 
+        }
+
+        .staff-btn {
+          flex: 1;
+          text-align: center;
+          padding: 20px 0;
+          text-decoration: none;
+          font-family: Arial, sans-serif;
+          font-weight: bold;
+          font-size: 1.2rem;
+          transition: background 0.3s;
+          border: none;
+          background-color:  #d1d1d1;
+          color: black;
+
+        }
+        .currPage{
+          background-color: #717171;
+          color: white;
+
+        }
+        .currPage span{
+          text-decoration: none; 
+          border-bottom: 2px solid white; 
+
+          padding-bottom: 5px; 
+          display: inline-block;
+        }
+
+        /* MODERN CSS IS SOOOO FUN I LOVE MY CONDITIONALS */
+        .staff-header:hover .currPage::before,
+        .staff-header:hover .currPage::after {
+          opacity: 0;
+        }
+
+        .staff-header .staff-btn:hover::before,
+        .staff-header .staff-btn:hover::after {
+          opacity: 1;
+        }
+        .staff-btn::before { content: "> "; opacity: 0; }
+        .staff-btn::after { content: " <"; opacity: 0; }
+        .currPage::before, 
+        .currPage::after { 
+          opacity: 1; 
+        }
+        .staff-btn:hover {
+          filter: brightness(90%);
+          cursor: pointer;
+        }
+
     </style>
 </head>
 <body>
+  <header class="staff-header">
+    <a href="/staff" class="staff-btn currPage"><span>Update Live Status<span></a>
+    <a href="/staff-cancel" class="staff-btn "><span>Cancel Session<span></a>
+</header>
 
-    <h1>Staff Command Center</h1>
+    <h1>Staff Dashboard - Live Status</h1>
     <p>Change statuses below.</p>
 
+<div class="debug-controls">
+    <label>Viewing Schedule For:</label>
+    <input type="date" id="view_date_sel">
+  <button onclick="setToToday()">Today</button>
+</div>
     <table id="staff-live-table">
         <thead>
             <tr>
@@ -29,43 +91,91 @@
     </table>
 
     <script>
-        async function loadStaffDashboard() {
-            const response = await fetch('/api/shifts/today');
-            const shifts = await response.json();
-            
-            const tbody = document.getElementById('staff-table-body');
-            tbody.innerHTML = '';
 
-            const statuses = ['Scheduled', 'Arrived', 'Late', 'Canceled', 'Full'];
+      //for date picker
+      const dateInput = document.getElementById('view_date_sel');
+      const todayStr = new Date().toISOString().split('T')[0];
+      dateInput.value = todayStr;
 
-            shifts.forEach(shift => {
-                const tr = document.createElement('tr');
-                let optionsHtml = statuses.map(s => 
-                    `<option value="${s}" ${shift.status === s ? 'selected' : ''}>${s}</option>`
-                ).join('');
+      dateInput.addEventListener('change', (e) => {
+        loadStaffDashboard(e.target.value);
+      });
 
-                tr.innerHTML = `
-                    <td>${shift.start} - ${shift.end}</td>
-                    <td>${shift.tutor}</td>
-                    <td>${shift.courses || "None"}</td>
+      function setToToday() {
+        dateInput.value = todayStr;
+        loadStaffDashboard(todayStr);
+      }
+
+
+      async function loadStaffDashboard(selectedDate) {
+        //const response = await fetch('/api/shifts/today');
+        //const shifts = await response.json();
+
+        const dateObj = new Date(selectedDate);
+        const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+        const dayName = days[dateObj.getUTCDay()]; //
+
+        const response = await fetch(`/api/shifts?date=${selectedDate}&day=${dayName}`);
+        const shifts = await response.json();
+        const tbody = document.getElementById('staff-table-body');
+        tbody.innerHTML = '';
+        // if none for the day. generally, if its a weekend this triggers lol``
+        //WHY DOES ==[] ALWAYS EQUAL FALSSE IN JS WHAAAAT
+        if (shifts.length === 0) {
+          tbody.innerHTML = `
+                <tr>
+                    <td colspan="4" style="text-align: center; padding: 20px; color: #666;">
+                        <strong>No tutoring shifts scheduled for ${dayName}.</strong> 
+                        <br>Try selecting another day?
+                    </td>
+                </tr>`;
+          return;
+        }
+
+        const statuses = ['Scheduled', 'Arrived', 'Late', 'Canceled', 'Full','Custom'];
+
+        shifts.forEach(shift => {
+          const tr = document.createElement('tr');
+          let optionsHtml = statuses.map(s => 
+            `<option value="${s}" ${shift.status === s ? 'selected' : ''}>${s}</option>`
+          ).join('');
+
+          tr.innerHTML = `
+                    <td>${shift.start_time} - ${shift.end_time}</td>
+                    <td>${shift.tutor_name}</td>
+                    <td>${shift.courses_taught || "None"}</td>
                     <td>
                         <select onchange="updateStatus('${shift.shift_id}', this.value)">
                             ${optionsHtml}
                         </select>
                     </td>
                 `;
-                tbody.appendChild(tr);
-            });
+          tbody.appendChild(tr);
+        });
+      }
+
+      async function updateStatus(shiftId, newStatus) {
+        let finalStatus = newStatus;
+
+        if (newStatus === "Custom") {
+          const customValue = prompt("Enter custom status:");
+
+          if (!customValue) {
+            loadStaffDashboard();
+            return;
+          }
+          finalStatus = customValue;
         }
-        async function updateStatus(shiftId, newStatus) {
-            await fetch('/api/update_live_status', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ shift_id: shiftId, status: newStatus })
-            });
-            console.log(`Updated shift ${shiftId} to ${newStatus}`);
-        }
-        loadStaffDashboard();
+
+        await fetch('/api/update_live_status', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ shift_id: shiftId, status: finalStatus })
+        });
+        console.log(`Updated shift ${shiftId} to ${finalStatus}`);
+      }
+      loadStaffDashboard(todayStr);
+      //loadStaffDashboard();
     </script>
 </body>
 </html>

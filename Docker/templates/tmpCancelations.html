@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en"><!-- placeholder slop for testing LOL --><head>
+    <meta charset="UTF-8">
+    <title>Staff Dashboard</title>
+    <style>
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { border: 1px solid #ccc; padding: 10px; text-align: left; }
+        th { background: #eee; }
+    </style>
+</head>
+<body style="
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+">
+
+    <h1>Cancelations</h1>
+    <p>Upcoming Cancelations Input Here</p>
+<div style="display:flex;border: 2px solid black;align-content: center;justify-content: center;align-items: center;width: 50%;" class="datesel"><div><p>Select Date To Edit</p></div><div style="
+    justify-content: flex-start;
+">
+<input type="date">
+    
+</div></div>
+
+    <table id="staff-live-table">
+        <thead>
+            <tr>
+                <th>Date</th>
+
+<th>Time</th>
+                <th>Tutor</th>
+                <th>Courses</th>
+                <th>Current Status</th>
+            </tr>
+        </thead>
+        <tbody id="staff-table-body"><tr>
+                    <td>04-21-2026</td>
+<td>11:00 - 13:00</td>
+                    <td>Susanna</td>
+                    <td>BIOL 101, BIOL 140, BIOL 141, BIOL 302, CHEM 101, CHEM 351, PHYS 111</td>
+                    <td style="
+    background: #ff2222a5 !important;
+">
+                        <select onchange="updateStatus('1', this.value)">
+                          <option>Canceled</option>
+                        </select>
+                    </td>
+                </tr><tr>
+                    <td>04-21-2026</td><td>13:00 - 14:00</td>
+                    <td>Lillian</td>
+                    <td>BIOL 101, BIOL 140, BIOL 141, CHEM 351</td>
+                    <td>
+                        <select onchange="updateStatus('2', this.value)" style="
+    /* background: none; */
+">
+                            <option value="Scheduled">Scheduled</option><option value="Arrived">Arrived</option><option value="Late">Late</option><option value="Canceled">Canceled</option><option value="Full">Full</option>
+<option value="Custom">Custom</option>
+
+                        </select>
+                    </td>
+                </tr><tr>
+                    <td>04-21-2026</td>
+<td>16:00 - 17:00</td>
+                    <td>Angela</td>
+                    <td>BIOL 101, BIOL 140, BIOL 141, BIOL 302, BIOL 303, CHEM 101, CHEM 102, CHEM 351</td>
+                    <td>
+                        <select onchange="updateStatus('4', this.value)">
+                            <option value="Scheduled" selected="">Scheduled</option><option value="Arrived">Arrived</option><option value="Late">Late</option><option value="Canceled">Canceled</option><option value="Full">Full</option>
+                        </select>
+                    </td>
+                </tr><tr>
+                    <td>04-21-2026</td>
+<td>13:00 - 15:00</td>
+                    <td>Theo</td>
+                    <td>CHEM 101, CHEM 102, CHEM 300, CHEM 351, CHEM 352</td>
+                    <td>
+                        <select onchange="updateStatus('16', this.value)">
+                            <option value="Scheduled">Scheduled</option><option value="Arrived">Arrived</option><option value="Late">Late</option><option value="Canceled">Canceled</option><option value="Full" selected="">Full</option>
+                        </select>
+                    </td>
+                </tr><tr>
+                    <td>04-21-2026</td>
+<td>15:00 - 17:00</td>
+                    <td>Molemo</td>
+                    <td>CHEM 101, CHEM 102, MATH 151, MATH 152, MATH 225, MATH 251</td>
+                    <td>
+                        <select onchange="updateStatus('17', this.value)">
+                            <option value="Scheduled">Scheduled</option><option value="Arrived">Arrived</option><option value="Late">Late</option><option value="Canceled" selected="">Canceled</option><option value="Full">Full</option>
+                        </select>
+                    </td>
+                </tr><tr>
+                    <td>04-21-2026</td>
+<td>14:00 - 16:00</td>
+                    <td>Aya</td>
+                    <td>CHEM 351, CHEM 352</td>
+                    <td>
+                        <select onchange="updateStatus('31', this.value)">
+                            <option value="Scheduled">Scheduled</option><option value="Arrived">Arrived</option><option value="Late" selected="">Late</option><option value="Canceled">Canceled</option><option value="Full">Full</option>
+                        </select>
+                    </td>
+                </tr><tr>
+                    <td>11:00 - 13:00</td>
+                    <td>Shrikant</td>
+                    <td>CMPE 212, CMSC 201, CMSC 202, CMSC 203, MATH 151, MATH 152, PHYS 111, PHYS 121, PHYS 122</td>
+                    <td>
+                        <select onchange="updateStatus('37', this.value)">
+                            <option value="Scheduled" selected="">Scheduled</option><option value="Arrived">Arrived</option><option value="Late">Late</option><option value="Canceled">Canceled</option><option value="Full">Full</option>
+                        </select>
+                    </td>
+                </tr><tr>
+                    <td>13:00 - 16:00</td>
+                    <td>Javan</td>
+                    <td>CMPE 212, CMPE 306, CMSC 201, CMSC 202</td>
+                    <td>
+                        <select onchange="updateStatus('43', this.value)">
+                            <option value="Scheduled" selected="">Scheduled</option><option value="Arrived">Arrived</option><option value="Late">Late</option><option value="Canceled">Canceled</option><option value="Full">Full</option>
+                        </select>
+                    </td>
+                </tr><tr>
+                    <td>11:00 - 14:00</td>
+                    <td>Elvis</td>
+                    <td>CMPE 306, CMPE 314</td>
+                    <td>
+                        <select onchange="updateStatus('45', this.value)">
+                            <option value="Scheduled" selected="">Scheduled</option><option value="Arrived">Arrived</option><option value="Late">Late</option><option value="Canceled">Canceled</option><option value="Full">Full</option>
+                        </select>
+                    </td>
+                </tr><tr>
+                    <td>11:00 - 12:30</td>
+                    <td>Ian</td>
+                    <td>CMPE 314, CMSC 201, CMSC 202, CMSC 341, CMSC 411, CMSC 421, CMSC 426</td>
+                    <td>
+                        <select onchange="updateStatus('47', this.value)">
+                            <option value="Scheduled" selected="">Scheduled</option><option value="Arrived">Arrived</option><option value="Late">Late</option><option value="Canceled">Canceled</option><option value="Full">Full</option>
+                        </select>
+                    </td>
+                </tr><tr>
+                    <td>11:00 - 12:30</td>
+                    <td>Kodi</td>
+                    <td>CMSC 201, CMSC 202, CMSC 203, MATH 151, MATH 225, PHYS 111, PHYS 112, PHYS 121, PHYS 122</td>
+                    <td>
+                        <select onchange="updateStatus('51', this.value)">
+                            <option value="Scheduled" selected="">Scheduled</option><option value="Arrived">Arrived</option><option value="Late">Late</option><option value="Canceled">Canceled</option><option value="Full">Full</option>
+                        </select>
+                    </td>
+                </tr><tr>
+                    <td>12:30 - 14:30</td>
+                    <td>Max A.</td>
+                    <td>CMSC 201, CMSC 202, CMSC 203, CMSC 331, CMSC 341</td>
+                    <td>
+                        <select onchange="updateStatus('58', this.value)">
+                            <option value="Scheduled" selected="">Scheduled</option><option value="Arrived">Arrived</option><option value="Late">Late</option><option value="Canceled">Canceled</option><option value="Full">Full</option>
+                        </select>
+                    </td>
+                </tr><tr>
+                    <td>14:30 - 17:00</td>
+                    <td>Sina</td>
+                    <td>CMSC 201, CMSC 202, CMSC 341, CMSC 411, CMSC 421, CMSC 426, CMSC 441</td>
+                    <td>
+                        <select onchange="updateStatus('63', this.value)">
+                            <option value="Scheduled" selected="">Scheduled</option><option value="Arrived">Arrived</option><option value="Late">Late</option><option value="Canceled">Canceled</option><option value="Full">Full</option>
+                        </select>
+                    </td>
+                </tr><tr>
+                    <td>15:00 - 18:00</td>
+                    <td>Lily</td>
+                    <td>CMSC 201, CMSC 202</td>
+                    <td>
+                        <select onchange="updateStatus('67', this.value)">
+                            <option value="Scheduled" selected="">Scheduled</option><option value="Arrived">Arrived</option><option value="Late">Late</option><option value="Canceled">Canceled</option><option value="Full">Full</option>
+                        </select>
+                    </td>
+                </tr><tr>
+                    <td>14:30 - 16:00</td>
+                    <td>Adamo</td>
+                    <td>ECON 101, ECON 102, MATH 155</td>
+                    <td>
+                        <select onchange="updateStatus('73', this.value)">
+                            <option value="Scheduled" selected="">Scheduled</option><option value="Arrived">Arrived</option><option value="Late">Late</option><option value="Canceled">Canceled</option><option value="Full">Full</option>
+                        </select>
+                    </td>
+                </tr><tr>
+                    <td>11:00 - 13:00</td>
+                    <td>Bruno</td>
+                    <td>IS 147, IS 310, IS 451</td>
+                    <td>
+                        <select onchange="updateStatus('76', this.value)">
+                            <option value="Scheduled" selected="">Scheduled</option><option value="Arrived">Arrived</option><option value="Late">Late</option><option value="Canceled">Canceled</option><option value="Full">Full</option>
+                        </select>
+                    </td>
+                </tr><tr>
+                    <td>16:00 - 18:00</td>
+                    <td>Bruno</td>
+                    <td>IS 147, IS 310, IS 451</td>
+                    <td>
+                        <select onchange="updateStatus('77', this.value)">
+                            <option value="Scheduled" selected="">Scheduled</option><option value="Arrived">Arrived</option><option value="Late">Late</option><option value="Canceled">Canceled</option><option value="Full">Full</option>
+                        </select>
+                    </td>
+                </tr><tr>
+                    <td>11:30 - 12:45</td>
+                    <td>Michael</td>
+                    <td>MATH 106, MATH 150, MATH 151, MATH 152, MATH 225, MATH 251</td>
+                    <td>
+                        <select onchange="updateStatus('82', this.value)">
+                            <option value="Scheduled" selected="">Scheduled</option><option value="Arrived">Arrived</option><option value="Late">Late</option><option value="Canceled">Canceled</option><option value="Full">Full</option>
+                        </select>
+                    </td>
+                </tr><tr>
+                    <td>13:00 - 14:30</td>
+                    <td>Ini</td>
+                    <td>MATH 106, MATH 155, SCI 100</td>
+                    <td>
+                        <select onchange="updateStatus('85', this.value)">
+                            <option value="Scheduled" selected="">Scheduled</option><option value="Arrived">Arrived</option><option value="Late">Late</option><option value="Canceled">Canceled</option><option value="Full">Full</option>
+                        </select>
+                    </td>
+                </tr><tr>
+                    <td>14:30 - 15:30</td>
+                    <td>Abe</td>
+                    <td>MATH 106, MATH 151, MATH 152, MATH 225, PHYS 122</td>
+                    <td>
+                        <select onchange="updateStatus('87', this.value)">
+                            <option value="Scheduled" selected="">Scheduled</option><option value="Arrived">Arrived</option><option value="Late">Late</option><option value="Canceled">Canceled</option><option value="Full">Full</option>
+                        </select>
+                    </td>
+                </tr><tr>
+                    <td>11:00 - 12:00</td>
+                    <td>Akanksha</td>
+                    <td>MATH 300, STAT 355</td>
+                    <td>
+                        <select onchange="updateStatus('96', this.value)">
+                            <option value="Scheduled" selected="">Scheduled</option><option value="Arrived">Arrived</option><option value="Late">Late</option><option value="Canceled">Canceled</option><option value="Full">Full</option>
+                        </select>
+                    </td>
+                </tr><tr>
+                    <td>16:00 - 18:00</td>
+                    <td>Molly</td>
+                    <td>MATH 151, MATH 152</td>
+                    <td>
+                        <select onchange="updateStatus('98', this.value)">
+                            <option value="Scheduled" selected="">Scheduled</option><option value="Arrived">Arrived</option><option value="Late">Late</option><option value="Canceled">Canceled</option><option value="Full">Full</option>
+                        </select>
+                    </td>
+                </tr><tr>
+                    <td>12:30 - 14:00</td>
+                    <td>O’Tega</td>
+                    <td>MATH 150, MATH 151, MATH 152, PHYS 111, PHYS 112, PHYS 121, PHYS 122</td>
+                    <td>
+                        <select onchange="updateStatus('99', this.value)">
+                            <option value="Scheduled" selected="">Scheduled</option><option value="Arrived">Arrived</option><option value="Late">Late</option><option value="Canceled">Canceled</option><option value="Full">Full</option>
+                        </select>
+                    </td>
+                </tr><tr>
+                    <td>16:00 - 18:00</td>
+                    <td>O’Tega</td>
+                    <td>MATH 150, MATH 151, MATH 152, PHYS 111, PHYS 112, PHYS 121, PHYS 122, STAT 121</td>
+                    <td>
+                        <select onchange="updateStatus('100', this.value)">
+                            <option value="Scheduled" selected="">Scheduled</option><option value="Arrived">Arrived</option><option value="Late">Late</option><option value="Canceled">Canceled</option><option value="Full">Full</option>
+                        </select>
+                    </td>
+                </tr><tr>
+                    <td>00:30 - 14:00</td>
+                    <td>O’Tega</td>
+                    <td>STAT 121</td>
+                    <td>
+                        <select onchange="updateStatus('101', this.value)">
+                            <option value="Scheduled" selected="">Scheduled</option><option value="Arrived">Arrived</option><option value="Late">Late</option><option value="Canceled">Canceled</option><option value="Full">Full</option>
+                        </select>
+                    </td>
+                </tr><tr>
+                    <td>14:00 - 16:00</td>
+                    <td>Dani</td>
+                    <td>MATH 151, PHYS 121, STAT 350, STAT 351, STAT 355</td>
+                    <td>
+                        <select onchange="updateStatus('102', this.value)">
+                            <option value="Scheduled" selected="">Scheduled</option><option value="Arrived">Arrived</option><option value="Late">Late</option><option value="Canceled">Canceled</option><option value="Full">Full</option>
+                        </select>
+                    </td>
+                </tr><tr>
+                    <td>16:00 - 17:00</td>
+                    <td>Rania</td>
+                    <td>MATH 151, MATH 152, MATH 251</td>
+                    <td>
+                        <select onchange="updateStatus('104', this.value)">
+                            <option value="Scheduled" selected="">Scheduled</option><option value="Arrived">Arrived</option><option value="Late">Late</option><option value="Canceled">Canceled</option><option value="Full">Full</option>
+                        </select>
+                    </td>
+                </tr></tbody>
+    </table>
+
+    <script>
+        async function loadStaffDashboard() {
+            const response = await fetch('/api/shifts/today');
+            const shifts = await response.json();
+            
+            const tbody = document.getElementById('staff-table-body');
+            tbody.innerHTML = '';
+
+            const statuses = ['Scheduled', 'Arrived', 'Late', 'Canceled', 'Full'];
+
+            shifts.forEach(shift => {
+                const tr = document.createElement('tr');
+                let optionsHtml = statuses.map(s => 
+                    `<option value="${s}" ${shift.status === s ? 'selected' : ''}>${s}</option>`
+                ).join('');
+
+                tr.innerHTML = `
+                    <td>${shift.start} - ${shift.end}</td>
+                    <td>${shift.tutor}</td>
+                    <td>${shift.courses || "None"}</td>
+                    <td>
+                        <select onchange="updateStatus('${shift.shift_id}', this.value)">
+                            ${optionsHtml}
+                        </select>
+                    </td>
+                `;
+                tbody.appendChild(tr);
+            });
+        }
+        async function updateStatus(shiftId, newStatus) {
+            await fetch('/api/update_live_status', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ shift_id: shiftId, status: newStatus })
+            });
+            console.log(`Updated shift ${shiftId} to ${newStatus}`);
+        }
+        loadStaffDashboard();
+    </script>
+
+</body></html>
