@@ -30,7 +30,7 @@
                 <th>Time</th>
                 <th>Tutor</th>
                 <th>Courses</th>
-                <th>Current Status</th>
+                <th>Canceled?</th>
             </tr>
         </thead>
         <tbody id="staff-table-body">
@@ -39,39 +39,101 @@
 
     <script>
 
-document.getElementById('cancel_date_sel').addEventListener('change', (e) => {
-    const dateValue = e.target.value; 
-    
-    if (!dateValue) return; 
 
+let pendingChanges = {}; 
+let currentSelectedDate = "";
+
+
+document.getElementById('cancel_date_sel').addEventListener('change', (e) => {
+    //const dateValue = e.target.value; 
+    console.log("pressed!") 
+    dateValue = e.target.value; 
+    if (!dateValue) return;
+    currentSelectedDate = dateValue;
     const date = new Date(dateValue);
     const dayIndex = date.getUTCDay(); 
     const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
     const dayName = days[dayIndex];
-    loadStaffDashboard(dayName);
+    
+    pendingChanges = {}; 
+    loadStaffDashboard(currentSelectedDate, dayName);
 });
 
-async function loadStaffDashboard(selectedDate) {
+async function loadStaffDashboard(currentSelectedDate, dayName) {
     //fallback to just today?
-    const date = selectedDate || new Date().toISOString().split('T')[0];
-    const response = await fetch(`/api/shifts?date=${date}`);
+    const date = dayName || new Date().toISOString().split('T')[0];
+    // was previously just doing Day of week. for some reason. pass full date!!!!
+    const response = await fetch(`/api/shifts?date=${currentSelectedDate}&day=${dayName}`);
     const shifts = await response.json();
     
     const tbody = document.getElementById('staff-table-body');
     tbody.innerHTML = '';
     shifts.forEach(shift => {
         const tr = document.createElement('tr');
-        // Use the status from the exception table if it exists, otherwise default to 'Scheduled'
+        // use the status from the exception table if it exists, otherwise default to 'scheduled'
 
+        const currentStatus = pendingChanges[shift.shift_id] || shift.exception_status || 'active';
         tr.innerHTML = `
-            <td>${shift.start} - ${shift.end}</td>
-            <td>${shift.tutor}</td>
-            <td>${shift.courses || "None"}</td>
+            <td>${shift.start_time} - ${shift.end_time}</td>
+            <td>${shift.tutor_name}</td>
+            <td>${shift.courses_taught || "None"}</td>
             <td>
+                <label>
+                    <input type="radio" name="status-${shift.shift_id}" value="active" 
+                        ${currentStatus === 'active' ? 'checked' : ''} 
+                        onchange="queueStatusChange(${shift.shift_id}, 'active')"> 
+                    Active
+                </label>
+                <label>
+                    <input type="radio" name="status-${shift.shift_id}" value="canceled" 
+                        ${currentStatus === 'canceled' ? 'checked' : ''} 
+                        onchange="queueStatusChange(${shift.shift_id}, 'canceled')"> 
+                    Canceled
+                </label>
             </td>
         `;
         tbody.appendChild(tr);
+        tbody.appendChild(tr);
     });
+}
+
+
+function queueStatusChange(shiftId, status) {
+    pendingChanges[shiftId] = status;
+    console.log("pending:", pendingChanges);
+}
+
+// prompt for confirmation, push to api!
+async function updateCancellations() {
+    const changesCount = Object.keys(pendingChanges).length;
+    if (changesCount === 0) return alert("No updates queued...");
+
+    const confirmed = confirm(`updating ${changesCount} shifts on ${currentSelectedDate}?`);
+    
+    if (confirmed) {
+        try {
+            const response = await fetch('/api/batch_update_exceptions', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    date: currentSelectedDate,
+                    updates: pendingChanges
+                })
+            });
+
+            if (response.ok) {
+              // empty queue, refresh list, alert suffessful. etc
+                alert("Canceled successfully!");
+                pendingChanges = {}; 
+                const date = new Date(currentSelectedDate);
+                const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+                loadStaffDashboard(currentSelectedDate, days[date.getUTCDay()]);
+            }
+        } catch (err) {
+            console.error(err);
+            alert("an error occcured, please try again?");
+        }
+    }
 }
 
 

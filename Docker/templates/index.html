@@ -64,13 +64,13 @@
               }, (0, o.i)(...Object.values(e.o))), e
             }
 
-            function u(e, t) {
+/*            function u(e, t) {
               let r = c();
               r.initializedAgents ?? = {}, t.initializedAt = {
                 ms: (0, i.t)(),
                 date: new Date
               }, r.initializedAgents[e] = t, 2 === Object.keys(r.initializedAgents).length && (0, s.R)(69)
-            }
+            }*/
 
             function l() {
               return function() {
@@ -7898,6 +7898,12 @@ Wishing you a successful semester, and we look forward to seeing you!</p>
 <li><a class="button button-primary" href="#Stat121">Statistics</a></li>
 </ul>
 
+
+<div class="debug-controls">
+    <label>Viewing Schedule For:</label>
+    <input type="date" id="view_date_sel">
+</div>
+
 <div id="live-tutoring-widget">
   <div class="live-dashboard">
     <h3>Live Status + Search</h3>
@@ -9859,7 +9865,34 @@ Noon – 1:00 p.m. – Shakib<br>
   const searchInput = document.getElementById('course-search');
   let currentShifts = []; 
 
-  const eventSource = new EventSource('/api/stream_statuses');
+
+    /// DEBUG LOGIC, REMOVE ON PRODUCTION
+  let eventSource = null;
+
+function setupStream(dateValue) {
+  // close open. debuggy
+    if (eventSource) {
+        eventSource.close();
+    }
+
+  //new streaam
+    eventSource = new EventSource(`/api/stream_statuses?date=${dateValue}`);
+
+    eventSource.onmessage = function(event) {
+        const data = JSON.parse(event.data);
+        renderShifts(data); 
+    };
+}
+
+const todayStr = new Date().toISOString().split('T')[0];
+document.getElementById('view_date_sel').value = todayStr;
+setupStream(todayStr);
+
+document.getElementById('view_date_sel').addEventListener('change', (e) => {
+    setupStream(e.target.value);
+});
+  /// END debug
+  //const eventSource = new EventSource('/api/stream_statuses');
 
   eventSource.onmessage = function(event) {
     currentShifts = JSON.parse(event.data);
@@ -9933,6 +9966,9 @@ Noon – 1:00 p.m. – Shakib<br>
       container.appendChild(card);
     });
   }
+
+
+
 </script>
 </body>
 </html>
