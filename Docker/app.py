@@ -159,6 +159,15 @@ def notify_clients():
 def index():
     return render_template('index.html')
 
+
+@app.route('/nav')
+def nav():
+    return render_template('nav.html')
+
+@app.route('/rw')
+def rw():
+    return render_template('htmlrework.html')
+
 @app.route('/staff')
 def staff():
     return render_template('staff.html')
@@ -170,6 +179,12 @@ def staff_cancel():
 @app.route('/api/shifts/today')
 def api_shifts_today():
     return jsonify(get_todays_shifts())
+
+
+@app.route('/api/get_live_status')
+def get_statuses():
+    return jsonify(live_statuses);
+
 
 @app.route('/api/update_live_status', methods=['POST'])
 def update_status():
