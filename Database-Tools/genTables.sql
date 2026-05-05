@@ -38,3 +38,4 @@ CREATE TABLE exceptions (
   end_time TEXT,
   FOREIGN KEY (shift_id) REFERENCES weekly_shift (shift_id) ON DELETE CASCADE
 );
+CREATE UNIQUE INDEX idx_shift_date ON exceptions (shift_id, target_date);
