@@ -159,6 +159,21 @@ def notify_clients():
 def index():
     return render_template('index.html')
 
+
+@app.route('/nav')
+def nav():
+    return render_template('nav.html')
+
+@app.route('/rw')
+def rw():
+    return render_template('htmlrework.html')
+
+@app.route('/staff-edit')
+def staffeditpage():
+    return render_template('staff-sessionedit.html')
+
+
+
 @app.route('/staff')
 def staff():
     return render_template('staff.html')
@@ -170,6 +185,12 @@ def staff_cancel():
 @app.route('/api/shifts/today')
 def api_shifts_today():
     return jsonify(get_todays_shifts())
+
+
+@app.route('/api/get_live_status')
+def get_statuses():
+    return jsonify(live_statuses);
+
 
 @app.route('/api/update_live_status', methods=['POST'])
 def update_status():
@@ -214,6 +235,51 @@ def stream_statuses():
             clients.remove(q)
 
     return Response(event_stream(target_date), mimetype="text/event-stream")
+
+# bonus gets for staff editing
+@app.route('/api/tutor/<tutor_id>/sessions')
+def get_tutor_sessions(tutor_id):
+    conn = get_db_connection()
+    query = '''
+        SELECT 
+            ws.shift_id,
+            ws.day_of_week,
+            ws.start_time,
+            ws.end_time,
+            GROUP_CONCAT(c.course_code) as assigned_courses
+        FROM weekly_shift ws
+        LEFT JOIN shift_course_junct scj ON ws.shift_id = scj.shift_id
+        LEFT JOIN course c ON scj.course_code = c.course_code
+        WHERE ws.tutor_ID = ?
+        GROUP BY ws.shift_id
+        ORDER BY 
+            CASE day_of_week 
+                WHEN 'Monday' THEN 1 WHEN 'Tuesday' THEN 2 
+                WHEN 'Wednesday' THEN 3 WHEN 'Thursday' THEN 4 
+                WHEN 'Friday' THEN 5 WHEN 'Saturday' THEN 6 
+                WHEN 'Sunday' THEN 7 
+            END, ws.start_time
+    '''
+    sessions = conn.execute(query, (tutor_id,)).fetchall()
+    conn.close()
+    
+    return jsonify([dict(s) for s in sessions])
+
+
+# bonus generic fetch endpoints
+@app.route('/api/tutors')
+def get_all_tutors():
+    conn = get_db_connection()
+    tutors = conn.execute('SELECT student_ID, preferred_name FROM tutor ORDER BY preferred_name').fetchall()
+    conn.close()
+    return jsonify([dict(t) for t in tutors])
+
+@app.route('/api/courses_list')
+def get_all_courses():
+    conn = get_db_connection()
+    courses = conn.execute('SELECT course_code FROM course ORDER BY course_code').fetchall()
+    conn.close()
+    return jsonify([row['course_code'] for row in data])
 
 @app.route('/api/shifts')
 def get_shifts_by_date():

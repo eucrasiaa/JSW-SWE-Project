@@ -5,6 +5,142 @@
     <meta charset="UTF-8">
     <title>Staff Dashboard</title>
     <style>
+
+:root {
+  --status-scheduled: #FCFCFC;
+  --status-arrived: #A3B87F;
+  --status-late: #CCB790;
+  /*--status-canceled: #CC9998;*/
+  --status-full: #9EBFCC;
+  --status-custom: #CC9EB0;
+}
+
+
+#shift-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.shift-card {
+    padding: 1.5rem;
+    border: 3px solid black;
+    position: relative;
+    background:#ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap:10px;
+    /*overflow: hidden;*/
+}
+.shift-courses {
+    display: flex;
+    margin: 0 -1.3rem;
+    column-gap: 6px;
+    row-gap: 4px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.shift-actions{
+    width: 100%;
+    position: sticky;
+    margin-top: auto;
+}
+.shift-courses > .course-chip {
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 3px;
+    font-size: 14px;
+    text-align: center;
+    font-weight: 600;
+}
+   .shift-tutor {
+    font-size: 20px;
+}
+
+.shift-actions {
+    width: 100%;
+    position: sticky;
+    margin-top: auto;
+}
+
+
+
+.select-shift > option{
+    text-align:center;
+}
+.select-shift{
+
+    appearance: none;
+    -webkit-appearance: none;
+    width: 90%;
+    padding: 10px 16px;
+    background-color: #fff;
+    border: 2px solid #222;
+    font-weight: 700;
+    font-size: 1rem;
+    color: #222;
+    cursor: pointer;
+transition: all 0.05s ease;
+
+    background-color: var(--bg-color, #fff); /* fallback */
+    transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+.select-shift:hover {
+    transform: scale(1.1);
+    
+}
+
+.select-shift:active {
+    /* transform: translate(0px, -4px); */
+}
+
+.shift-actions::after {
+    content: '▼';
+    font-size: 18px;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%) rotate(0deg);
+    
+    pointer-events: none; 
+    color: #222;
+    transition: 
+        transform 0.05s ease;
+}
+
+.shift-actions:has(.select-shift:hover)::after {
+    transform: scale(1.1) translateY(-50%) translateX(4px) rotate(0deg);
+     /* transform:  */
+    /* transform: translateY(calc(-50% + 2px)); */
+}
+.shift-actions:has(.select-shift:active)::after {
+    /* transform: translateY(calc(-50% - 4px)); */
+/* content: '▲'; */
+transform: scale(1.1) translateY(-50%) translateX(4px) rotate(180deg);
+}
+
+.shift-actions {display: flex;justify-content: center;}
+/*
+   .shift-card:hover {
+    transform: translate(-2px, -2px);
+}
+*/
+
+.shift-card::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: 4px; 
+    left: 4px;
+    width: 100%;
+    height: 100%;
+    background-color:#a1a1a1; 
+    border: 3px solid #222;
+}
+
         table { width: 100%; border-collapse: collapse; margin-top: 20px; }
         th, td { border: 1px solid #ccc; padding: 10px; text-align: left; }
         th { background: #eee; }
@@ -65,11 +201,24 @@
 </head>
 <body>
   <header class="staff-header">
-    <a href="/staff" class="staff-btn currPage"><span>Update Live Status<span></a>
-    <a href="/staff-cancel" class="staff-btn "><span>Cancel Session<span></a>
+    <a href="/staff" class="staff-btn currPage"><span>Update Live Status</span></a>
+    <a href="/staff-cancel" class="staff-btn "><span>Cancel Session</span></a>
+    <a href="/staff-edit" class="staff-btn"><span>Edit Shifts</span></a>
 </header>
+<template id="shift-card-template">
+  <div class="shift-card">
+    <div class="shift-time"></div>
+    <div class="shift-tutor"></div>
+    <div class="shift-courses"></div>
+    <div class="shift-actions">
+      <select class="select-shift">
+      </select>
 
-    <h1>Staff Dashboard - Live Status</h1>
+    </div>
+  </div>
+</template>
+
+    <h1>Staff Dashboard - Live Status rework</h1>
     <p>Change statuses below.</p>
 
 <div class="debug-controls">
@@ -77,18 +226,24 @@
     <input type="date" id="view_date_sel">
   <button onclick="setToToday()">Today</button>
 </div>
-    <table id="staff-live-table">
-        <thead>
-            <tr>
-                <th>Time</th>
-                <th>Tutor</th>
-                <th>Courses</th>
-                <th>Current Status</th>
-            </tr>
-        </thead>
-        <tbody id="staff-table-body">
-            </tbody>
-    </table>
+
+<div id="shift-container">
+
+
+</div>
+<br><br><hr><br><br>
+    <!-- <table id="staff-live-table"> -->
+    <!--     <thead> -->
+    <!--         <tr> -->
+    <!--             <th>Time</th> -->
+    <!--             <th>Tutor</th> -->
+    <!--             <th>Courses</th> -->
+    <!--             <th>Current Status</th> -->
+    <!--         </tr> -->
+    <!--     </thead> -->
+    <!--     <tbody id="staff-table-body"> -->
+    <!--         </tbody> -->
+    <!-- </table> -->
 
     <script>
 
@@ -106,8 +261,17 @@
         loadStaffDashboard(todayStr);
       }
 
+const template = document.getElementById('shift-card-template');
+const container = document.getElementById('shift-container');
+//const tbody = document.getElementById('staff-table-body');
+
+container.innerHTML = '';
+
+        const statuses = ['Scheduled', 'Arrived', 'Late', 'Full','Custom'];
+let shifts;
 
       async function loadStaffDashboard(selectedDate) {
+
         //const response = await fetch('/api/shifts/today');
         //const shifts = await response.json();
 
@@ -116,24 +280,61 @@
         const dayName = days[dateObj.getUTCDay()]; //
 
         const response = await fetch(`/api/shifts?date=${selectedDate}&day=${dayName}`);
-        const shifts = await response.json();
-        const tbody = document.getElementById('staff-table-body');
-        tbody.innerHTML = '';
+        shifts = await response.json();
+        //tbody.innerHTML = '';
+        container.innerHTML = '';
+
         // if none for the day. generally, if its a weekend this triggers lol``
         //WHY DOES ==[] ALWAYS EQUAL FALSSE IN JS WHAAAAT
         if (shifts.length === 0) {
-          tbody.innerHTML = `
+          //tbody.innerHTML = `
+          container.innerHTML = `
+          <table>
                 <tr>
                     <td colspan="4" style="text-align: center; padding: 20px; color: #666;">
                         <strong>No tutoring shifts scheduled for ${dayName}.</strong> 
                         <br>Try selecting another day?
                     </td>
-                </tr>`;
+                </tr>
+          </table>
+            `;
           return;
         }
 
-        const statuses = ['Scheduled', 'Arrived', 'Late', 'Canceled', 'Full','Custom'];
+        shifts.forEach(shift => {
+          const clone = template.content.cloneNode(true);
+          /*clone.id=`${shift.shift_id}`;*/
+          const shiftElement = clone.firstElementChild; 
+          shiftElement.id = `shift-${shift.shift_id}`; 
+          clone.querySelector('.shift-time').textContent = `${shift.start_time} - ${shift.end_time}`;
+          clone.querySelector('.shift-tutor').textContent = shift.tutor_name;
+          //clone.querySelector('.shift-courses').textContent = shift.courses_taught || "None";
+          const courseContainer = clone.querySelector('.shift-courses');
+          const coursesRaw = shift.courses_taught || "";
+          const courseSplit = coursesRaw.split(',').map(c => c.trim()).filter(c => c !== "");
 
+          courseSplit.forEach(course => {
+            const span = document.createElement('span');
+            span.className = 'course-chip';
+            span.textContent = course;
+            courseContainer.appendChild(span);
+          });
+          let optionsHtml = statuses.map(s => {
+            if (s==="Custom"){
+              return `<option class="customone" value="${s}" ${shift.status === s ? 'selected' : ''}>${s}</option>`
+            }
+            else{
+              return `<option value="${s}" ${shift.status === s ? 'selected' : ''}>${s}</option>`
+            }
+          }).join('');
+          clone.querySelector('.select-shift').innerHTML = `${optionsHtml}`;
+          clone.querySelector('.select-shift').onchange = function() {
+            updateStatus(shift.shift_id, this.value);
+          };
+
+          container.appendChild(clone);
+        });
+        /*
         shifts.forEach(shift => {
           const tr = document.createElement('tr');
           let optionsHtml = statuses.map(s => 
@@ -152,11 +353,68 @@
                 `;
           tbody.appendChild(tr);
         });
+        */
+                  await setCustomDropdown();
+
+        
+
       }
 
-      async function updateStatus(shiftId, newStatus) {
-        let finalStatus = newStatus;
+async function setCustomDropdown() {
+    try {
+        const response = await fetch('http://localhost:4413/api/get_live_status');
+        const liveStatuses = await response.json(); 
+        const allCards = document.querySelectorAll('.shift-card');
 
+        allCards.forEach(card => {
+            const id = card.id.replace('shift-', '');
+            const statusText = liveStatuses[id]; // safe? 
+            const select = card.querySelector('.select-shift');
+            const customOption = card.querySelector('.customone');
+
+            if (statusText && select && customOption) {
+                const isCustom = !statuses.includes(statusText);
+
+                if (isCustom) {
+                    customOption.textContent = statusText;
+                    select.value = "Custom";
+                } else {
+                    select.value = statusText;
+                    customOption.textContent = "Custom";
+                }
+
+            }
+                          select.style.setProperty('--bg-color', getStatusColor(select.value));
+
+        });
+    } catch (error) {
+        console.error("FAILLL!!!! to load custom statuses:", error);
+    }
+}
+
+const getStatusColor = (status) => {
+    const colors = {
+        'Scheduled': 'var(--status-scheduled)',
+        'Arrived': 'var(--status-arrived)',
+        'Late': 'var(--status-late)',
+        /*'Canceled': 'var(--status-canceled)',*/
+        'Full': 'var(--status-full)',
+        'Custom': 'var(--status-custom)'
+    };
+    return colors[status] || 'var(--status-custom)'; 
+};
+
+      function setCustomDropdownInsta(id, statuss){
+        const outercard = document.getElementById(`shift-${id}`);
+        if (outercard) {
+          const customOption = outercard.querySelector('.customone');
+          const select = outercard.querySelector('.select-shift');
+          select.value=statuss;
+        }
+
+      }
+      async function updateStatus(shiftId, newStatus) {
+        let finalStatus = newStatus; 
         if (newStatus === "Custom") {
           const customValue = prompt("Enter custom status:");
 
@@ -165,6 +423,8 @@
             return;
           }
           finalStatus = customValue;
+          //setCustomDropdownInsta(shiftId, customValue);
+
         }
 
         await fetch('/api/update_live_status', {
@@ -172,6 +432,8 @@
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ shift_id: shiftId, status: finalStatus })
         });
+        await setCustomDropdown();
+
         console.log(`Updated shift ${shiftId} to ${finalStatus}`);
       }
       loadStaffDashboard(todayStr);
@@ -179,3 +441,4 @@
     </script>
 </body>
 </html>
+
