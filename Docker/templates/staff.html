@@ -10,7 +10,7 @@
   --status-scheduled: #FCFCFC;
   --status-arrived: #A3B87F;
   --status-late: #CCB790;
-  --status-canceled: #CC9998;
+  /*--status-canceled: #CC9998;*/
   --status-full: #9EBFCC;
   --status-custom: #CC9EB0;
 }
@@ -201,8 +201,9 @@ transform: scale(1.1) translateY(-50%) translateX(4px) rotate(180deg);
 </head>
 <body>
   <header class="staff-header">
-    <a href="/staff" class="staff-btn currPage"><span>Update Live Status<span></a>
-    <a href="/staff-cancel" class="staff-btn "><span>Cancel Session<span></a>
+    <a href="/staff" class="staff-btn currPage"><span>Update Live Status</span></a>
+    <a href="/staff-cancel" class="staff-btn "><span>Cancel Session</span></a>
+    <a href="/staff-edit" class="staff-btn"><span>Edit Shifts</span></a>
 </header>
 <template id="shift-card-template">
   <div class="shift-card">
@@ -231,18 +232,18 @@ transform: scale(1.1) translateY(-50%) translateX(4px) rotate(180deg);
 
 </div>
 <br><br><hr><br><br>
-    <table id="staff-live-table">
-        <thead>
-            <tr>
-                <th>Time</th>
-                <th>Tutor</th>
-                <th>Courses</th>
-                <th>Current Status</th>
-            </tr>
-        </thead>
-        <tbody id="staff-table-body">
-            </tbody>
-    </table>
+    <!-- <table id="staff-live-table"> -->
+    <!--     <thead> -->
+    <!--         <tr> -->
+    <!--             <th>Time</th> -->
+    <!--             <th>Tutor</th> -->
+    <!--             <th>Courses</th> -->
+    <!--             <th>Current Status</th> -->
+    <!--         </tr> -->
+    <!--     </thead> -->
+    <!--     <tbody id="staff-table-body"> -->
+    <!--         </tbody> -->
+    <!-- </table> -->
 
     <script>
 
@@ -262,11 +263,11 @@ transform: scale(1.1) translateY(-50%) translateX(4px) rotate(180deg);
 
 const template = document.getElementById('shift-card-template');
 const container = document.getElementById('shift-container');
-const tbody = document.getElementById('staff-table-body');
+//const tbody = document.getElementById('staff-table-body');
 
 container.innerHTML = '';
 
-        const statuses = ['Scheduled', 'Arrived', 'Late', 'Canceled', 'Full','Custom'];
+        const statuses = ['Scheduled', 'Arrived', 'Late', 'Full','Custom'];
 let shifts;
 
       async function loadStaffDashboard(selectedDate) {
@@ -396,7 +397,7 @@ const getStatusColor = (status) => {
         'Scheduled': 'var(--status-scheduled)',
         'Arrived': 'var(--status-arrived)',
         'Late': 'var(--status-late)',
-        'Canceled': 'var(--status-canceled)',
+        /*'Canceled': 'var(--status-canceled)',*/
         'Full': 'var(--status-full)',
         'Custom': 'var(--status-custom)'
     };

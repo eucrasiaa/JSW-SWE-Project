@@ -12,6 +12,7 @@
   .status-late { border-color: orange; }
   .status-canceled { border-color: red; opacity: 0.6; }
   .status-full { border-color: purple; }
+  .status-custom{border-color:cyan;}
   
 
 span[class^="status-"] {
@@ -30,6 +31,11 @@ span.status-scheduled {
     border-color: #666;
     background-color: #666;
 }
+span.status-custom {
+    border-color: cyan;
+    background-color: cyan;
+}
+
 span.status-scheduled::after {content: "Scheduled";}
 
 
@@ -6604,10 +6610,15 @@ document.getElementById('view_date_sel').addEventListener('change', (e) => {
       if (query.length === 0) {return false};
       return coursesStr.includes(query) || shift.tutor.toLowerCase().includes(query);
     });
-
+            const statuses = ['scheduled', 'arrived', 'late', 'full','custom'];
     filtered.forEach(shift => {
       const card = document.createElement('div');
-      card.className = `shift-card status-${shift.status.toLowerCase()}`;
+      const shiftStatus = shift.status.toLowerCase();
+    
+      // Check if the current status is in your allowed list
+      const statusClass = statuses.includes(shiftStatus) ? `status-${shiftStatus}` : 'status-custom';
+    
+    card.className = `shift-card ${statusClass}`
       card.innerHTML = `
                     <div style="font-weight: bold;">${shift.start} - ${shift.end}</div>
                     <div><strong>Tutor:</strong> ${shift.tutor}</div>
