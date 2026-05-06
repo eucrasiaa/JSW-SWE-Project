@@ -250,14 +250,17 @@ transform: scale(1.1) translateY(-50%) translateX(4px) rotate(180deg);
       //for date picker
       const dateInput = document.getElementById('view_date_sel');
       const todayStr = new Date().toISOString().split('T')[0];
+      let theselectedDate = todayStr;
       dateInput.value = todayStr;
 
       dateInput.addEventListener('change', (e) => {
+        theselectedDate = e.target.value;
         loadStaffDashboard(e.target.value);
       });
 
       function setToToday() {
         dateInput.value = todayStr;
+        theselectedDate = todayStr;
         loadStaffDashboard(todayStr);
       }
 
@@ -419,7 +422,7 @@ const getStatusColor = (status) => {
           const customValue = prompt("Enter custom status:");
 
           if (!customValue) {
-            loadStaffDashboard();
+            loadStaffDashboard(theselectedDate);
             return;
           }
           finalStatus = customValue;
