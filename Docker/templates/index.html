@@ -6610,7 +6610,7 @@ document.getElementById('view_date_sel').addEventListener('change', (e) => {
       if (query.length === 0) {return false};
       return coursesStr.includes(query) || shift.tutor.toLowerCase().includes(query);
     });
-            const statuses = ['scheduled', 'arrived', 'late', 'full','custom'];
+            const statuses = ['scheduled', 'arrived', 'late', 'full','canceled','custom'];
     filtered.forEach(shift => {
       const card = document.createElement('div');
       const shiftStatus = shift.status.toLowerCase();
