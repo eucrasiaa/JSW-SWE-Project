@@ -92,7 +92,7 @@
     </div>
 
     <div style="margin-top: 50px;">
-      <button onclick="submitAllChanges()">SUBMIT AlL CHANGES</button>
+      <button onclick="submitAllChanges()">SUBMIT ALL CHANGES</button>
     </div>
 
     <script>
@@ -122,23 +122,107 @@
       }
 
       async function promptAddTutor() {
-        const id = prompt("Enter Tutor's Student ID (e.g. UB12345):");
-        if (!id) return;
-        const first = prompt("Tutor's First Name:");
-        const last = prompt("Tutor's Last Name:");
-        const pref = prompt("Tutor's Preferred Name (To be shown):");
-
+        const formData = await showTutorFormModal();
+        if (!formData) return;
+        const { id, first, last, pref } = formData;
         const resp = await fetch('/api/tutor/add', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ id, first, last, pref })
         });
-
         if ((await resp.json()).success) {
           location.reload();
         } else {
           alert("Error adding tutor.");
         }
+      }
+
+      async function showTutorFormModal() {
+        return new Promise((resolve) => {
+          const overlay = document.createElement('div');
+          overlay.style.cssText = `
+            position:fixed; top:0; left:0; width:100%; height:100%;
+            background:rgba(0,0,0,0.5); display:flex; justify-content:center;
+            align-items:center; z-index:9999;
+          `;
+
+          const modal = document.createElement('div');
+          modal.style.cssText = `
+            background:white; padding:2rem; border-radius:8px; box-shadow:0 4px 12px rgba(0,0,0,0.3);
+            min-width:300px; max-width:90%;
+          `;
+          modal.innerHTML = `
+            <h3 style="margin-top:0;">Add Tutor</h3>
+            <label style="display:block; margin-bottom:0.5rem;">
+              Student ID:
+              <input type="text" id="tutor-id" placeholder="ex: UB12345" style="width:100%; box-sizing:border-box;">
+            </label>
+            <label style="display:block; margin-bottom:0.5rem;">
+              First Name:
+              <input type="text" id="tutor-first" style="width:100%; box-sizing:border-box;">
+            </label>
+            <label style="display:block; margin-bottom:0.5rem;">
+              Last Name:
+              <input type="text" id="tutor-last" style="width:100%; box-sizing:border-box;">
+            </label>
+            <label style="display:block; margin-bottom:1rem;">
+              Preferred Name:
+              <input type="text" id="tutor-pref" placeholder="Shown name, First Name if empty" style="width:100%; box-sizing:border-box; ">
+            </label>
+            <div style="text-align:right;">
+              <button id="tutor-cancel" style="margin-right:0.5rem;">Cancel</button>
+              <button id="tutor-submit">Add Tutor</button>
+            </div>
+          `;
+
+          overlay.appendChild(modal);
+          document.body.appendChild(overlay);
+
+          const idInput = modal.querySelector('#tutor-id');
+          idInput.focus();
+
+          const cancel = () => {
+            document.body.removeChild(overlay);
+            resolve(null);
+          };
+
+          const submit = () => {
+            const id = idInput.value.trim();
+            const first = modal.querySelector('#tutor-first').value.trim();
+            const last = modal.querySelector('#tutor-last').value.trim();
+            pref = modal.querySelector('#tutor-pref').value.trim();
+            if (!id || !first || !last) {
+              alert('Please fill in at least Student ID, First Name, and Last Name.');
+              return;
+            }
+            const idPattern = /^[A-Z]{2}\d{5}$/;
+            if (!idPattern.test(id)) {
+              alert('Invalid Student ID. Expected format: UB12345 (two letters followed by five digits).');
+              return;
+            }
+
+            if (!pref) {
+              pref = first;
+            }
+            document.body.removeChild(overlay);
+            resolve({ id, first, last, pref });
+          };
+          modal.querySelector('#tutor-cancel').addEventListener('click', cancel);
+          modal.querySelector('#tutor-submit').addEventListener('click', submit);
+          overlay.addEventListener('click', (e) => {
+            if (e.target === overlay) cancel();
+          });
+          modal.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') submit();
+          });
+
+          document.addEventListener('keydown', function escHandler(e) {
+            if (e.key === 'Escape') {
+              cancel();
+              document.removeEventListener('keydown', escHandler);
+            }
+          });
+        });
       }
 
       async function addNewShift() {
