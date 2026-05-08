@@ -315,6 +315,10 @@
               const date = new Date(currentSelectedDate);
               const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
               loadStaffDashboard(currentSelectedDate, days[date.getUTCDay()]);
+              const btn = document.getElementById('submit-btn');
+              btn.innerText = `Submit 0 Changes`;
+              btn.style.opacity = "0.5";
+              btn.disabled = true;
             }
           } catch (err) {
             console.error(err);
