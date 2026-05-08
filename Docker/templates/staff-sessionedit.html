@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <title>Staff Schedule Adjustment</title>
     <style>
 
-        .staff-header {
-          display: flex;
-          width: 100%; 
-        }
+.staff-header {
+  display: flex;
+  width: 100%; 
+}
 
         .staff-btn {
           flex: 1;
@@ -61,67 +61,129 @@
 
         select, input { font-size: 1rem; padding: 10px; margin: 5px; border: 2px solid #000; background:white; }
         .session-row { 
-            background: white; border: 2px solid black; padding: 20px; 
-            margin-bottom: 20px; 
+          background: white; border: 2px solid black; padding: 20px; 
+          margin-bottom: 20px; 
         }
         .changed { background-color: #ffffa0 !important; border-color: #ff0000 !important; }
         .header-box { border-bottom: 2px solid black; margin-bottom: 30px; padding-bottom: 10px; border-bottom-style:dashed}
     </style>
-</head>
-<body>
-  <header class="staff-header">
-    <a href="/staff" class="staff-btn "><span>Update Live Status</span></a>
-    <a href="/staff-cancel" class="staff-btn "><span>Cancel Session</span></a>
-    <a href="/staff-edit" class="staff-btn currPage"><span>Edit Shifts</span></a>
-</header>
+  </head>
+  <body>
+    <header class="staff-header">
+      <a href="/staff" class="staff-btn "><span>Update Live Status</span></a>
+      <a href="/staff-cancel" class="staff-btn "><span>Cancel Session</span></a>
+      <a href="/staff-edit" class="staff-btn currPage"><span>Edit Shifts</span></a>
+    </header>
 
     <div class="header-box">
-        <h1>STAFF SCHEDULE ADJUSTMENT</h1>
-        <label>Select Tutor to Edit:</label>
-        <select id="tutor-select" onchange="fetchTutorSessions(this.value)">
-            <option value="">Choose a Tutor</option>
-        </select>
+      <h1>STAFF SCHEDULE ADJUSTMENT</h1>
+      <label>Select Tutor to Edit:</label>
+      <select id="tutor-select" onchange="fetchTutorSessions(this.value)">
+        <option value="">Choose a Tutor</option>
+      </select>
+      <button onclick="promptAddTutor()" style="">add new tutor</button>
     </div>
 
     <div id="editor-container">
-        </div>
+    </div>
+
+    <div id="add-shift-container" style="display:none; margin-bottom: 20px;">
+      <button onclick="addNewShift()" style="width: 100%;">+ add new shift</button>
+    </div>
 
     <div style="margin-top: 50px;">
-        <button onclick="submitAllChanges()">SUBMIT AlL CHANGES</button>
+      <button onclick="submitAllChanges()">SUBMIT AlL CHANGES</button>
     </div>
 
     <script>
-        let originalData = {}; 
+      let originalData = {}; 
 
-        window.onload = async () => {
-            const resp = await fetch('/api/tutors');
-            const tutors = await resp.json();
-            const select = document.getElementById('tutor-select');
-            tutors.forEach(t => {
-                select.innerHTML += `<option value="${t.student_ID}">${t.preferred_name}</option>`;
-            });
-        };
+      window.onload = async () => {
+        const resp = await fetch('/api/tutors');
+        const tutors = await resp.json();
+        const select = document.getElementById('tutor-select');
+        tutors.forEach(t => {
+          select.innerHTML += `<option value="${t.student_ID}">${t.preferred_name}</option>`;
+        });
+      };
 
-        // 2. Fetch and Build rows
-        async function fetchTutorSessions(tutorId) {
-            if (!tutorId) return;
-            const container = document.getElementById('editor-container');
-            container.innerHTML = "<h2>Loading Sessions...</h2>";
+      async function deleteshift(shiftId) {
+        if (!confirm(`Permanently delete Shift #${shiftId}?`)) return;
 
-            const resp = await fetch(`/api/tutor/${tutorId}/sessions`);
-            const sessions = await resp.json();
-            
-            container.innerHTML = "";
-            originalData = {}; 
+        const resp = await fetch(`/api/shift/delete/${shiftId}`, { method: 'DELETE' });
+        const result = await resp.json();
 
-            sessions.forEach(s => {
-                originalData[s.shift_id] = JSON.stringify(s);
-                
-                const div = document.createElement('div');
-                div.className = 'session-row';
-                div.id = `row-${s.shift_id}`;
-                div.innerHTML = `
-                    <h3>Shift ID: ${s.shift_id}</h3>
+        if (result.success) {
+          document.getElementById(`row-${shiftId}`).remove();
+          alert("Shift Deleted.");
+        } else {
+          alert("Error: " + result.error);
+        }
+      }
+
+      async function promptAddTutor() {
+        const id = prompt("Enter Tutor's Student ID (e.g. UB12345):");
+        if (!id) return;
+        const first = prompt("Tutor's First Name:");
+        const last = prompt("Tutor's Last Name:");
+        const pref = prompt("Tutor's Preferred Name (To be shown):");
+
+        const resp = await fetch('/api/tutor/add', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ id, first, last, pref })
+        });
+
+        if ((await resp.json()).success) {
+          location.reload();
+        } else {
+          alert("Error adding tutor.");
+        }
+      }
+
+      async function addNewShift() {
+        const tutorId = document.getElementById('tutor-select').value;
+        const resp = await fetch('/api/shift/add', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ tutor_id: tutorId })
+        });
+
+        const result = await resp.json();
+        if (result.success) {
+          //refresh
+          fetchTutorSessions(tutorId);
+        }
+      }
+      async function fetchTutorSessions(tutorId) {
+        const addBtn = document.getElementById('add-shift-container');
+        if (!tutorId) {
+          addBtn.style.display = 'none';
+          return;
+        }
+        addBtn.style.display = 'block';
+        if (!tutorId) return;
+        const container = document.getElementById('editor-container');
+        container.innerHTML = "<h2>Loading Sessions...</h2>";
+
+        const resp = await fetch(`/api/tutor/${tutorId}/sessions`);
+        const sessions = await resp.json();
+
+        container.innerHTML = "";
+        originalData = {}; 
+
+        sessions.forEach(s => {
+          originalData[s.shift_id] = JSON.stringify(s);
+
+          //<h3>Shift ID: ${s.shift_id}</h3>
+          const div = document.createElement('div');
+          div.className = 'session-row';
+          div.id = `row-${s.shift_id}`;
+          div.innerHTML = `
+          <div style="display: flex;flex-direction: row; justify-content: space-between;">
+<h3>Shift ID: ${s.shift_id}</h3>
+<button onclick="deleteshift(${s.shift_id})" style="width: 25px;height: 25px;">X</button>
+</div>
                     <div style="display: flex; flex-wrap: wrap; gap: 20px;">
                         <div>
                             <label>Day</label>
@@ -142,50 +204,72 @@
                         </div>
                     </div>
                 `;
-                container.appendChild(div);
-            });
-        }
+          container.appendChild(div);
+        });
+      }
 
-        function checkChange(id, field, value) {
-            const row = document.getElementById(`row-${id}`);
-            const original = JSON.parse(originalData[id]);
-            const originalVal = original[field] || "";
-            
+      function checkChange(id, field, value) {
+        const row = document.getElementById(`row-${id}`);
+        const original = JSON.parse(originalData[id]);
+        const originalVal = original[field] || "";
+
+        const inputs = row.querySelectorAll('input');
+        let isDifferent = false;
+
+        if (value !== originalVal) {
+          event.target.classList.add('changed');
+        } else {
+          event.target.classList.remove('changed');
+        }
+      }
+
+      async function submitAllChanges() {
+        const allRows = document.querySelectorAll('.session-row');
+        const payload = [];
+
+        allRows.forEach(row => {
+          const changedInputs = row.querySelectorAll('.changed');
+          if (changedInputs.length > 0) {
             const inputs = row.querySelectorAll('input');
-            let isDifferent = false;
+            payload.push({
+              shift_id: row.id.split('-')[1],
+              day_of_week: inputs[0].value,
+              start_time: inputs[1].value,
+              end_time: inputs[2].value,
+              courses: inputs[3].value.split(',').map(c => c.trim()).filter(c => c !== "")  
+              //courses: inputs[3].value.split(',').map(c => c.trim())
+            });
+          }
+        });
 
-            if (value !== originalVal) {
-                event.target.classList.add('changed');
-            } else {
-                event.target.classList.remove('changed');
-            }
-        }
-
-        function submitAllChanges() {
-            const allRows = document.querySelectorAll('.session-row');
-            const payload = [];
-
-            allRows.forEach(row => {
-                const changedInputs = row.querySelectorAll('.changed');
-                if (changedInputs.length > 0) {
-                    const inputs = row.querySelectorAll('input');
-                    payload.push({
-                        shift_id: row.id.split('-')[1],
-                        day_of_week: inputs[0].value,
-                        start_time: inputs[1].value,
-                        end_time: inputs[2].value,
-                        courses: inputs[3].value.split(',').map(c => c.trim())
-                    });
-                }
+        if (payload.length === 0) {
+          alert("No changes detected!");
+        } else {
+          console.log("SENDING :", payload);
+          //alert(`Prepared to ${payload.length}  wowowowow!!`);
+          try {
+            const response = await fetch('/api/tutor/sessions/update', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify(payload)
             });
 
-            if (payload.length === 0) {
-                alert("No changes detected!");
+            const result = await response.json();
+
+            if (result.success) {
+              //alert(`Success: ${result.message} wowowowow!!`);
+              const currentTutorId = document.getElementById('tutor-select').value;
+              fetchTutorSessions(currentTutorId);
+              alert("Success!")
             } else {
-                console.log("SENDING :", payload);
-                alert(`Prepared to ${payload.length}  wowowowow!!`);
+              alert(`Error: ${result.error}`);
             }
+          } catch (err) {
+            console.error(err);
+            alert("A network error occurred while saving.");
+          }
         }
+      }
     </script>
-</body>
+  </body>
 </html>
