@@ -6616,9 +6616,17 @@ document.getElementById('view_date_sel').addEventListener('change', (e) => {
       // Check if the current status is in your allowed list
       const statusClass = statuses.includes(shiftStatus) ? `status-${shiftStatus}` : 'status-custom';
     
+    const startParts = shift.start.split(':');
+    const startHour = parseInt(startParts[0]);
+    const endParts = shift.end.split(':');
+    const endHour = parseInt(endParts[0]);
+
+    const shiftStart = (startHour % 12 || 12) + ':' + startParts[1] + ' ' + (startHour >= 12 ? 'PM' : 'AM');
+    const shiftEnd = (endHour % 12 || 12) + ':' + endParts[1] + ' ' + (endHour >= 12 ? 'PM' : 'AM');
+
     card.className = `shift-card ${statusClass}`
       card.innerHTML = `
-                    <div style="font-weight: bold;">${shift.start} - ${shift.end}</div>
+                    <div style="font-weight: bold;">${shiftStart} - ${shiftEnd}</div>
                     <div><strong>Tutor:</strong> ${shift.tutor}</div>
                     <div style="font-size: 0.9em; color: #555;">${shift.courses || "No courses listed"}</div>
                     <div style="margin-top: 5px; font-weight: bold;">Status: ${shift.status}</div>
