@@ -86,7 +86,8 @@
       <select id="tutor-select" onchange="fetchTutorSessions(this.value)">
         <option value="">Choose a Tutor</option>
       </select>
-      <button onclick="promptAddTutor()" style="padding: 10px; cursor: pointer;">Add New Tutor</button> 
+      <button onclick="promptAddTutor()" style="padding: 10px; cursor: pointer;">Add New Tutor</button>
+      <button onclick="deleteTutor()" style="padding: 10px; cursor: pointer;">Delete Tutor</button>
     </div>
 
     <div id="add-shift-container" style="display:none; margin-bottom: 20px;">
@@ -139,6 +140,30 @@
           location.reload();
         } else {
           alert("Error adding tutor.");
+        }
+      }
+
+      async function deleteTutor() {
+        const select = document.getElementById('tutor-select');
+        const tutorId = select.value;
+
+        if (!tutorId) {
+          return alert("Select a tutor first.");
+        }
+
+        const tutorName = select.options[select.selectedIndex].text;
+        if (!confirm(`Delete ${tutorName} and all their shifts? This cannot be undone.`)) {
+          return;
+        }
+
+         const resp = await fetch(`/api/tutor/${tutorId}`, { method: 'DELETE'});
+         const result = await resp.json();
+         if (result.success) {
+          alert("Tutor deleted.");
+          location.reload();
+        }
+        else {
+          alert("Error: " + result.error);
         }
       }
 
