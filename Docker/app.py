@@ -441,6 +441,21 @@ def add_shift():
         return jsonify({"success": False, "error": str(e)})
     finally:
         conn.close()
+
+@app.route('/api/tutor/<tutor_id>', methods=['DELETE'])
+def delete_tutor(tutor_id):
+    conn = get_db_connection()
+    try:
+        conn.execute('DELETE FROM weekly_shift WHERE tutor_ID = ?',(tutor_id,)) 
+        conn.execute('DELETE FROM tutor WHERE student_ID = ?', (tutor_id,))
+        conn.commit()
+        return jsonify({"success": True})
+    
+    except Exception as e:
+        return jsonify({"success": False, "error": str(e)}), 500
+    finally:
+        conn.close()  
+
 if __name__ == '__main__':
     # idek brah something weird thrown here but. TODO :??
     app.run(port=4413, debug=True)
