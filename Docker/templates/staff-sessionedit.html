@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <title>Staff Schedule Adjustment</title>
     <style>
-
-.staff-header {
-  display: flex;
-  width: 100%; 
-}
+        .staff-header {
+          display: flex;
+          width: 100%; 
+          box-shadow: 0 4px 8px rgba(0,0,0,0.25);
+          border: 1px solid #999; 
+        }
 
         .staff-btn {
           flex: 1;
@@ -18,26 +19,30 @@
           font-family: Arial, sans-serif;
           font-weight: bold;
           font-size: 1.2rem;
-          transition: background 0.3s;
+          transition: 0.3s;
           border: none;
-          background-color:  #d1d1d1;
+          background: linear-gradient(to bottom, #e0e0e0, #b8b8b8);
           color: black;
-
+          border-right: 1px solid #aaa;
         }
+
+        .staff-btn:last-child { 
+          border-right: none; 
+        } 
+
         .currPage{
-          background-color: #717171;
+          background: linear-gradient(to bottom, #808080, #5a5a5a);
           color: white;
-
+          box-shadow: inset 0 3px 6px rgba(0,0,0,0.35);
         }
+        
         .currPage span{
           text-decoration: none; 
           border-bottom: 2px solid white; 
-
           padding-bottom: 5px; 
           display: inline-block;
         }
 
-        /* MODERN CSS IS SOOOO FUN I LOVE MY CONDITIONALS */
         .staff-header:hover .currPage::before,
         .staff-header:hover .currPage::after {
           opacity: 0;
@@ -76,23 +81,23 @@
     </header>
 
     <div class="header-box">
-      <h1>STAFF SCHEDULE ADJUSTMENT</h1>
+      <h1>Staff Schedule Adjustment</h1>
       <label>Select Tutor to Edit:</label>
       <select id="tutor-select" onchange="fetchTutorSessions(this.value)">
         <option value="">Choose a Tutor</option>
       </select>
-      <button onclick="promptAddTutor()" style="">add new tutor</button>
+      <button onclick="promptAddTutor()" style="padding: 10px; cursor: pointer;">Add New Tutor</button> 
+    </div>
+
+    <div id="add-shift-container" style="display:none; margin-bottom: 20px;">
+      <button onclick="addNewShift()" style="width: 100%;">Add New Shift</button>
     </div>
 
     <div id="editor-container">
     </div>
 
-    <div id="add-shift-container" style="display:none; margin-bottom: 20px;">
-      <button onclick="addNewShift()" style="width: 100%;">+ add new shift</button>
-    </div>
-
     <div style="margin-top: 50px;">
-      <button onclick="submitAllChanges()">SUBMIT ALL CHANGES</button>
+      <button id= "submit-btn" onclick="submitAllChanges()" style="padding: 10px; background: #28a745; color: white; border: none; opacity: 0.5;" disabled>Submit All Changes</button>
     </div>
 
     <script>
@@ -155,7 +160,7 @@
             <h3 style="margin-top:0;">Add Tutor</h3>
             <label style="display:block; margin-bottom:0.5rem;">
               Student ID:
-              <input type="text" id="tutor-id" placeholder="ex: UB12345" style="width:100%; box-sizing:border-box;">
+              <input type="text" id="tutor-id" placeholder="ex: AB12345" style="width:100%; box-sizing:border-box;">
             </label>
             <label style="display:block; margin-bottom:0.5rem;">
               First Name:
@@ -290,6 +295,8 @@
                 `;
           container.appendChild(div);
         });
+
+        updateSubmitButton();
       }
 
       function checkChange(id, field, value) {
@@ -305,6 +312,16 @@
         } else {
           event.target.classList.remove('changed');
         }
+
+        updateSubmitButton();
+      }
+
+      async function updateSubmitButton() {
+        const btn = document.getElementById('submit-btn');
+        const changedCount = document.querySelectorAll('.session-row .changed').length;
+        btn.disabled = changedCount === 0;
+        btn.style.opacity = changedCount === 0 ? "0.5" : "1";
+        btn.style.cursor = changedCount === 0 ? "default" : "pointer";
       }
 
       async function submitAllChanges() {
@@ -344,7 +361,7 @@
               //alert(`Success: ${result.message} wowowowow!!`);
               const currentTutorId = document.getElementById('tutor-select').value;
               fetchTutorSessions(currentTutorId);
-              alert("Success!")
+              alert("Shifts edited successfully!")
             } else {
               alert(`Error: ${result.error}`);
             }
