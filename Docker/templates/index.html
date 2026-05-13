@@ -4541,7 +4541,7 @@ Wishing you a successful semester, and we look forward to seeing you!</p>
 
 <div class="debug-controls">
     <label>Viewing Schedule For:</label>
-    <input type="date" id="view_date_sel">
+    <input type="date" id="view_date_sel"> <button onclick="setToToday()" style="margin-left:8px">Today</button>
 </div>
 
 <div id="live-tutoring-widget">
@@ -6539,9 +6539,15 @@ function setupStream(dateValue) {
     };
 }
 
-const todayStr = new Date().toISOString().split('T')[0];
+const todayStr = new Date().toLocaleDateString('en-CA');
 document.getElementById('view_date_sel').value = todayStr;
 setupStream(todayStr);
+
+      function setToToday() {
+        const today = new Date().toLocaleDateString('en-CA');
+        document.getElementById('view_date_sel').value = today;
+        setupStream(today);
+      }
 
 document.getElementById('view_date_sel').addEventListener('change', (e) => {
     setupStream(e.target.value);

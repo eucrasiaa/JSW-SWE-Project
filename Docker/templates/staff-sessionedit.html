@@ -6,6 +6,7 @@
     <style>
         .staff-header {
           display: flex;
+          flex-wrap: wrap;
           width: 100%; 
           box-shadow: 0 4px 8px rgba(0,0,0,0.25);
           border: 1px solid #999; 
@@ -13,12 +14,16 @@
 
         .staff-btn {
           flex: 1;
+          display: flex;
+          align-items: center;
+          justify-content: center;
           text-align: center;
           padding: 20px 0;
           text-decoration: none;
           font-family: Arial, sans-serif;
           font-weight: bold;
-          font-size: 1.2rem;
+          font-size: clamp(1rem, 3vw, 1.5rem);
+          white-space: nowrap;
           transition: 0.3s;
           border: none;
           background: linear-gradient(to bottom, #e0e0e0, #b8b8b8);
@@ -39,32 +44,22 @@
         .currPage span{
           text-decoration: none; 
           border-bottom: 2px solid white; 
-          padding-bottom: 5px; 
           display: inline-block;
         }
 
-        .staff-header:hover .currPage::before,
-        .staff-header:hover .currPage::after {
-          opacity: 0;
-        }
+        
 
-        .staff-header .staff-btn:hover::before,
-        .staff-header .staff-btn:hover::after {
-          opacity: 1;
-        }
-        .staff-btn::before { content: "> "; opacity: 0; }
-        .staff-btn::after { content: " <"; opacity: 0; }
-        .currPage::before, 
-        .currPage::after { 
-          opacity: 1; 
-        }
+        
+        
+        
         .staff-btn:hover {
           filter: brightness(90%);
           cursor: pointer;
         }
 
 
-        select, input { font-size: 1rem; padding: 10px; margin: 5px; border: 2px solid #000; background:white; }
+
+        select, input { font-size: clamp(1rem, 3vw, 1.5rem); padding: 10px; margin: 5px; border: 2px solid #000; background:white; }
         .session-row { 
           background: white; border: 2px solid black; padding: 20px; 
           margin-bottom: 20px; 
@@ -88,6 +83,7 @@
       </select>
       <button onclick="promptAddTutor()" style="padding: 10px; cursor: pointer;">Add New Tutor</button>
       <button onclick="deleteTutor()" style="padding: 10px; cursor: pointer;">Delete Tutor</button>
+      <button id= "submit-btn" onclick="submitAllChanges()" style="padding: 10px; background: #28a745; color: white; border: 2px solid #1e7a34; opacity: 0.5; cursor: pointer;" disabled>Submit All Changes</button>
     </div>
 
     <div id="add-shift-container" style="display:none; margin-bottom: 20px;">
@@ -95,10 +91,6 @@
     </div>
 
     <div id="editor-container">
-    </div>
-
-    <div style="margin-top: 50px;">
-      <button id= "submit-btn" onclick="submitAllChanges()" style="padding: 10px; background: #28a745; color: white; border: none; opacity: 0.5;" disabled>Submit All Changes</button>
     </div>
 
     <script>
@@ -301,7 +293,15 @@
                     <div style="display: flex; flex-wrap: wrap; gap: 20px;">
                         <div>
                             <label>Day</label>
-                            <input type="text" value="${s.day_of_week}" oninput="checkChange(${s.shift_id}, 'day_of_week', this.value)">
+                            <select data-shift-id="${s.shift_id}" data-field="day_of_week">
+                                <option ${s.day_of_week === "Monday" ? "selected" : ""}>Monday</option>
+                                <option ${s.day_of_week === "Tuesday" ? "selected" : ""}>Tuesday</option>
+                                <option ${s.day_of_week === "Wednesday" ? "selected" : ""}>Wednesday</option>
+                                <option ${s.day_of_week === "Thursday" ? "selected" : ""}>Thursday</option>
+                                <option ${s.day_of_week === "Friday" ? "selected" : ""}>Friday</option>
+                                <option ${s.day_of_week === "Saturday" ? "selected" : ""}>Saturday</option>
+                                <option ${s.day_of_week === "Sunday" ? "selected" : ""}>Sunday</option>
+                            </select>
                         </div>
                         <div>
                             <label>Start</label>
@@ -319,23 +319,29 @@
                     </div>
                 `;
           container.appendChild(div);
+          // Attach change listener to the day select
+          const daySelect = div.querySelector('select[data-shift-id]');
+          if (daySelect) {
+            daySelect.addEventListener('change', function() {
+              const sid = this.getAttribute('data-shift-id');
+              const fld = this.getAttribute('data-field');
+              checkChange(sid, fld, this.value, this);
+            });
+          }
         });
 
         updateSubmitButton();
       }
 
-      function checkChange(id, field, value) {
-        const row = document.getElementById(`row-${id}`);
+      function checkChange(id, field, value, el) {
         const original = JSON.parse(originalData[id]);
         const originalVal = original[field] || "";
-
-        const inputs = row.querySelectorAll('input');
-        let isDifferent = false;
+        const target = el || event.target;
 
         if (value !== originalVal) {
-          event.target.classList.add('changed');
+          target.classList.add('changed');
         } else {
-          event.target.classList.remove('changed');
+          target.classList.remove('changed');
         }
 
         updateSubmitButton();
@@ -356,13 +362,14 @@
         allRows.forEach(row => {
           const changedInputs = row.querySelectorAll('.changed');
           if (changedInputs.length > 0) {
+            const daySelect = row.querySelector('select');
             const inputs = row.querySelectorAll('input');
             payload.push({
               shift_id: row.id.split('-')[1],
-              day_of_week: inputs[0].value,
-              start_time: inputs[1].value,
-              end_time: inputs[2].value,
-              courses: inputs[3].value.split(',').map(c => c.trim()).filter(c => c !== "")  
+              day_of_week: daySelect ? daySelect.value : inputs[0].value,
+              start_time: inputs[0].value,
+              end_time: inputs[1].value,
+              courses: inputs[2].value.split(',').map(c => c.trim()).filter(c => c !== "")  
               //courses: inputs[3].value.split(',').map(c => c.trim())
             });
           }
