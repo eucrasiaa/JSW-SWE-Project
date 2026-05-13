@@ -9,63 +9,161 @@
   --no-changes= "#28a745";
   --change=""
 }
-        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
-        th, td { border: 1px solid #ccc; padding: 10px; text-align: left; }
-        th { background: #eee; }
         .remove-button {margin-left:40px}
-        .datesel {display:flex;border: 2px solid black;align-content: center;justify-content: center;align-items: center;width: 50%; gap:10%;}
+        .datesel {display:flex;border: 2px solid black;align-content: center;justify-content: center;align-items: center;width: 50%; gap:10%; padding: 12px 0;} .datesel p {margin: 0; text-align: center;}
+        
+        #shift-container {
+            width: 80%;
+            max-width: 1200px;
+            margin-top: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 16px;
+        }
+        #shift-container .group {
+            display: flex;
+            flex-direction: column;
+        }
+        #shift-container .card {
+            flex: 1;
+        }
+        #shift-container .card {
+            background: linear-gradient(to bottom, #ffffff, #f5f5f5);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15), 0 1px 3px rgba(0,0,0,0.1);
+            border: 1px solid #ddd;
+            padding: 14px 12px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+            font-size: clamp(1rem, 3vw, 1.5rem);
+            transition: transform 0.15s, box-shadow 0.15s;
+        }
+
+        #shift-container .card .pills-row {
+            margin-top: auto;
+        }
+        #shift-container .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(0,0,0,0.2), 0 2px 4px rgba(0,0,0,0.1);
+        }
+        #shift-container .card:first-child {
+            border-radius: 8px 8px 0 0;
+        }
+        #shift-container .card:last-child {
+            border-radius: 0 0 8px 8px;
+        }
+        #shift-container .card:only-child {
+            border-radius: 8px;
+        }
+        #shift-container .card + .card {
+            border-top: none;
+            box-shadow: none;
+        }
+        #shift-container .card .time { font-weight: bold; text-align: center; width: 100%; }
+        #shift-container .card .tutor { color: #111; font-weight: bold; font-size: 1.15rem; margin: 2px 0; }
+        #shift-container .card .courses { display: flex; flex-wrap: wrap; justify-content: center; gap: 4px; }
+        #shift-container .card .pills-row {
+            display: flex;
+            flex-direction: row;
+            gap: 8px;
+            margin-top: auto;
+            padding-top: 8px;
+        }
+                #shift-container .course-chip {
+            border: 1px solid #222;
+            border-radius: 5px;
+            padding: 2px 8px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+        #shift-container .pill { display: inline-block; margin: 0 3px; }
+        #shift-container .pill input { display: none; }
+        #shift-container .pill span { padding: 5px 14px; border-radius: 20px; border: 2px solid #ccc; cursor: pointer; font-size: 0.85rem; }
+        #shift-container .pill input:checked + span { color: white; }
+        #shift-container .pill.green input:checked + span { background: #27ae60; border-color: #27ae60; }
+        #shift-container .pill.red input:checked + span { background: #e74c3c; border-color: #e74c3c; }
+        #viz-content ul { padding: 0; margin: 0; }
+        #viz-content table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        #viz-content th {
+            background: #444;
+            color: white;
+            padding: 12px 16px;
+            font-size: 0.95rem;
+            letter-spacing: 0.5px;
+            text-align: left;
+        }
+        #viz-content td {
+            padding: 12px 16px;
+            border-bottom: 1px solid #eee;
+            text-align: left;
+        }
+        #viz-content tr:last-child td { border-bottom: none; }
+        #viz-content tr:nth-child(even) td { background: #fafafa; }
+        #viz-content tr:hover td { background: #eef3ff; }
+        #viz-content .status-badge { background: #ffeaea; color: #c0392b; font-weight: bold; padding: 3px 10px; border-radius: 4px; display: inline-block; }
+
         .staff-header {
           display: flex;
+          flex-wrap: wrap;
           width: 100%; 
+          box-shadow: 0 4px 8px rgba(0,0,0,0.25);
+          border: 1px solid #999; 
         }
 
         .staff-btn {
           flex: 1;
+          display: flex;
+          align-items: center;
+          justify-content: center;
           text-align: center;
           padding: 20px 0;
           text-decoration: none;
           font-family: Arial, sans-serif;
           font-weight: bold;
-          font-size: 1.2rem;
-          transition: background 0.3s;
+          font-size: clamp(1rem, 3vw, 1.5rem);
+          white-space: nowrap;
+          transition: 0.3s;
           border: none;
-          background-color:  #d1d1d1;
+          background: linear-gradient(to bottom, #e0e0e0, #b8b8b8);
           color: black;
-
+          border-right: 1px solid #aaa;
         }
+
+        .staff-btn:last-child { 
+          border-right: none; 
+        } 
+
         .currPage{
-          background-color: #717171;
+          background: linear-gradient(to bottom, #808080, #5a5a5a);
           color: white;
-
+          box-shadow: inset 0 3px 6px rgba(0,0,0,0.35);
         }
+
         .currPage span{
           text-decoration: none; 
           border-bottom: 2px solid white; 
-
-          padding-bottom: 5px; 
           display: inline-block;
         }
 
-        /* MODERN CSS IS SOOOO FUN I LOVE MY CONDITIONALS */
-        .staff-header:hover .currPage::before,
-        .staff-header:hover .currPage::after {
-          opacity: 0;
-        }
+        
 
-        .staff-header .staff-btn:hover::before,
-        .staff-header .staff-btn:hover::after {
-          opacity: 1;
-        }
-        .staff-btn::before { content: "> "; opacity: 0; }
-        .staff-btn::after { content: " <"; opacity: 0; }
-        .currPage::before, 
-        .currPage::after { 
-          opacity: 1; 
-        }
+        
+        
+        
         .staff-btn:hover {
           filter: brightness(90%);
           cursor: pointer;
         }
+
     </style>
 </head>
 <body style="
@@ -81,44 +179,34 @@
 
 </header>
     <h1>Staff Dashboard - Cancellations</h1>
-    <p>Upcoming Cancelations Input Here</p>
     <div style="margin-top: 20px; display: flex; gap: 10px;">
     <button id="submit-btn" onclick="updateCancellations()" 
-            style="padding: 10px 20px; background: #28a745; color: white; border: none; cursor: pointer; opacity: 0.5;" disabled>
+            style="padding: 10px 20px; background: #28a745; color: white; border: 2px solid #1e7a34; opacity: 0.5;" disabled>
         Submit 0 Changes
     </button>
 
-    <button onclick="toggleVisualizer('pending')" style="padding: 10px;">View Pending Changes</button>
-    <button onclick="toggleVisualizer('allcancel')" style="padding: 10px;">View All Cancelations</button>
+    <button onclick="toggleVisualizer('pending')" style="padding: 10px; cursor: pointer;">View Pending Changes</button>
+    <button onclick="toggleVisualizer('allcancel')" style="padding: 10px; cursor: pointer;">View All Cancelations</button>
 </div>
 
-<div id="visualizer-container" style="width: 80%; margin-top: 20px; padding: 15px; border: 1px dashed #666; background: #f9f9f9;">
+<div id="visualizer-container" style="width: 80%; margin-top: 20px; padding: 0px 15px 15px 15px; border: 1px dashed #666; background: #f9f9f9;">
     <h3 id="viz-title">Pending Changes</h3>
-    <div id="viz-content">No pending changes.</div>
+    <div id="viz-content">No pending changes found.</div>
 </div>
+
+<p></p>
+
 <div style="" class="datesel"><div><p>Select Date To Edit</p></div><div style="
     justify-content: flex-start;
 ">
-<input id="cancel_date_sel" type="date">
+<input id="cancel_date_sel" type="date"> <button onclick="setToToday()" style="margin-left:8px">Today</button>
 </div></div>
-    <table id="staff-live-table">
-        <thead>
-            <tr>
-                <th>Time</th>
-                <th>Tutor</th>
-                <th>Courses</th>
-                <th>Canceled?</th>
-            </tr>
-        </thead>
-        <tbody id="staff-table-body">
-            </tbody>
-    </table>
+    <div id="shift-container"></div>
 
     <script>
-
-
-      let pendingChanges = {}; 
-      let currentSelectedDate = "";
+      let pendingChanges = {};
+      let currentSelectedDate = new Date().toLocaleDateString('en-CA');
+      document.getElementById('cancel_date_sel').value = currentSelectedDate;
 
       let loaded = {};
       // todo this is such a terrible way to do it but also its working. so maybe 
@@ -135,55 +223,75 @@
         const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
         const dayName = days[dayIndex];
 
-        //pendingChanges = {}; 
         loadStaffDashboard(currentSelectedDate, dayName);
       });
 
+      function setToToday() {
+        const todayStr = new Date().toLocaleDateString('en-CA');
+        document.getElementById('cancel_date_sel').value = todayStr;
+        currentSelectedDate = todayStr;
+        const date = new Date(todayStr);
+        const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+        loadStaffDashboard(todayStr, days[date.getUTCDay()]);
+      }
+
+      function fmtTime(t) {
+        var parts = t.split(':');
+        var h = parseInt(parts[0]);
+        var m = parts[1];
+        var ampm = h >= 12 ? 'PM' : 'AM';
+        var h12 = h % 12 || 12;
+        return h12 + ':' + m + ' ' + ampm;
+      }
+
       async function loadStaffDashboard(currentSelectedDate, dayName) {
-        //fallback to just today?
-        const date = dayName || new Date().toISOString().split('T')[0];
-        // was previously just doing Day of week. for some reason. pass full date!!!!
         const response = await fetch(`/api/shifts?date=${currentSelectedDate}&day=${dayName}`);
         const shifts = await response.json();
-        loaded = shifts;
-        const tbody = document.getElementById('staff-table-body');
-        tbody.innerHTML = '';
-        shifts.forEach(shift => {
-          const tr = document.createElement('tr');
-          // use the status from the exception table if it exists, otherwise default to 'scheduled'
+        loaded[currentSelectedDate] = shifts;
+        const container = document.getElementById('shift-container');
+        container.innerHTML = '';
 
-          const currentStatus = pendingChanges[shift.shift_id] || shift.exception_status || 'active';
-          tr.innerHTML = `
-            <td>${shift.start_time} - ${shift.end_time}</td>
-            <td>${shift.tutor_name}</td>
-            <td>${shift.courses_taught || "None"}</td>
-            <td id="radios-${shift.shift_id}">
-                <label>
-                    <input type="radio" name="status-${shift.shift_id}" value="active" 
-                        ${currentStatus === 'active' ? 'checked' : ''} 
-                        onchange="queueStatusChange(${shift.shift_id}, 'active')"> 
-                    Active
-                </label>
-                <label>
-                    <input type="radio" name="status-${shift.shift_id}" value="canceled" 
-                        ${currentStatus === 'canceled' ? 'checked' : ''} 
-                        onchange="queueStatusChange(${shift.shift_id}, 'canceled')"> 
-                    Canceled
-                </label>
-            </td>
-        `;
-          tbody.appendChild(tr);
-          tbody.appendChild(tr);
+        // Group consecutive same-tutor shifts
+        const groups = [];
+        for (const shift of shifts) {
+          const last = groups[groups.length - 1];
+          if (last && last.tutor_name === shift.tutor_name) {
+            last.push(shift);
+          } else {
+            groups.push([shift]);
+          }
+        }
+
+        groups.forEach(group => {
+          const groupDiv = document.createElement('div');
+          groupDiv.className = 'group';
+          group.forEach(shift => {
+            const currentStatus = pendingChanges[currentSelectedDate]?.[shift.shift_id] || shift.exception_status || 'active';
+            const card = document.createElement('div');
+            card.className = 'card';
+            card.id = 'radios-' + shift.shift_id;
+            card.innerHTML = '<span class="time">' + fmtTime(shift.start_time) + ' - ' + fmtTime(shift.end_time) + '</span>'
+              + '<span class="tutor">' + shift.tutor_name + '</span>'
+              + '<span class="courses">' + (shift.courses_taught ? shift.courses_taught.split(',').map(function(c){ return '<span class="course-chip">' + c.trim() + '</span>'; }).join('') : 'None') + '</span>'
+              + '<div class="pills-row"><label class="pill green"><input type="radio" name="status-' + shift.shift_id + '" value="active"'
+              + (currentStatus === 'active' ? ' checked' : '')
+              + ' onchange="queueStatusChange(' + shift.shift_id + ', \'active\')"><span>Active</span></label>'
+              + '<label class="pill red"><input type="radio" name="status-' + shift.shift_id + '" value="canceled"'
+              + (currentStatus === 'canceled' ? ' checked' : '')
+              + ' onchange="queueStatusChange(' + shift.shift_id + ', \'canceled\')"><span>Canceled</span></label>' + '</div>';
+            groupDiv.appendChild(card);
+          });
+          container.appendChild(groupDiv);
         });
       }
 
       function updateQueueUI() {
         const btn = document.getElementById('submit-btn');
-        const count = Object.keys(pendingChanges).length;
-
+         const count = Object.values(pendingChanges).reduce((sum, shifts) => sum + Object.keys(shifts).length, 0)
         btn.innerText = `Submit ${count} Changes`;
         btn.disabled = count === 0;
         btn.style.opacity = count === 0 ? "0.5" : "1";
+        btn.style.cursor = count === 0 ? "default" : "pointer";
 
         // ew.
         if (document.getElementById('viz-title').innerText === "Pending Changes") {
@@ -208,13 +316,13 @@
             const data = await resp.json();
 
             if (data.length === 0) {
-              content.innerHTML = "No cancellations found in database!";
+              content.innerHTML = "No cancellations found in database.";
               return;
             }
 
-            let html = `<table><tr><th>Date</th><th>Tutor</th><th>Status</th></tr>`;
+            let html = `<table><tr><th>Date</th><th>Time</th><th>Tutor</th><th>Courses</th><th>Status</th></tr>`;
             data.forEach(ex => {
-              html += `<tr><td>${ex.target_date}</td><td>${ex.tutor_name}</td><td>${ex.status}</td></tr>`;
+              html += `<tr><td>${ex.target_date}</td><td><span style="white-space:nowrap;">${fmtTime(ex.start_time || '')}</span> - <span style="white-space:nowrap;">${fmtTime(ex.end_time || '')}</span></td><td>${ex.tutor_name}</td><td>${ex.courses_taught ? ex.courses_taught.split(',').map(c => '<span style="white-space:nowrap;">' + c.trim() + '</span>').join(', ') : ''}</td><td><span class="status-badge">${ex.status.charAt(0).toUpperCase() + ex.status.slice(1)}</span></td></tr>`;
             });
             content.innerHTML = html + `</table>`;
           } catch (e) {
@@ -225,55 +333,87 @@
 
       function renderPendingList() {
         const content = document.getElementById('viz-content');
-        const keys = Object.keys(pendingChanges);
 
-        if (keys.length === 0) {
-          content.innerHTML = "No changes for this session.";
-          return;
-        }
+        let totalCount = 0;
         let list = "<ul>";
-        for (const [id, status] of Object.entries(pendingChanges)) {
-          const foundShift = loaded.find(item => item.shift_id == id);
-          console.log(foundShift);
-          let nname = `delete pending change for ${id}?`
-          if (foundShift){
-            nname= foundShift.tutor_name+"'s shift on " + dateValue + "  (" + foundShift.start_time+"-"+foundShift.end_time+") "
-            list += `<li><strong>${nname}</strong> set to <strong>${status}</strong>`;
-          }
-          else{
-            list += `<li>Shift ID <strong>${id}</strong> set to <strong>${status}</strong>`;
-          }
-          let safeName = nname.replace(/'/g, "\\'"); 
-          let confirmMsg = `remove ${safeName}?`;
-          list+=`<button class="remove-button" onclick="popfromqueue('${id}', '${confirmMsg}')">&times</button></li>`
 
+        for (const [date, shifts] of Object.entries(pendingChanges).sort((a,b) => a[0].localeCompare(b[0]))) {
+          if (Object.keys(shifts).length === 0) continue;
 
+          list += `<li style="list-style:none; margin-top:24px; text-align:center; font-size:1.1rem; border-bottom:1px solid #ccc; padding-bottom:8px;"><strong>${date}</strong></li><ul style="margin-top:8px;">`;          
+          for (const [id, status] of Object.entries(shifts)) {
+            totalCount++;
+            const foundShift = (loaded[date] || []).find(item => item.shift_id == id);
+            let label;
+            if (foundShift) {
+              label = `${foundShift.tutor_name}'s shift (${fmtTime(foundShift.start_time)}-${fmtTime(foundShift.end_time)})`;
+            } 
+            else {
+              label = `Shift ID ${id}`;
+            }
+            list += '<li style="display:flex; justify-content:space-between; align-items:center; background:white; border:1px solid #ddd; border-radius:6px; padding:8px 12px; margin-bottom:6px;">'
+              + '<span>' + label + ' set to <strong style="color:' + (status === 'canceled' ? '#c0392b' : '#27ae60') + '">' + status + '</strong></span>'
+              + '<button onclick="popfromqueue(\'' + date + '\',\'' + id + '\')" style="padding:2px 8px; cursor:pointer; border:1px solid #ccc; background:#f5f5f5; border-radius:4px; font-size:1.1rem;">&times;</button>'
+              + '</li>';
+          }
+          list += "</ul>";
         }
+        list += "</ul>";
 
-        content.innerHTML = list + "</ul>";
+        if (totalCount === 0) {
+          content.innerHTML = "No pending changes found.";
+        } 
+        else {
+          content.innerHTML = list;
+        }
       }
 
-      function popfromqueue(id, textContent){
-        const confirmed = confirm(textContent);
-        if (confirmed) {
-          delete pendingChanges[id];
+      function popfromqueue(date, id){
+        let label;
+        const foundShift = (loaded[date] || []).find(item => item.shift_id == id);
+        if (foundShift) {
+          label = `${foundShift.tutor_name}'s shift on ${date}`; 
+        } 
+        else {
+          label = `Shift ID ${id} on ${date}`;
         }
-        //fix visual if exists
-        fixDisplay(id);
-        //re-draw list of pending
-        renderPendingList();
-        //reset button number to -1 or to greyed out
-        updateQueueUI();
+
+        if (confirm(`Remove ${label}?`)) {
+          delete pendingChanges[date][id];
+          if (Object.keys(pendingChanges[date]).length === 0){
+            delete pendingChanges[date];
+          }
+          //fix visual if exists
+          fixDisplay(id);
+          //re-draw list of pending
+          renderPendingList();
+          //reset button number to -1 or to greyed out
+          updateQueueUI();
+        }
       }
+
       function queueStatusChange(shiftId, status) {
-        pendingChanges[shiftId] = status;
+        const found = (loaded[currentSelectedDate] || []).find(item => item.shift_id == shiftId);
+        const defaultStatus = (found && found.exception_status) || 'active';
+        if (status === defaultStatus) {
+          if (pendingChanges[currentSelectedDate]) {
+            delete pendingChanges[currentSelectedDate][shiftId];
+          }
+        }
+        else {
+          if (!pendingChanges[currentSelectedDate]){
+            pendingChanges[currentSelectedDate] = {};
+          }
+          pendingChanges[currentSelectedDate][shiftId] = status;
+          toggleVisualizer('pending');
+        }
         updateQueueUI();
         console.log("pending:", pendingChanges);
       }
+
       // if a queued elem is canceled, reset the radio box!
       function fixDisplay(id){
-
-        const foundShift = loaded.find(item => item.shift_id == id);
+        const foundShift = (loaded[currentSelectedDate] || []).find(item => item.shift_id == id);
         if (foundShift){
           let originalStatus = foundShift.exception_status;
           if (originalStatus == null) {
@@ -281,8 +421,10 @@
           }
 
           // 3. Find the specific radio button with that value and check it
-          const selector = `input[name="status-${id}"][value="${originalStatus}"]`;
-          const radioBtn = document.querySelector(selector);
+          const card = document.getElementById('radios-' + id);
+          if (!card) return;
+          const selector = 'input[name="status-' + id + '"][value="' + originalStatus + '"]';
+          const radioBtn = card.querySelector(selector);
 
           if (radioBtn) {
             radioBtn.checked = true;
@@ -291,31 +433,38 @@
       }
       // prompt for confirmation, push to api!
       async function updateCancellations() {
-        const changesCount = Object.keys(pendingChanges).length;
-        if (changesCount === 0) return alert("No updates queued...");
+        const dates = Object.keys(pendingChanges).filter(d => Object.keys(pendingChanges[d]).length > 0);
+        const totalCount = dates.reduce((sum, d) => sum + Object.keys(pendingChanges[d]).length, 0);
+        if (totalCount === 0) return alert("No updates queued...");
 
-        const confirmed = confirm(`updating ${changesCount} shifts on ${currentSelectedDate}?`);
+        const confirmed = confirm(`Submit ${totalCount} changes across ${dates.length} date(s): ${dates.join(", ")}?`);
 
         if (confirmed) {
           try {
-            const response = await fetch('/api/batch_update_exceptions', {
-              method: 'POST',
-              headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify({
-                date: currentSelectedDate,
-                updates: pendingChanges
-              })
-            });
-
-            if (response.ok) {
-              // empty queue, refresh list, alert suffessful. etc
-              alert("Canceled successfully!");
-              pendingChanges = {};
-              toggleVisualizer('allcancel');
-              const date = new Date(currentSelectedDate);
-              const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-              loadStaffDashboard(currentSelectedDate, days[date.getUTCDay()]);
+            let allSucceeded = true;
+            for (const date of dates) {
+              const response = await fetch('/api/batch_update_exceptions', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                  date: date,
+                  updates: pendingChanges[date]
+                })
+              });
+              if (!response.ok) {
+                allSucceeded = false;
+                return;
+              }
             }
+            alert("All cancelations submitted successfully!")
+            for (const date of dates) { 
+              delete pendingChanges[date]; 
+            }
+            toggleVisualizer('allcancel');
+            const newDate = new Date(currentSelectedDate);
+            const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+            loadStaffDashboard(currentSelectedDate, days[newDate.getUTCDay()]);
+            updateQueueUI();
           } catch (err) {
             console.error(err);
             alert("an error occcured, please try again?");
@@ -329,7 +478,7 @@
         const response = await fetch('/api/shifts/today');
         const shifts = await response.json();
 
-        const tbody = document.getElementById('staff-table-body');
+        const tbody = document.getElementById('shift-container');
         tbody.innerHTML = '';
 
 
@@ -353,7 +502,9 @@
           const customValue = prompt("Enter custom status:");
 
           if (!customValue) {
-            loadStaffDashboard();
+            const d = new Date(currentSelectedDate);
+            const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+            loadStaffDashboard(currentSelectedDate, days[d.getUTCDay()]); 
             return;
           }
           finalStatus = customValue;
@@ -366,7 +517,9 @@
         });
         console.log(`Updated shift ${shiftId} to ${finalStatus}`);
       }
-      loadStaffDashboard();
+      const d = new Date(currentSelectedDate);
+      const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+      loadStaffDashboard(currentSelectedDate, days[d.getUTCDay()]); 
     </script>
 </body>
 </html>

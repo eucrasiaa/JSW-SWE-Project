@@ -79,7 +79,7 @@
     background-color: #fff;
     border: 2px solid #222;
     font-weight: 700;
-    font-size: 1rem;
+    font-size: clamp(1rem, 3vw, 1.5rem);
     color: #222;
     cursor: pointer;
 transition: all 0.05s ease;
@@ -144,58 +144,60 @@ transform: scale(1.1) translateY(-50%) translateX(4px) rotate(180deg);
         table { width: 100%; border-collapse: collapse; margin-top: 20px; }
         th, td { border: 1px solid #ccc; padding: 10px; text-align: left; }
         th { background: #eee; }
-                .staff-header {
+        
+        .staff-header {
           display: flex;
+          flex-wrap: wrap;
           width: 100%; 
+          box-shadow: 0 4px 8px rgba(0,0,0,0.25);
+          border: 1px solid #999; 
         }
 
         .staff-btn {
           flex: 1;
+          display: flex;
+          align-items: center;
+          justify-content: center;
           text-align: center;
           padding: 20px 0;
           text-decoration: none;
           font-family: Arial, sans-serif;
           font-weight: bold;
-          font-size: 1.2rem;
-          transition: background 0.3s;
+          font-size: clamp(1rem, 3vw, 1.5rem);
+          white-space: nowrap;
+          transition: 0.3s;
           border: none;
-          background-color:  #d1d1d1;
+          background: linear-gradient(to bottom, #e0e0e0, #b8b8b8);
           color: black;
-
+          border-right: 1px solid #aaa;
         }
+
+        .staff-btn:last-child { 
+          border-right: none; 
+        } 
+
         .currPage{
-          background-color: #717171;
+          background: linear-gradient(to bottom, #808080, #5a5a5a);
           color: white;
-
+          box-shadow: inset 0 3px 6px rgba(0,0,0,0.35);
         }
+
         .currPage span{
           text-decoration: none; 
           border-bottom: 2px solid white; 
-
-          padding-bottom: 5px; 
           display: inline-block;
         }
 
-        /* MODERN CSS IS SOOOO FUN I LOVE MY CONDITIONALS */
-        .staff-header:hover .currPage::before,
-        .staff-header:hover .currPage::after {
-          opacity: 0;
-        }
+        
 
-        .staff-header .staff-btn:hover::before,
-        .staff-header .staff-btn:hover::after {
-          opacity: 1;
-        }
-        .staff-btn::before { content: "> "; opacity: 0; }
-        .staff-btn::after { content: " <"; opacity: 0; }
-        .currPage::before, 
-        .currPage::after { 
-          opacity: 1; 
-        }
+        
+        
+        
         .staff-btn:hover {
           filter: brightness(90%);
           cursor: pointer;
         }
+
 
     </style>
 </head>
@@ -219,7 +221,6 @@ transform: scale(1.1) translateY(-50%) translateX(4px) rotate(180deg);
 </template>
 
     <h1>Staff Dashboard - Live Status</h1>
-    <p>Change statuses below.</p>
 
 <div class="debug-controls">
     <label>Viewing Schedule For:</label>
@@ -249,7 +250,7 @@ transform: scale(1.1) translateY(-50%) translateX(4px) rotate(180deg);
 
       //for date picker
       const dateInput = document.getElementById('view_date_sel');
-      const todayStr = new Date().toISOString().split('T')[0];
+      const todayStr = new Date().toLocaleDateString('en-CA');
       let theselectedDate = todayStr;
       dateInput.value = todayStr;
 
@@ -257,6 +258,15 @@ transform: scale(1.1) translateY(-50%) translateX(4px) rotate(180deg);
         theselectedDate = e.target.value;
         loadStaffDashboard(e.target.value);
       });
+
+      function fmtTime(t) {
+        var parts = t.split(':');
+        var h = parseInt(parts[0]);
+        var m = parts[1];
+        var ampm = h >= 12 ? 'PM' : 'AM';
+        var h12 = h % 12 || 12;
+        return h12 + ':' + m + ' ' + ampm;
+      }
 
       function setToToday() {
         dateInput.value = todayStr;
@@ -309,7 +319,7 @@ let shifts;
           /*clone.id=`${shift.shift_id}`;*/
           const shiftElement = clone.firstElementChild; 
           shiftElement.id = `shift-${shift.shift_id}`; 
-          clone.querySelector('.shift-time').textContent = `${shift.start_time} - ${shift.end_time}`;
+          clone.querySelector('.shift-time').textContent = fmtTime(shift.start_time) + ' - ' + fmtTime(shift.end_time);
           clone.querySelector('.shift-tutor').textContent = shift.tutor_name;
           //clone.querySelector('.shift-courses').textContent = shift.courses_taught || "None";
           const courseContainer = clone.querySelector('.shift-courses');

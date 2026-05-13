@@ -23,6 +23,7 @@ clients = []
 # --- DATABASE HELPER ---
 def get_db_connection():
     conn = sqlite3.connect('tutoring.db')
+    conn.execute('PRAGMA foreign_keys = ON;')
     conn.row_factory = sqlite3.Row
     return conn
 
@@ -146,7 +147,17 @@ def insert_cancelation(session_id):
 @app.route('/api/exceptions/all')
 def get_all_exceptions():
     conn = get_db_connection()
-    exceptions = conn.execute('SELECT * FROM vw_resolved_exceptions ORDER BY target_date DESC').fetchall()
+    exceptions = conn.execute('''
+        SELECT e.target_date, e.status, ws.start_time, ws.end_time, t.preferred_name AS tutor_name,
+               GROUP_CONCAT(c.course_code) AS courses_taught
+        FROM exceptions e
+        JOIN weekly_shift ws ON e.shift_id = ws.shift_id
+        JOIN tutor t ON ws.tutor_ID = t.student_ID
+        LEFT JOIN shift_course_junct scj ON ws.shift_id = scj.shift_id
+        LEFT JOIN course c ON scj.course_code = c.course_code
+        GROUP BY e.shift_id, e.target_date
+        ORDER BY e.target_date DESC
+    ''').fetchall()
     conn.close()
     return jsonify([dict(row) for row in exceptions])
 
@@ -301,6 +312,7 @@ def get_shifts_by_date():
         FROM vw_base_weekly_schedule s
         LEFT JOIN exceptions e ON s.shift_id = e.shift_id AND e.target_date = ?
         WHERE s.day_of_week = ? 
+        ORDER BY s.tutor_name, s.start_time
     '''
     shifts = conn.execute(query, (target_date, day_name)).fetchall()
     conn.close()
@@ -349,6 +361,113 @@ def batch_update_exceptions():
     finally:
         conn.close()
 
+## EVIL EDIT SHIFTS THAT WANTS ME DEAD
+@app.route('/api/tutor/sessions/update', methods=['POST'])
+def update_tutor_sessions():
+    payload = request.json
+    
+    if not payload:
+        return jsonify({"success": False, "error": "No data received"}), 400
+
+    conn = get_db_connection()
+    try:
+        for shift in payload:
+            shift_id = shift.get('shift_id')
+            day_of_week = shift.get('day_of_week')
+            start_time = shift.get('start_time')
+            end_time = shift.get('end_time')
+            courses = shift.get('courses', []) 
+
+            #time + day edits
+            conn.execute('''
+                UPDATE weekly_shift 
+                SET day_of_week = ?, start_time = ?, end_time = ?
+                WHERE shift_id = ?
+            ''', (day_of_week, start_time, end_time, shift_id))
+
+            #just nuke the old ones to fix it
+            conn.execute('DELETE FROM shift_course_junct WHERE shift_id = ?', (shift_id,))
+            for course_code in courses:
+                # Normalize to uppercase so lowercase input matches course table
+                course_code = course_code.upper().strip()
+                if course_code:
+                    conn.execute('''
+                        INSERT INTO shift_course_junct (shift_id, course_code)
+                        VALUES (?, ?)
+                    ''', (shift_id, course_code))
+
+        conn.commit()
+        return jsonify({"success": True, "message": f"Updated {len(payload)} shifts!"})
+        
+    except sqlite3.IntegrityError as e:
+        conn.rollback()
+        return jsonify({"success": False, "error": "Error! Invalid course entered!"}), 400
+    except Exception as e:
+        conn.rollback()
+        return jsonify({"success": False, "error": str(e)}), 500
+    finally:
+        conn.close()
+
+## BIG POST DB EDITS SCARRYYYYY
+@app.route('/api/shift/delete/<int:shift_id>', methods=['DELETE'])
+def delete_shift(shift_id):
+    conn = get_db_connection()
+    try:
+        conn.execute('DELETE FROM weekly_shift WHERE shift_id = ?', (shift_id,))
+        conn.commit()
+        return jsonify({"success": True})
+    except Exception as e:
+        return jsonify({"success": False, "error": str(e)}), 500
+    finally:
+        conn.close()
+
+@app.route('/api/tutor/add', methods=['POST'])
+def add_tutor():
+    data = request.json
+    conn = get_db_connection()
+    try:
+        conn.execute('''
+            INSERT INTO tutor (student_ID, first_name, last_name, preferred_name)
+            VALUES (?, ?, ?, ?)
+        ''', (data['id'], data['first'], data['last'], data['pref']))
+        conn.commit()
+        return jsonify({"success": True})
+    except Exception as e:
+        return jsonify({"success": False, "error": "ID already exists or invalid data"})
+    finally:
+        conn.close()
+
+@app.route('/api/shift/add', methods=['POST'])
+def add_shift():
+    data = request.json # Expects { tutor_id: "..." }
+    conn = get_db_connection()
+    try:
+        # makes a monday 9-10 as a default to begin editing off of!
+        cursor = conn.execute('''
+            INSERT INTO weekly_shift (tutor_ID, day_of_week, start_time, end_time)
+            VALUES (?, 'Monday', '09:00', '10:00')
+        ''', (data['tutor_id'],))
+        new_id = cursor.lastrowid
+        conn.commit()
+        return jsonify({"success": True, "new_id": new_id})
+    except Exception as e:
+        return jsonify({"success": False, "error": str(e)})
+    finally:
+        conn.close()
+
+@app.route('/api/tutor/<tutor_id>', methods=['DELETE'])
+def delete_tutor(tutor_id):
+    conn = get_db_connection()
+    try:
+        conn.execute('DELETE FROM weekly_shift WHERE tutor_ID = ?',(tutor_id,)) 
+        conn.execute('DELETE FROM tutor WHERE student_ID = ?', (tutor_id,))
+        conn.commit()
+        return jsonify({"success": True})
+    
+    except Exception as e:
+        return jsonify({"success": False, "error": str(e)}), 500
+    finally:
+        conn.close()  
 
 if __name__ == '__main__':
     # idek brah something weird thrown here but. TODO :??
