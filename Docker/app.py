@@ -147,7 +147,17 @@ def insert_cancelation(session_id):
 @app.route('/api/exceptions/all')
 def get_all_exceptions():
     conn = get_db_connection()
-    exceptions = conn.execute('SELECT * FROM vw_resolved_exceptions ORDER BY target_date DESC').fetchall()
+    exceptions = conn.execute('''
+        SELECT e.target_date, e.status, ws.start_time, ws.end_time, t.preferred_name AS tutor_name,
+               GROUP_CONCAT(c.course_code) AS courses_taught
+        FROM exceptions e
+        JOIN weekly_shift ws ON e.shift_id = ws.shift_id
+        JOIN tutor t ON ws.tutor_ID = t.student_ID
+        LEFT JOIN shift_course_junct scj ON ws.shift_id = scj.shift_id
+        LEFT JOIN course c ON scj.course_code = c.course_code
+        GROUP BY e.shift_id, e.target_date
+        ORDER BY e.target_date DESC
+    ''').fetchall()
     conn.close()
     return jsonify([dict(row) for row in exceptions])
 
@@ -302,6 +312,7 @@ def get_shifts_by_date():
         FROM vw_base_weekly_schedule s
         LEFT JOIN exceptions e ON s.shift_id = e.shift_id AND e.target_date = ?
         WHERE s.day_of_week = ? 
+        ORDER BY s.tutor_name, s.start_time
     '''
     shifts = conn.execute(query, (target_date, day_name)).fetchall()
     conn.close()
@@ -377,7 +388,9 @@ def update_tutor_sessions():
             #just nuke the old ones to fix it
             conn.execute('DELETE FROM shift_course_junct WHERE shift_id = ?', (shift_id,))
             for course_code in courses:
-                if course_code: 
+                # Normalize to uppercase so lowercase input matches course table
+                course_code = course_code.upper().strip()
+                if course_code:
                     conn.execute('''
                         INSERT INTO shift_course_junct (shift_id, course_code)
                         VALUES (?, ?)
